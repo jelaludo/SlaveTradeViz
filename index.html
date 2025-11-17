@@ -743,6 +743,136 @@
                 font-size: 1rem;
             }
         }
+
+        /* Mobile responsiveness */
+        .visualization-container {
+            width: 100%;
+            overflow-x: auto;
+            overflow-y: visible;
+            -webkit-overflow-scrolling: touch;
+            position: relative;
+        }
+
+        .visualization-container::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .visualization-container::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+        }
+
+        .visualization-container::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 4px;
+        }
+
+        .visualization-container::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .timeline-svg {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .subtitle {
+                font-size: 0.9rem;
+                padding: 0 10px;
+            }
+
+            .filter-header {
+                flex-direction: column;
+                gap: 15px;
+                padding: 0 10px;
+            }
+
+            .filter-button {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .legend.brutality-legend {
+                padding: 15px;
+                margin: 15px 10px;
+                font-size: 0.85rem;
+            }
+
+            .legend-dimensions {
+                font-size: 0.8rem;
+            }
+
+            .active-filters {
+                padding: 10px;
+                flex-wrap: wrap;
+            }
+
+            .filter-chip {
+                font-size: 0.8rem;
+                padding: 4px 8px;
+            }
+
+            .treemap-container {
+                padding: 10px;
+            }
+
+            .treemap-item {
+                font-size: 0.75rem;
+            }
+
+            .treemap-name {
+                font-size: 0.7rem;
+            }
+
+            .treemap-number {
+                font-size: 0.65rem;
+            }
+
+            .category-tooltip,
+            .dimension-tooltip {
+                max-width: 90vw;
+                font-size: 0.85rem;
+            }
+
+            .filter-modal-content {
+                width: 95vw;
+                max-height: 90vh;
+                padding: 15px;
+            }
+
+            .filter-section h3 {
+                font-size: 1rem;
+            }
+
+            .filter-checkboxes {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.2rem;
+            }
+
+            .subtitle {
+                font-size: 0.8rem;
+            }
+
+            .legend.brutality-legend {
+                padding: 10px;
+                margin: 10px 5px;
+            }
+
+            .legend-scale-row {
+                font-size: 0.75rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1593,8 +1723,11 @@ const slaveryData = [
                 drawTreemap();
             }
 
-            // Handle window resize for treemap
+            // Handle window resize for both visualizations
             const handleResize = () => {
+                if (svgRef.current) {
+                    drawVisualization();
+                }
                 if (treemapRef.current) {
                     drawTreemap();
                 }
@@ -1625,17 +1758,29 @@ const slaveryData = [
             return;
         }
 
-        const margin = { top: 80, right: 300, bottom: 80, left: 250 };
-        const trackHeight = 280;
-        const width = 2200 - margin.left - margin.right;
+        // Responsive margins and dimensions
+        const isMobile = window.innerWidth < 768;
+        const isTablet = window.innerWidth < 1024 && window.innerWidth >= 768;
+        
+        const margin = isMobile 
+            ? { top: 60, right: 50, bottom: 60, left: 50 }
+            : isTablet
+            ? { top: 70, right: 150, bottom: 70, left: 100 }
+            : { top: 80, right: 300, bottom: 80, left: 250 };
+        
+        const trackHeight = isMobile ? 200 : isTablet ? 240 : 280;
+        const baseWidth = isMobile ? 1200 : isTablet ? 1600 : 2200;
+        const width = baseWidth - margin.left - margin.right;
         const height = (dataToVisualize.length * trackHeight) + margin.top + margin.bottom;
 
         d3.select(svgRef.current).selectAll('*').remove();
 
         const svg = d3.select(svgRef.current)
             .append('svg')
-            .attr('width', width + margin.left + margin.right)
+            .attr('width', baseWidth)
             .attr('height', height)
+            .attr('viewBox', `0 0 ${baseWidth} ${height}`)
+            .attr('preserveAspectRatio', 'xMinYMin meet')
             .attr('class', 'timeline-svg')
             .append('g')
             .attr('transform', `translate(${margin.left},${margin.top})`);
@@ -1700,15 +1845,18 @@ const slaveryData = [
                 .attr('rx', 8);
 
             // Combined title: Name | Estimate | Period, centered at top of colored area
-            const titleText = `${trade.name} | ${(trade.lowEstimate/1000000).toFixed(1)}-${(trade.highEstimate/1000000).toFixed(1)}M | ${trade.period}`;
+            const titleFontSize = isMobile ? '11px' : isTablet ? '12px' : '14px';
+            const titleText = isMobile 
+                ? `${trade.name} | ${(trade.lowEstimate/1000000).toFixed(1)}-${(trade.highEstimate/1000000).toFixed(1)}M`
+                : `${trade.name} | ${(trade.lowEstimate/1000000).toFixed(1)}-${(trade.highEstimate/1000000).toFixed(1)}M | ${trade.period}`;
             const titleElement = tradeGroup.append('text')
                 .attr('class', 'trade-title')
                 .attr('x', startX + flowWidth / 2)
-                .attr('y', 15)
+                .attr('y', isMobile ? 12 : 15)
                 .attr('text-anchor', 'middle')
                 .attr('fill', trade.color)
                 .attr('font-weight', '600')
-                .attr('font-size', '14px')
+                .attr('font-size', titleFontSize)
                 .style('cursor', 'help')
                 .text(titleText)
                 .on('mouseover', function(event) {
@@ -1825,12 +1973,14 @@ const slaveryData = [
                         hideTooltip();
                     });
 
+                const labelFontSize = isMobile ? '9px' : isTablet ? '10px' : '11px';
                 tradeGroup.append('text')
                     .attr('class', 'node-label')
                     .attr('x', destLabelX)
                     .attr('y', pos.midY)
                     .attr('dy', '0.35em')
                     .attr('text-anchor', 'start')
+                    .attr('font-size', labelFontSize)
                     .text(`${dest} (${(destinationTotals[dest]/1000000).toFixed(1)}M)`);
             });
 
@@ -1942,12 +2092,14 @@ const slaveryData = [
 
                 const midY = cumulativeSourceY + sourceHeight / 2;
                 const sourceLabelX = startX - 30; // Position labels outside colored area
+                const sourceLabelFontSize = isMobile ? '9px' : isTablet ? '10px' : '11px';
                 tradeGroup.append('text')
                     .attr('class', 'node-label')
                     .attr('x', sourceLabelX)
                     .attr('y', midY)
                     .attr('dy', '0.35em')
                     .attr('text-anchor', 'end')
+                    .attr('font-size', sourceLabelFontSize)
                     .text(`${source} (${(sourceTotals[source]/1000000).toFixed(1)}M)`);
 
                 cumulativeSourceY += sourceHeight + nodePadding;
