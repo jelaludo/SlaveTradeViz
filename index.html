@@ -248,6 +248,461 @@
             box-shadow: 0 20px 60px rgba(0,0,0,0.5);
         }
 
+        /* Filter Modal Styles */
+        .filter-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding: 0 20px;
+        }
+
+        .filter-button {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .filter-button:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .filter-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.85);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .filter-modal.visible {
+            display: flex;
+        }
+
+        .filter-modal-content {
+            background: #1a1a2e;
+            border-radius: 12px;
+            padding: 30px;
+            max-width: 1000px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+        }
+
+        .filter-modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 20px;
+        }
+
+        .filter-modal-header h2 {
+            color: #fff;
+            font-size: 1.8rem;
+        }
+
+        .close-filter-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .close-filter-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .filter-section {
+            margin-bottom: 30px;
+        }
+
+        .filter-section h3 {
+            color: #fff;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .filter-checkboxes {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 12px;
+        }
+
+        .filter-checkbox {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .filter-checkbox input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        .filter-checkbox label {
+            color: #e0e0e0;
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+
+        .filter-slider-group {
+            margin-bottom: 20px;
+        }
+
+        .filter-slider-label {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+            color: #e0e0e0;
+        }
+
+        .filter-slider-label span {
+            font-weight: 600;
+        }
+
+        .filter-slider-value {
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .filter-slider {
+            width: 100%;
+            height: 8px;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            outline: none;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        .filter-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #3b82f6;
+            cursor: pointer;
+        }
+
+        .filter-slider::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #3b82f6;
+            cursor: pointer;
+            border: none;
+        }
+
+        .filter-actions {
+            display: flex;
+            gap: 15px;
+            justify-content: flex-end;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .filter-btn {
+            padding: 12px 24px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .filter-btn-apply {
+            background: #3b82f6;
+            color: #fff;
+        }
+
+        .filter-btn-apply:hover {
+            background: #2563eb;
+        }
+
+        .filter-btn-reset {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+
+        .filter-btn-reset:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Active Filter Chips */
+        .active-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+            padding: 0 20px;
+        }
+
+        .filter-chip {
+            background: rgba(59, 130, 246, 0.2);
+            border: 1px solid rgba(59, 130, 246, 0.5);
+            color: #fff;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .filter-chip-remove {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: #fff;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            line-height: 1;
+        }
+
+        .filter-chip-remove:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Brutality Legend Styles */
+        .brutality-legend {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        .brutality-legend h3 {
+            color: #fff;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .legend-scale {
+            margin-bottom: 25px;
+        }
+
+        .legend-scale-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+
+        .legend-chip {
+            width: 30px;
+            height: 20px;
+            border-radius: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .legend-chip.level-0 {
+            background: #1e40af;
+        }
+
+        .legend-chip.level-1 {
+            background: #3b82f6;
+        }
+
+        .legend-chip.level-2 {
+            background: #f59e0b;
+        }
+
+        .legend-chip.level-3 {
+            background: #dc2626;
+        }
+
+        .legend-label {
+            color: #e0e0e0;
+            font-size: 0.95rem;
+        }
+
+        .legend-dimensions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .legend-dimension {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .legend-dimension dt {
+            color: #fff;
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
+        .legend-dimension dd {
+            color: #bbb;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-left: 0;
+        }
+
+        .legend-note {
+            color: #f59e0b;
+            font-size: 0.85rem;
+            font-weight: normal;
+        }
+
+        /* Dimension Tooltip Styles */
+        .dimension-label {
+            cursor: help;
+            position: relative;
+            text-decoration: underline;
+            text-decoration-style: dotted;
+            text-decoration-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .dimension-tooltip {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.95);
+            color: #fff;
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            max-width: 300px;
+            z-index: 3000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        .dimension-tooltip.visible {
+            opacity: 1;
+        }
+
+        .dimension-tooltip-title {
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: #fff;
+        }
+
+        .dimension-tooltip-text {
+            color: #e0e0e0;
+        }
+
+        /* Category Tooltip Styles */
+        .category-tooltip {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.95);
+            color: #fff;
+            padding: 16px 20px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            max-width: 400px;
+            z-index: 3000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        .category-tooltip.visible {
+            opacity: 1;
+        }
+
+        .category-tooltip-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+            color: #fff;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 8px;
+        }
+
+        .category-tooltip-section {
+            margin-bottom: 12px;
+        }
+
+        .category-tooltip-section-title {
+            font-weight: 600;
+            color: #f59e0b;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+
+        .category-tooltip-values {
+            color: #e0e0e0;
+            font-size: 0.9rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .category-tooltip-value {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+
+        .category-tooltip-brutality {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 8px;
+            font-size: 0.85rem;
+        }
+
+        .category-tooltip-brutality-label {
+            color: #bbb;
+        }
+
+        .category-tooltip-brutality-value {
+            color: #fff;
+            font-weight: 600;
+        }
+
         .detail-content h2 {
             color: #fff;
             margin-bottom: 20px;
@@ -321,6 +776,24 @@ const slaveryData = [
       "Italy": "Italy—especially Rome and central Italian estates—was the core sink for enslaved people captured across the Empire. They worked in latifundia agriculture, urban households, workshops, mines and public construction. Many household slaves could be manumitted and become freedpersons, but plantation and mine labor remained brutal.",
       "Roman East": "In the eastern provinces (Greece, Asia Minor, Syria, Egypt), slavery was deeply embedded in cities and villas. A larger share of enslaved people worked as skilled laborers, administrators, tutors and domestic servants, though agricultural and quarry work were also common. Eastern markets redistributed captives from frontier wars and piracy.",
       "Provinces": "Outside Italy and the major eastern centers, provincial estates, mines and households absorbed captives from local rebellions, frontier wars and debt. In Gaul, Spain, North Africa and the Balkans, some enslaved people never left their home region but were pulled into the Roman legal and economic system as property."
+    },
+    "acquisition_mode": ["war_captive", "raid", "debt_bondage", "birth_into_slavery"],
+    "legal_status": ["chattel_property", "state_slave"],
+    "labor_types": [
+      "plantation_agriculture",
+      "domestic_household",
+      "construction_infrastructure",
+      "mining_quarry",
+      "sexual_concubinage",
+      "administrative_bureaucratic",
+      "military"
+    ],
+    "brutality_profile": {
+      "transport_mortality": 1,
+      "bodily_mutilation": 2,
+      "sexual_exploitation": 2,
+      "hereditary_rigidity": 3,
+      "upward_mobility": 1
     }
   },
   {
@@ -347,6 +820,23 @@ const slaveryData = [
       "Households": "Domestic slavery was widespread across Chinese and Korean households, with enslaved people serving as domestic servants, concubines, and personal attendants. Many were hereditary bondservants bound to families for generations.",
       "Estates": "Agricultural estates and plantations relied heavily on enslaved labor for rice cultivation, silk production, and other agricultural work. Enslaved people worked alongside tenant farmers in large-scale agricultural operations.",
       "State Service": "State and imperial service included eunuchs in imperial courts, penal slaves working on public projects, and administrative servitude. The eunuch system in particular had extremely high mortality rates."
+    },
+    "acquisition_mode": ["war_captive", "debt_bondage", "birth_into_slavery", "judicial_penal"],
+    "legal_status": ["state_slave", "bonded_labor", "chattel_property"],
+    "labor_types": [
+      "domestic_household",
+      "agriculture_smallholder",
+      "administrative_bureaucratic",
+      "construction_infrastructure",
+      "sexual_concubinage",
+      "eunuch_slavery"
+    ],
+    "brutality_profile": {
+      "transport_mortality": 1,
+      "bodily_mutilation": 3,
+      "sexual_exploitation": 2,
+      "hereditary_rigidity": 2,
+      "upward_mobility": 1
     }
   },
   {
@@ -373,6 +863,21 @@ const slaveryData = [
       "Infrastructure Labor": "The Inca mit'a system required labor service for imperial infrastructure including road construction, terrace farming, and public works. While technically a labor draft, it functioned as a form of forced servitude.",
       "Agriculture": "Inca provinces provided agricultural labor through the mit'a system, with workers maintaining terraced fields and producing food for the empire.",
       "Domestic Slavery": "Amazonian groups practiced captive-taking as a central cultural institution, with captives integrated into households and communities, often through adoption or marriage."
+    },
+    "acquisition_mode": ["war_captive", "raid", "birth_into_slavery"],
+    "legal_status": ["chattel_property", "state_slave"],
+    "labor_types": [
+      "agriculture_smallholder",
+      "construction_infrastructure",
+      "ritual_sacrifice",
+      "domestic_household"
+    ],
+    "brutality_profile": {
+      "transport_mortality": 1,
+      "bodily_mutilation": 2,
+      "sexual_exploitation": 1,
+      "hereditary_rigidity": 2,
+      "upward_mobility": 0
     }
   },
   {
@@ -405,6 +910,22 @@ const slaveryData = [
       "Morocco": "Moroccan cities such as Marrakesh and Fez drew in enslaved people from caravan routes through the western Sahara. They were used in royal courts, urban households and irrigated agriculture.",
       "Ottoman Empire": "Some captives moving through North African ports were sent deeper into the Ottoman world—into Anatolia, the Levant and the Balkans—where they served in households, elite military units and rural estates.",
       "Middle East": "Beyond the formal Ottoman territories, desert and Red Sea routes brought enslaved Africans into Arabia and the broader Middle East, where they were integrated into domestic, pastoral and religious economies."
+    },
+    "acquisition_mode": ["raid", "war_captive", "kidnapping_trafficking"],
+    "legal_status": ["chattel_property"],
+    "labor_types": [
+      "domestic_household",
+      "eunuch_slavery",
+      "camel_caravan_transport",
+      "sexual_concubinage",
+      "agriculture_smallholder"
+    ],
+    "brutality_profile": {
+      "transport_mortality": 3,
+      "bodily_mutilation": 3,
+      "sexual_exploitation": 3,
+      "hereditary_rigidity": 2,
+      "upward_mobility": 0
     }
   },
   {
@@ -436,6 +957,21 @@ const slaveryData = [
       "North Africa": "The Maghreb (North Africa) absorbed Slavic captives through Mediterranean trade routes. They worked in urban households, agricultural estates, and as domestic servants.",
       "Middle East": "The Abbasid Caliphate and other Middle Eastern powers received Slavic captives through Khazar and Byzantine intermediaries. They served in households, military units, and administrative roles.",
       "Byzantium": "The Byzantine Empire absorbed Slavic captives, particularly from South Slavic regions. They worked in households, agriculture, and as soldiers in Byzantine armies."
+    },
+    "acquisition_mode": ["raid", "kidnapping_trafficking", "war_captive"],
+    "legal_status": ["chattel_property"],
+    "labor_types": [
+      "domestic_household",
+      "sexual_concubinage",
+      "military",
+      "administrative_bureaucratic"
+    ],
+    "brutality_profile": {
+      "transport_mortality": 2,
+      "bodily_mutilation": 1,
+      "sexual_exploitation": 2,
+      "hereditary_rigidity": 2,
+      "upward_mobility": 1
     }
   },
   {
@@ -463,6 +999,22 @@ const slaveryData = [
       "Temple Labor": "Khmer Empire temple complexes (like Angkor Wat) relied on massive forced labor for construction and maintenance, drawing from war captives and tribute populations.",
       "Maritime Labor": "Maritime Southeast Asian powers used enslaved people for galley labor, port work, and naval operations. Indonesian and Philippine captives were particularly used in maritime contexts.",
       "Domestic/Estates": "Hill tribes and other marginalized groups were captured and used in domestic service and agricultural estates across Southeast Asian kingdoms."
+    },
+    "acquisition_mode": ["war_captive", "raid", "debt_bondage", "birth_into_slavery"],
+    "legal_status": ["chattel_property", "corvee_subject"],
+    "labor_types": [
+      "agriculture_smallholder",
+      "domestic_household",
+      "construction_infrastructure",
+      "maritime_labor",
+      "sexual_concubinage"
+    ],
+    "brutality_profile": {
+      "transport_mortality": 1,
+      "bodily_mutilation": 1,
+      "sexual_exploitation": 2,
+      "hereditary_rigidity": 2,
+      "upward_mobility": 1
     }
   },
   {
@@ -495,6 +1047,61 @@ const slaveryData = [
       "Steppes": "Central Asian steppe regions absorbed deportees who worked as herders, craftspeople, and in military service.",
       "Middle East": "The Middle East received captives through the Ilkhanate, who were integrated into local economies and military units.",
       "Golden Horde": "The Golden Horde (Mongol-ruled Rus' territories) absorbed captives from Rus' principalities, who worked in agriculture, crafts, and military service."
+    },
+    "acquisition_mode": ["war_captive", "raid"],
+    "legal_status": ["state_slave", "chattel_property"],
+    "labor_types": [
+      "military",
+      "agriculture_smallholder",
+      "construction_infrastructure",
+      "domestic_household"
+    ],
+    "brutality_profile": {
+      "transport_mortality": 2,
+      "bodily_mutilation": 2,
+      "sexual_exploitation": 2,
+      "hereditary_rigidity": 1,
+      "upward_mobility": 1
+    }
+  },
+  {
+    "id": "devshirme",
+    "name": "Devshirme (Ottoman Child Levy)",
+    "period": "1420 - 1705 CE",
+    "color": "#22c55e",
+    "startYear": 1420,
+    "endYear": 1705,
+    "lowEstimate": 300000,
+    "highEstimate": 1200000,
+    "flows": [
+      { "source": "Balkans", "destination": "Janissary Corps", "value": 400000 },
+      { "source": "Anatolia", "destination": "Janissary Corps", "value": 200000 },
+      { "source": "Balkans", "destination": "Palace Service", "value": 150000 },
+      { "source": "Anatolia", "destination": "Palace Service", "value": 100000 },
+      { "source": "Balkans", "destination": "Administrative Roles", "value": 100000 },
+      { "source": "Various Christian Territories", "destination": "Agricultural Estates", "value": 50000 }
+    ],
+    "description": "The devshirme (\"collection\") was an Ottoman system of forced conscription that took Christian boys, typically aged 8–18, from Christian territories in the Balkans and Anatolia. Estimates suggest 300,000–1.2 million boys were taken over nearly three centuries. These children were converted to Islam, educated, and trained for elite military service (Janissaries), palace administration, or other state roles. The system was both a form of human tribute and a method of staffing the Ottoman military and bureaucracy with loyal, skilled personnel.",
+    "ending": "The devshirme system declined in the 17th century and was formally abolished around 1705. Factors included growing resistance from Christian communities, the increasing power of the Janissary corps (who began recruiting their own sons), and changing military needs. The system was replaced by voluntary recruitment and other methods of staffing the Ottoman military and administration.",
+    "destinationDetails": {
+      "Janissary Corps": "The Janissaries were elite infantry units of the Ottoman Empire. Boys taken through devshirme were trained from childhood in military arts, converted to Islam, and became professional soldiers. They formed the backbone of Ottoman military power for centuries and were among the most effective military units in Europe and the Middle East.",
+      "Palace Service": "Some devshirme recruits were selected for palace service, working as administrators, guards, or personal attendants to the Sultan. These roles required education and loyalty, and offered significant social mobility within the Ottoman hierarchy.",
+      "Administrative Roles": "The Ottoman bureaucracy absorbed many devshirme recruits as scribes, tax collectors, and regional administrators. Their education and loyalty made them valuable for managing the diverse territories of the empire.",
+      "Agricultural Estates": "A smaller number of devshirme recruits were assigned to agricultural estates or other economic roles, though the majority went into military or administrative service."
+    },
+    "acquisition_mode": ["child_levy"],
+    "legal_status": ["state_slave"],
+    "labor_types": [
+      "military",
+      "administrative_bureaucratic",
+      "domestic_household"
+    ],
+    "brutality_profile": {
+      "transport_mortality": 1,
+      "bodily_mutilation": 1,
+      "sexual_exploitation": 1,
+      "hereditary_rigidity": 1,
+      "upward_mobility": 3
     }
   },
   {
@@ -519,6 +1126,20 @@ const slaveryData = [
       "Crimean Markets": "Ports such as Caffa, Kefe and Gezlev were central sorting points. Captives from Polish–Lithuanian, Ukrainian and Russian lands were branded, recorded and sold to Ottoman and Middle Eastern buyers or ransomed back through church and family networks.",
       "Ottoman Empire": "The Ottoman Empire absorbed large numbers of captives as household servants, agricultural laborers, artisans and, in some cases, soldiers or administrators. Istanbul and other major cities were prime destinations.",
       "Middle East": "Some captives were sent onward from Ottoman ports into the broader Middle East, including Egypt and the Levant, where they entered domestic service, agricultural work or military households."
+    },
+    "acquisition_mode": ["raid"],
+    "legal_status": ["chattel_property"],
+    "labor_types": [
+      "domestic_household",
+      "agriculture_smallholder",
+      "sexual_concubinage"
+    ],
+    "brutality_profile": {
+      "transport_mortality": 1,
+      "bodily_mutilation": 1,
+      "sexual_exploitation": 2,
+      "hereditary_rigidity": 2,
+      "upward_mobility": 0
     }
   },
   {
@@ -550,6 +1171,21 @@ const slaveryData = [
       "Red Sea Ports": "Red Sea ports acted as waypoints where captives from East Africa and the Horn were transshipped to Arabia, Egypt and the Levant. Some remained in local households or coastal estates.",
       "Ottoman Empire": "African captives passing through Red Sea and eastern Mediterranean routes entered Ottoman lands as domestic servants, soldiers, agricultural laborers and palace slaves.",
       "Indian Ocean Islands": "Smaller island societies across the western Indian Ocean used enslaved labor for agriculture, shipping and household work, often blending African, South Asian and local populations over time."
+    },
+    "acquisition_mode": ["raid", "war_captive", "kidnapping_trafficking"],
+    "legal_status": ["chattel_property"],
+    "labor_types": [
+      "domestic_household",
+      "maritime_labor",
+      "sexual_concubinage",
+      "agriculture_smallholder"
+    ],
+    "brutality_profile": {
+      "transport_mortality": 2,
+      "bodily_mutilation": 3,
+      "sexual_exploitation": 3,
+      "hereditary_rigidity": 2,
+      "upward_mobility": 1
     }
   },
   {
@@ -578,6 +1214,20 @@ const slaveryData = [
       "Tripoli": "Tripoli served as another corsair haven, with captives forced into harbor work, construction and domestic service while diplomatic missions attempted to buy their freedom.",
       "Morocco": "Moroccan ports such as Salé and Rabat hosted corsair fleets targeting Atlantic shipping. Captives could end up in royal projects, urban labor or remote construction sites.",
       "Barbary Coast": "\"Barbary Coast\" here represents smaller ports and coastal forts that absorbed part of the captive population, redistributing them among local rulers, corsair crews and merchants."
+    },
+    "acquisition_mode": ["raid", "kidnapping_trafficking"],
+    "legal_status": ["chattel_property"],
+    "labor_types": [
+      "maritime_labor",
+      "galley_slave",
+      "domestic_household"
+    ],
+    "brutality_profile": {
+      "transport_mortality": 2,
+      "bodily_mutilation": 1,
+      "sexual_exploitation": 1,
+      "hereditary_rigidity": 1,
+      "upward_mobility": 0
     }
   },
   {
@@ -606,6 +1256,20 @@ const slaveryData = [
       "Hejaz": "This label covers the broader western Arabian region, where enslaved Africans worked in towns, oases and caravan support roles.",
       "Yemen": "Yemeni ports and highland towns used enslaved labor in agriculture, coffee production, domestic service and trade, drawing on routes from the Horn of Africa.",
       "Red Sea Ports": "Smaller ports along both African and Arabian shores acted as transit points where captives were sold locally or shipped onward to Egypt, the Levant and the interior."
+    },
+    "acquisition_mode": ["raid", "war_captive", "kidnapping_trafficking"],
+    "legal_status": ["chattel_property"],
+    "labor_types": [
+      "domestic_household",
+      "sexual_concubinage",
+      "eunuch_slavery"
+    ],
+    "brutality_profile": {
+      "transport_mortality": 2,
+      "bodily_mutilation": 3,
+      "sexual_exploitation": 3,
+      "hereditary_rigidity": 2,
+      "upward_mobility": 0
     }
   },
   {
@@ -636,6 +1300,21 @@ const slaveryData = [
       "Caribbean": "The Caribbean islands (British, French, Dutch and Danish) imported more than 4 million Africans for sugar, coffee and other plantations. Brutal work regimes and disease produced extreme mortality and frequent revolts, culminating in the Haitian Revolution and later emancipation movements.",
       "Spanish America": "Spanish America—including Mexico, Central America and northern South America—imported around 1–1.3 million Africans. They worked in mines, plantations, ranches and cities. Manumission, caste systems and regional revolutions created complex Afro-Latin societies.",
       "North America": "British North America and later the United States received roughly 300–400 thousand Africans directly, but the enslaved population grew rapidly through natural increase. Plantation slavery concentrated in the Chesapeake and Deep South, and its destruction required a civil war and constitutional abolition."
+    },
+    "acquisition_mode": ["kidnapping_trafficking", "raid", "war_captive", "birth_into_slavery"],
+    "legal_status": ["chattel_property", "hereditary"],
+    "labor_types": [
+      "plantation_agriculture",
+      "domestic_household",
+      "construction_infrastructure",
+      "sexual_concubinage"
+    ],
+    "brutality_profile": {
+      "transport_mortality": 3,
+      "bodily_mutilation": 2,
+      "sexual_exploitation": 2,
+      "hereditary_rigidity": 3,
+      "upward_mobility": 0
     }
   },
   {
@@ -668,6 +1347,22 @@ const slaveryData = [
       "Forced Marriage": "Forced marriage includes situations where people—disproportionately women and girls—are married without free and informed consent, often facing lifelong domestic and sexual servitude. These arrangements may be framed as \"traditional\" but meet criteria for slavery-like practices.",
       "Sex Trafficking": "Sex trafficking involves the recruitment, transport or harboring of people for sexual exploitation through coercion, deception or abuse of vulnerability. Victims are found in brothels, massage parlors, online platforms and informal venues across all regions.",
       "State-Imposed": "State-imposed forced labor includes compulsory prison labor without due process, abusive conscription systems and forced participation in public works or political programs. Examples include prison camps, forced labor as punishment for dissent, and compulsory labor tied to ethnicity or religion."
+    },
+    "acquisition_mode": ["kidnapping_trafficking", "debt_bondage", "coercion", "fraud"],
+    "legal_status": ["illegal_slavery", "forced_labor", "forced_marriage"],
+    "labor_types": [
+      "manufacturing",
+      "domestic_household",
+      "agriculture_smallholder",
+      "sex_trafficking",
+      "construction_infrastructure"
+    ],
+    "brutality_profile": {
+      "transport_mortality": 1,
+      "bodily_mutilation": 1,
+      "sexual_exploitation": 3,
+      "hereditary_rigidity": 0,
+      "upward_mobility": 0
     }
   }
 ];
@@ -678,10 +1373,95 @@ const slaveryData = [
         const tooltipRef = useRef(null);
         const [selectedTrade, setSelectedTrade] = useState(null);
         const [selectedDestination, setSelectedDestination] = useState(null);
+        const [showFilterModal, setShowFilterModal] = useState(false);
+        const [hoveredDimension, setHoveredDimension] = useState(null);
+        const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
+        const [hoveredCategory, setHoveredCategory] = useState(null);
+        const [categoryTooltipPosition, setCategoryTooltipPosition] = useState({ x: 0, y: 0 });
+        const [filters, setFilters] = useState({
+            acquisition: [],
+            legalStatus: [],
+            laborTypes: [],
+            brutality: {
+                transport_mortality: 0,
+                bodily_mutilation: 0,
+                sexual_exploitation: 0,
+                hereditary_rigidity: 0,
+                upward_mobility: 0
+            }
+        });
 
     const openTradeDetail = (trade, destination = null) => {
         setSelectedTrade(trade);
         setSelectedDestination(destination);
+    };
+
+    // Filter function: OR within dimensions, AND across dimensions
+    const filterTrades = (trades) => {
+        return trades.filter(trade => {
+            // Check acquisition mode (OR logic)
+            if (filters.acquisition.length > 0) {
+                const hasMatchingAcquisition = trade.acquisition_mode && 
+                    filters.acquisition.some(mode => trade.acquisition_mode.includes(mode));
+                if (!hasMatchingAcquisition) return false;
+            }
+
+            // Check legal status (OR logic)
+            if (filters.legalStatus.length > 0) {
+                const hasMatchingLegalStatus = trade.legal_status && 
+                    filters.legalStatus.some(status => trade.legal_status.includes(status));
+                if (!hasMatchingLegalStatus) return false;
+            }
+
+            // Check labor types (OR logic)
+            if (filters.laborTypes.length > 0) {
+                const hasMatchingLaborType = trade.labor_types && 
+                    filters.laborTypes.some(type => trade.labor_types.includes(type));
+                if (!hasMatchingLaborType) return false;
+            }
+
+            // Check brutality profile thresholds (AND logic - all must meet threshold)
+            if (trade.brutality_profile) {
+                const bp = trade.brutality_profile;
+                
+                // Transport mortality threshold
+                if (filters.brutality.transport_mortality > 0) {
+                    if (!bp.transport_mortality || bp.transport_mortality < filters.brutality.transport_mortality) {
+                        return false;
+                    }
+                }
+
+                // Bodily mutilation threshold
+                if (filters.brutality.bodily_mutilation > 0) {
+                    if (!bp.bodily_mutilation || bp.bodily_mutilation < filters.brutality.bodily_mutilation) {
+                        return false;
+                    }
+                }
+
+                // Sexual exploitation threshold
+                if (filters.brutality.sexual_exploitation > 0) {
+                    if (!bp.sexual_exploitation || bp.sexual_exploitation < filters.brutality.sexual_exploitation) {
+                        return false;
+                    }
+                }
+
+                // Hereditary rigidity threshold
+                if (filters.brutality.hereditary_rigidity > 0) {
+                    if (!bp.hereditary_rigidity || bp.hereditary_rigidity < filters.brutality.hereditary_rigidity) {
+                        return false;
+                    }
+                }
+
+                // Upward mobility threshold (inverted - higher is better, so we check if trade's value >= threshold)
+                if (filters.brutality.upward_mobility > 0) {
+                    if (!bp.upward_mobility || bp.upward_mobility < filters.brutality.upward_mobility) {
+                        return false;
+                    }
+                }
+            }
+
+            return true;
+        });
     };
 
         const showTooltip = (event, html) => {
@@ -702,7 +1482,19 @@ const slaveryData = [
         };
 
         const drawTreemap = () => {
-            if (!treemapRef.current || !slaveryData || slaveryData.length === 0) return;
+            // Use filtered trades instead of all slaveryData
+            const dataToVisualize = filterTrades(slaveryData);
+            if (!treemapRef.current || !dataToVisualize || dataToVisualize.length === 0) {
+                const container = d3.select(treemapRef.current);
+                container.selectAll('*').remove();
+                container.append('div')
+                    .style('text-align', 'center')
+                    .style('color', '#fff')
+                    .style('padding', '100px 20px')
+                    .style('font-size', '18px')
+                    .text('No systems match the selected filters');
+                return;
+            }
 
             const container = d3.select(treemapRef.current);
             container.selectAll('*').remove();
@@ -711,7 +1503,7 @@ const slaveryData = [
             const height = 260;
 
             // Prepare data with average estimates
-            const treemapData = slaveryData.map(trade => ({
+            const treemapData = dataToVisualize.map(trade => ({
                 name: trade.name,
                 value: (trade.lowEstimate + trade.highEstimate) / 2,
                 color: trade.color,
@@ -745,11 +1537,11 @@ const slaveryData = [
                 .style('height', d => (d.y1 - d.y0) + 'px')
                 .style('background-color', d => d.data.color)
                 .on('click', (event, d) => {
-                    const trade = slaveryData.find(t => t.id === d.data.id);
+                    const trade = dataToVisualize.find(t => t.id === d.data.id);
                     if (trade) openTradeDetail(trade);
                 })
                 .on('mouseover', function(event, d) {
-                    const trade = slaveryData.find(t => t.id === d.data.id);
+                    const trade = dataToVisualize.find(t => t.id === d.data.id);
                     if (trade) {
                         showTooltip(
                             event,
@@ -770,6 +1562,27 @@ const slaveryData = [
             cells.append('div')
                 .attr('class', 'treemap-period')
                 .text(d => d.data.period);
+
+            // Add hover handlers to treemap cells
+            cells.on('mouseover', function(event, d) {
+                const trade = dataToVisualize.find(t => t.id === d.data.id);
+                if (trade) {
+                    setHoveredCategory(trade);
+                    setCategoryTooltipPosition({
+                        x: event.clientX + 15,
+                        y: event.clientY - 15
+                    });
+                }
+            })
+            .on('mousemove', function(event) {
+                setCategoryTooltipPosition({
+                    x: event.clientX + 15,
+                    y: event.clientY - 15
+                });
+            })
+            .on('mouseout', function() {
+                setHoveredCategory(null);
+            });
         };
 
         useEffect(() => {
@@ -789,15 +1602,33 @@ const slaveryData = [
 
             window.addEventListener('resize', handleResize);
             return () => window.removeEventListener('resize', handleResize);
-        }, []);
+        }, [filters]);
 
     const drawVisualization = () => {
-        if (!slaveryData || slaveryData.length === 0) return;
+        // Use filtered trades instead of all slaveryData
+        const dataToVisualize = filterTrades(slaveryData);
+        if (!dataToVisualize || dataToVisualize.length === 0) {
+            // Show message if no trades match filters
+            d3.select(svgRef.current).selectAll('*').remove();
+            const svg = d3.select(svgRef.current)
+                .append('svg')
+                .attr('width', 800)
+                .attr('height', 200)
+                .attr('class', 'timeline-svg');
+            svg.append('text')
+                .attr('x', 400)
+                .attr('y', 100)
+                .attr('text-anchor', 'middle')
+                .attr('fill', '#fff')
+                .attr('font-size', '24px')
+                .text('No systems match the selected filters');
+            return;
+        }
 
         const margin = { top: 80, right: 300, bottom: 80, left: 250 };
         const trackHeight = 280;
         const width = 2200 - margin.left - margin.right;
-        const height = (slaveryData.length * trackHeight) + margin.top + margin.bottom;
+        const height = (dataToVisualize.length * trackHeight) + margin.top + margin.bottom;
 
         d3.select(svgRef.current).selectAll('*').remove();
 
@@ -848,7 +1679,7 @@ const slaveryData = [
             .attr('transform', `translate(0,${height - margin.top - margin.bottom})`)
             .call(xAxisBottom);
 
-        slaveryData.forEach((trade, index) => {
+        dataToVisualize.forEach((trade, index) => {
             const yOffset = index * trackHeight;
             const tradeGroup = svg.append('g')
                 .attr('transform', `translate(0,${yOffset})`);
@@ -870,7 +1701,7 @@ const slaveryData = [
 
             // Combined title: Name | Estimate | Period, centered at top of colored area
             const titleText = `${trade.name} | ${(trade.lowEstimate/1000000).toFixed(1)}-${(trade.highEstimate/1000000).toFixed(1)}M | ${trade.period}`;
-            tradeGroup.append('text')
+            const titleElement = tradeGroup.append('text')
                 .attr('class', 'trade-title')
                 .attr('x', startX + flowWidth / 2)
                 .attr('y', 15)
@@ -878,7 +1709,44 @@ const slaveryData = [
                 .attr('fill', trade.color)
                 .attr('font-weight', '600')
                 .attr('font-size', '14px')
-                .text(titleText);
+                .style('cursor', 'help')
+                .text(titleText)
+                .on('mouseover', function(event) {
+                    setHoveredCategory(trade);
+                    setCategoryTooltipPosition({
+                        x: event.clientX + 15,
+                        y: event.clientY - 15
+                    });
+                })
+                .on('mousemove', function(event) {
+                    setCategoryTooltipPosition({
+                        x: event.clientX + 15,
+                        y: event.clientY - 15
+                    });
+                })
+                .on('mouseout', function() {
+                    setHoveredCategory(null);
+                });
+
+            // Also add hover to the colored background rectangle
+            tradeGroup.select('rect')
+                .style('cursor', 'help')
+                .on('mouseover', function(event) {
+                    setHoveredCategory(trade);
+                    setCategoryTooltipPosition({
+                        x: event.clientX + 15,
+                        y: event.clientY - 15
+                    });
+                })
+                .on('mousemove', function(event) {
+                    setCategoryTooltipPosition({
+                        x: event.clientX + 15,
+                        y: event.clientY - 15
+                    });
+                })
+                .on('mouseout', function() {
+                    setHoveredCategory(null);
+                });
 
             const totalValue = trade.flows.reduce((sum, flow) => sum + flow.value, 0);
 
@@ -1092,12 +1960,430 @@ const slaveryData = [
         .filter(d => d.id !== 'modern')
         .reduce((sum, d) => sum + (d.highEstimate + d.lowEstimate) / 2, 0);
 
+    // Get all unique values for filter options
+    const getAllAcquisitionModes = () => {
+        const modes = new Set();
+        slaveryData.forEach(trade => {
+            if (trade.acquisition_mode) {
+                trade.acquisition_mode.forEach(mode => modes.add(mode));
+            }
+        });
+        return Array.from(modes).sort();
+    };
+
+    const getAllLegalStatuses = () => {
+        const statuses = new Set();
+        slaveryData.forEach(trade => {
+            if (trade.legal_status) {
+                trade.legal_status.forEach(status => statuses.add(status));
+            }
+        });
+        return Array.from(statuses).sort();
+    };
+
+    const getAllLaborTypes = () => {
+        const types = new Set();
+        slaveryData.forEach(trade => {
+            if (trade.labor_types) {
+                trade.labor_types.forEach(type => types.add(type));
+            }
+        });
+        return Array.from(types).sort();
+    };
+
+    const handleFilterChange = (type, value) => {
+        if (type === 'acquisition' || type === 'legalStatus' || type === 'laborTypes') {
+            setFilters(prev => {
+                const arr = prev[type];
+                const newArr = arr.includes(value)
+                    ? arr.filter(v => v !== value)
+                    : [...arr, value];
+                return { ...prev, [type]: newArr };
+            });
+        }
+    };
+
+    const handleBrutalityChange = (dimension, value) => {
+        setFilters(prev => ({
+            ...prev,
+            brutality: {
+                ...prev.brutality,
+                [dimension]: parseInt(value)
+            }
+        }));
+    };
+
+    const resetFilters = () => {
+        setFilters({
+            acquisition: [],
+            legalStatus: [],
+            laborTypes: [],
+            brutality: {
+                transport_mortality: 0,
+                bodily_mutilation: 0,
+                sexual_exploitation: 0,
+                hereditary_rigidity: 0,
+                upward_mobility: 0
+            }
+        });
+    };
+
+    const getActiveFilterCount = () => {
+        let count = 0;
+        count += filters.acquisition.length;
+        count += filters.legalStatus.length;
+        count += filters.laborTypes.length;
+        Object.values(filters.brutality).forEach(val => {
+            if (val > 0) count++;
+        });
+        return count;
+    };
+
+    const formatFilterLabel = (str) => {
+        return str.split('_').map(word => 
+            word.charAt(0).toUpperCase() + word.slice(1)
+        ).join(' ');
+    };
+
+    // Dimension descriptions for tooltips
+    const dimensionDescriptions = {
+        // Brutality dimensions
+        transport_mortality: {
+            title: "Transport Mortality",
+            description: "How deadly was the movement from source to destination? 0 = Minimal (short-distance, mostly on foot). 1 = Significant but not central (long marches, rough conditions). 2 = High and systemic (long routes with serious mortality). 3 = Extreme and defining (transport itself is one of the most lethal parts, like Middle Passage or Trans-Saharan desert crossings)."
+        },
+        bodily_mutilation: {
+            title: "Bodily Mutilation",
+            description: "How central are mutilations like castration, branding, amputation to the system? 0 = Rare (happens but not expected). 1 = Present (branding or physical punishment exist, but not core institution). 2 = Frequent/structural (branding, marking, harsh corporal punishments are common). 3 = System-defining (large-scale eunuch systems, castration central like some Islamic/Chinese eunuch systems)."
+        },
+        sexual_exploitation: {
+            title: "Sexual Exploitation",
+            description: "How central is coerced sexual access / concubinage / rape to the system? 0 = Not structurally central (undoubtedly present as abuse, but not defining logic). 1 = Common but peripheral (sexual exploitation happens, but system not primarily organized around it). 2 = Structural (female captives, concubinage, sexual labor are regular, expected outcome). 3 = Core feature (system strongly oriented around sexual exploitation like harems, concubine-focused trades, modern sex trafficking)."
+        },
+        hereditary_rigidity: {
+            title: "Hereditary Rigidity",
+            description: "How likely are children to inherit slave status with no realistic exit? 0 = Non-hereditary (penal labor, war captives, limited-term systems; children not automatically slaves). 1 = Mixed (some hereditary transmission, but not universal; realistic paths into non-slave status). 2 = Strong but not total (most children follow slave/bonded status, but law/custom sometimes allows exit). 3 = Fully rigid & central (chattel slavery and caste-like systems where status is inherited and extremely hard to escape)."
+        },
+        upward_mobility: {
+            title: "Upward Mobility (Inverted)",
+            description: "How realistic is significant upward movement into elite / non-slave positions? This scale is INVERTED: higher = less brutal. 0 = Virtually none (plantation slaves, mines, modern forced labor: escape extremely rare). 1 = Rare but possible (individual manumission or exceptional cases, but not expected). 2 = Structured but limited (institutional pathways for some talented or favored individuals). 3 = High / built into system (institution expects some slaves to rise very high, like Devshirme → Janissary generals, Mamluks, certain palace slaves)."
+        },
+        // Acquisition modes
+        war_captive: {
+            title: "War Captive",
+            description: "People enslaved through warfare and conquest. Most ancient empires (Rome, Assyria, Mongols), Aztec, Inca, Southeast Asian kingdoms. High mortality, mass enslavement, often gender-selective (men killed, women enslaved)."
+        },
+        raid: {
+            title: "Raid",
+            description: "Continuous, predatory slave acquisition through raiding, not tied to formal warfare. Examples: Viking/Slavic trade, Crimean–Tatar raids, Barbary corsair raids, Amazonian tribal wars."
+        },
+        child_levy: {
+            title: "Child Levy / Tribute Slavery",
+            description: "Forced conscription of children based on criteria (fitness, beauty, intelligence). Often provided elite status later. Examples: Devshirme, Imperial Chinese tribute systems, Ethiopian debo levies, Ottoman Caucasus child markets."
+        },
+        debt_bondage: {
+            title: "Debt Bondage",
+            description: "Forced labor through financial obligation. Not chattel slavery, but often inheritable and still coerced, often lifelong. Common in Ancient Near East, India & Southeast Asia, Colonial Latin America, modern bonded labor in South Asia."
+        },
+        birth_into_slavery: {
+            title: "Birth Into Slavery",
+            description: "Hereditary slavery where children automatically inherit slave status from their parents. Common in chattel slavery systems like Transatlantic trade, Roman slavery, many African kingships, Southeast Asian hereditary slavery."
+        },
+        kidnapping_trafficking: {
+            title: "Kidnapping / Trafficking",
+            description: "Abduction and illegal transport of people for enslavement. Common in modern slavery, but also historical systems like Trans-Saharan trade, Indian Ocean trade, and various raiding-based systems."
+        },
+        judicial_penal: {
+            title: "Judicial / Penal Slavery",
+            description: "Enslavement as legal punishment. Examples include Qin/Han China, Rome, Tsarist Russia, and modern forced labor camps. Not hereditary, but extremely harsh conditions."
+        },
+        coercion: {
+            title: "Coercion",
+            description: "Enslavement through threats, manipulation, or force without formal legal process. Common in modern slavery contexts where people are coerced into forced labor or marriage."
+        },
+        fraud: {
+            title: "Fraud",
+            description: "Enslavement through deception, false promises, or fraudulent contracts. Common in modern human trafficking where victims are deceived about work conditions, pay, or legal status."
+        },
+        // Legal statuses
+        chattel_property: {
+            title: "Chattel Property",
+            description: "People treated as property that can be bought, sold, and owned. No legal personhood, hereditary status. This is the category most people imagine when they hear 'slavery.' Examples: Transatlantic slave trade, Roman slavery, many African kingships."
+        },
+        state_slave: {
+            title: "State Slave",
+            description: "Enslaved people owned by or serving the state. High-status roles possible, but power ≠ freedom. Examples: Ottoman palace system, Chinese eunuchs, Roman bureaucracy slaves, Incan administrators."
+        },
+        bonded_labor: {
+            title: "Bonded Labor",
+            description: "Forced labor through debt or family obligation. Not full chattel slavery, but still coerced and often inheritable. Common in India, Southeast Asia, and various historical contexts."
+        },
+        corvee_subject: {
+            title: "Corvée Subject",
+            description: "Forced state labor, not fully property. Blurs lines between taxation, labor draft, and slavery. Examples: Inca mit'a system, Southeast Asian corvée systems."
+        },
+        clientage_serfdom: {
+            title: "Clientage / Serfdom",
+            description: "Attached to land or patron rather than being fully owned property. Examples include various forms of serfdom, clientage systems, and land-bound labor."
+        },
+        illegal_slavery: {
+            title: "Illegal Slavery",
+            description: "Modern slavery that is formally illegal everywhere but persists. Includes forced labor, forced marriage, and human trafficking despite legal prohibitions."
+        },
+        forced_labor: {
+            title: "Forced Labor",
+            description: "Modern form of slavery where people are compelled to work under threats, debt, or confiscated documents. Common in construction, manufacturing, agriculture, domestic work, and fishing."
+        },
+        forced_marriage: {
+            title: "Forced Marriage",
+            description: "Situations where people are married without free and informed consent, often facing lifelong domestic and sexual servitude. Disproportionately affects women and girls."
+        },
+        hereditary: {
+            title: "Hereditary",
+            description: "Slavery status that is inherited by children. Common in chattel slavery systems where children of enslaved people are automatically enslaved."
+        },
+        // Labor types
+        plantation_agriculture: {
+            title: "Plantation Agriculture",
+            description: "Large-scale agricultural production on plantations. Extreme mortality, gendered division, mass-scale labor. Examples: Transatlantic sugar/rice plantations, Roman latifundia, Persian estates, Southeast Asian rice slavery."
+        },
+        domestic_household: {
+            title: "Domestic / Household",
+            description: "Slavery within private households. Mixed treatment (sometimes benign, sometimes horrifying). High exploitation risk for women (sexual slavery). Examples: Islamic world, China and Korea, Roman familia urbana, Ottoman harems."
+        },
+        military: {
+            title: "Military",
+            description: "Enslaved people serving in military roles. Often given prestige and mobility, but still legally slaves. Examples: Mamluks, Janissaries (post-training), Mongol conscript slaves, Aztec/Maya war slaves."
+        },
+        administrative_bureaucratic: {
+            title: "Administrative / Bureaucratic",
+            description: "Enslaved people in administrative and bureaucratic roles. High-status roles possible, but power ≠ freedom. Examples: Ottoman palace system, Chinese eunuchs, Roman bureaucracy slaves, Incan administrators."
+        },
+        construction_infrastructure: {
+            title: "Construction / Infrastructure",
+            description: "Forced labor for building projects, roads, temples, and infrastructure. Extremely harsh conditions, high mortality. Examples: Roman public works, Inca road construction, Maya temple building, modern construction slavery."
+        },
+        mining_quarry: {
+            title: "Mining / Quarry",
+            description: "Forced labor in mines and quarries. Among the most brutal forms of slavery with extremely high mortality rates. Examples: Roman mines, Spanish American silver mines, modern mining slavery."
+        },
+        sexual_concubinage: {
+            title: "Sexual Concubinage",
+            description: "Coerced sexual servitude and concubinage. Gendered exploitation, continuous across all societies. Examples: Ottoman harems, Mongol conquests, Roman slavery, African domestic slavery, modern trafficking."
+        },
+        agriculture_smallholder: {
+            title: "Smallholder Agriculture",
+            description: "Agricultural labor on smaller farms and estates. Less extreme than plantation agriculture but still coerced. Examples: Chinese/Korean estates, Southeast Asian rice fields, various historical agricultural systems."
+        },
+        eunuch_slavery: {
+            title: "Eunuch Slavery",
+            description: "Castration-based slavery. Castration mortality 30–90%. Elite roles for survivors. One of the most violent forms of slavery in history. Examples: Islamic courts, China (largest eunuch system), Byzantium, Ethiopia."
+        },
+        maritime_labor: {
+            title: "Maritime Labor",
+            description: "Forced labor in maritime contexts including galley rowing, port work, pearl diving, and naval operations. Examples: Barbary corsairs, Indian Ocean trade, Southeast Asian maritime slavery."
+        },
+        galley_slave: {
+            title: "Galley Slave",
+            description: "Forced labor rowing galleys and ships. Extremely brutal conditions with high mortality. Examples: Barbary corsairs, Mediterranean galley slavery, various maritime powers."
+        },
+        ritual_sacrifice: {
+            title: "Ritual Sacrifice",
+            description: "Enslaved people used for ritual purposes including human sacrifice. Examples: Aztec ritual slavery, various pre-Columbian systems."
+        },
+        camel_caravan_transport: {
+            title: "Camel Caravan Transport",
+            description: "Forced labor in desert caravan transport. High mortality from harsh desert conditions. Examples: Trans-Saharan trade, various desert trade routes."
+        },
+        manufacturing: {
+            title: "Manufacturing",
+            description: "Forced labor in manufacturing and industrial contexts. Common in modern slavery. Examples: Modern forced labor in factories, sweatshops, and manufacturing facilities."
+        },
+        sex_trafficking: {
+            title: "Sex Trafficking",
+            description: "Modern form of sexual exploitation through trafficking. Involves recruitment, transport or harboring of people for sexual exploitation through coercion, deception or abuse of vulnerability."
+        }
+    };
+
+    const handleDimensionHover = (dimensionKey, event) => {
+        if (dimensionDescriptions[dimensionKey]) {
+            setHoveredDimension(dimensionKey);
+            setTooltipPosition({
+                x: event.clientX + 15,
+                y: event.clientY - 15
+            });
+        }
+    };
+
+    const handleDimensionLeave = () => {
+        setHoveredDimension(null);
+    };
+
+    // Format category dimensions for tooltip display
+    const formatCategoryDimensions = (trade) => {
+        if (!trade) return null;
+
+        const sections = [];
+
+        // Acquisition Mode
+        if (trade.acquisition_mode && trade.acquisition_mode.length > 0) {
+            sections.push({
+                title: "Acquisition Mode",
+                values: trade.acquisition_mode.map(mode => formatFilterLabel(mode))
+            });
+        }
+
+        // Legal Status
+        if (trade.legal_status && trade.legal_status.length > 0) {
+            sections.push({
+                title: "Legal Status",
+                values: trade.legal_status.map(status => formatFilterLabel(status))
+            });
+        }
+
+        // Labor Types
+        if (trade.labor_types && trade.labor_types.length > 0) {
+            sections.push({
+                title: "Labor Types",
+                values: trade.labor_types.map(type => formatFilterLabel(type))
+            });
+        }
+
+        // Brutality Profile
+        if (trade.brutality_profile) {
+            const bp = trade.brutality_profile;
+            const brutalityValues = [];
+            
+            brutalityValues.push({
+                label: "Transport Mortality",
+                value: bp.transport_mortality !== undefined ? bp.transport_mortality : 'N/A'
+            });
+            brutalityValues.push({
+                label: "Bodily Mutilation",
+                value: bp.bodily_mutilation !== undefined ? bp.bodily_mutilation : 'N/A'
+            });
+            brutalityValues.push({
+                label: "Sexual Exploitation",
+                value: bp.sexual_exploitation !== undefined ? bp.sexual_exploitation : 'N/A'
+            });
+            brutalityValues.push({
+                label: "Hereditary Rigidity",
+                value: bp.hereditary_rigidity !== undefined ? bp.hereditary_rigidity : 'N/A'
+            });
+            brutalityValues.push({
+                label: "Upward Mobility",
+                value: bp.upward_mobility !== undefined ? bp.upward_mobility : 'N/A'
+            });
+
+            sections.push({
+                title: "Brutality Profile (0-3 scale)",
+                brutality: brutalityValues
+            });
+        }
+
+        return sections;
+    };
+
+    // Get filtered trades for rendering
+    const filteredTrades = filterTrades(slaveryData);
+
     return (
         <div className="container">
-            <h1>The Scale of Slavery Throughout History</h1>
+            <div className="filter-header">
+                <h1>The Scale of Slavery Throughout History</h1>
+                <button className="filter-button" onClick={() => setShowFilterModal(true)}>
+                    <span>🔍</span>
+                    <span>Filters</span>
+                    {getActiveFilterCount() > 0 && (
+                        <span style={{ background: '#3b82f6', borderRadius: '10px', padding: '2px 8px', fontSize: '0.85rem' }}>
+                            {getActiveFilterCount()}
+                        </span>
+                    )}
+                </button>
+            </div>
             <p className="subtitle">
                 An integrated timeline visualization showing sources, flows, and destinations of enslaved people from Ancient Rome to the present day. "all models are wrong, some are useful", the numbers here are based on historical consensus, but data is sometime sparse and incomplete. It is certainly directionality accurate, despite your nitpick.
             </p>
+
+            {/* Brutality Legend */}
+            <div className="legend brutality-legend">
+                <h3>Brutality Dimensions (0–3 Scale)</h3>
+                <div className="legend-scale">
+                    <div className="legend-scale-row">
+                        <span className="legend-chip level-0"></span>
+                        <span className="legend-label"><strong>0</strong> – rare / not structurally central</span>
+                    </div>
+                    <div className="legend-scale-row">
+                        <span className="legend-chip level-1"></span>
+                        <span className="legend-label"><strong>1</strong> – present but limited</span>
+                    </div>
+                    <div className="legend-scale-row">
+                        <span className="legend-chip level-2"></span>
+                        <span className="legend-label"><strong>2</strong> – frequent / important</span>
+                    </div>
+                    <div className="legend-scale-row">
+                        <span className="legend-chip level-3"></span>
+                        <span className="legend-label"><strong>3</strong> – defining and extreme</span>
+                    </div>
+                </div>
+                <dl className="legend-dimensions">
+                    <div className="legend-dimension">
+                        <dt>Transport Mortality</dt>
+                        <dd>How deadly the routes were (marches, sea voyages, desert crossings).</dd>
+                    </div>
+                    <div className="legend-dimension">
+                        <dt>Bodily Mutilation</dt>
+                        <dd>Use of castration, branding, amputation or similar permanent violence.</dd>
+                    </div>
+                    <div className="legend-dimension">
+                        <dt>Sexual Exploitation</dt>
+                        <dd>How central coerced sexual access / concubinage / rape were to the system.</dd>
+                    </div>
+                    <div className="legend-dimension">
+                        <dt>Hereditary Rigidity</dt>
+                        <dd>How strongly slave status was inherited by children with no realistic exit.</dd>
+                    </div>
+                    <div className="legend-dimension">
+                        <dt>Upward Mobility <span className="legend-note">(inverted)</span></dt>
+                        <dd>
+                            <strong>0</strong> – almost no chance to rise beyond slavery<br/>
+                            <strong>3</strong> – some enslaved people regularly rose into elite roles
+                        </dd>
+                    </div>
+                </dl>
+            </div>
+
+            {/* Active Filter Chips */}
+            {getActiveFilterCount() > 0 && (
+                <div className="active-filters">
+                    {filters.acquisition.map(mode => (
+                        <div key={mode} className="filter-chip">
+                            <span>Acquisition: {formatFilterLabel(mode)}</span>
+                            <button className="filter-chip-remove" onClick={() => handleFilterChange('acquisition', mode)}>×</button>
+                        </div>
+                    ))}
+                    {filters.legalStatus.map(status => (
+                        <div key={status} className="filter-chip">
+                            <span>Legal: {formatFilterLabel(status)}</span>
+                            <button className="filter-chip-remove" onClick={() => handleFilterChange('legalStatus', status)}>×</button>
+                        </div>
+                    ))}
+                    {filters.laborTypes.map(type => (
+                        <div key={type} className="filter-chip">
+                            <span>Labor: {formatFilterLabel(type)}</span>
+                            <button className="filter-chip-remove" onClick={() => handleFilterChange('laborTypes', type)}>×</button>
+                        </div>
+                    ))}
+                    {Object.entries(filters.brutality).map(([dim, val]) => (
+                        val > 0 && (
+                            <div key={dim} className="filter-chip">
+                                <span>{formatFilterLabel(dim)}: ≥{val}</span>
+                                <button className="filter-chip-remove" onClick={() => handleBrutalityChange(dim, 0)}>×</button>
+                            </div>
+                        )
+                    ))}
+                </div>
+            )}
 
             <div className="stats-banner">
                 <div className="treemap-container" ref={treemapRef}></div>
@@ -1116,6 +2402,289 @@ const slaveryData = [
             </div>
 
             <div ref={tooltipRef} className="tooltip"></div>
+
+            {/* Filter Modal */}
+            <div className={`filter-modal ${showFilterModal ? 'visible' : ''}`} onClick={(e) => {
+                if (e.target.className.includes('filter-modal')) {
+                    setShowFilterModal(false);
+                }
+            }}>
+                <div className="filter-modal-content" onClick={(e) => e.stopPropagation()}>
+                    <div className="filter-modal-header">
+                        <h2>Filter Systems by Dimensions</h2>
+                        <button className="close-filter-btn" onClick={() => setShowFilterModal(false)}>
+                            Close
+                        </button>
+                    </div>
+
+                    {/* Acquisition Mode Filter */}
+                    <div className="filter-section">
+                        <h3>Acquisition Mode</h3>
+                        <div className="filter-checkboxes">
+                            {getAllAcquisitionModes().map(mode => (
+                                <div key={mode} className="filter-checkbox">
+                                    <input
+                                        type="checkbox"
+                                        id={`acq-${mode}`}
+                                        checked={filters.acquisition.includes(mode)}
+                                        onChange={() => handleFilterChange('acquisition', mode)}
+                                    />
+                                    <label 
+                                        htmlFor={`acq-${mode}`}
+                                        className={dimensionDescriptions[mode] ? "dimension-label" : ""}
+                                        onMouseEnter={(e) => dimensionDescriptions[mode] && handleDimensionHover(mode, e)}
+                                        onMouseMove={(e) => dimensionDescriptions[mode] && setTooltipPosition({ x: e.clientX + 15, y: e.clientY - 15 })}
+                                        onMouseLeave={handleDimensionLeave}
+                                    >
+                                        {formatFilterLabel(mode)}
+                                    </label>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Legal Status Filter */}
+                    <div className="filter-section">
+                        <h3>Legal Status</h3>
+                        <div className="filter-checkboxes">
+                            {getAllLegalStatuses().map(status => {
+                                // Convert status key to match description keys (e.g., "chattel_property" -> "chattel_property")
+                                const statusKey = status.replace(/-/g, '_');
+                                return (
+                                    <div key={status} className="filter-checkbox">
+                                        <input
+                                            type="checkbox"
+                                            id={`legal-${status}`}
+                                            checked={filters.legalStatus.includes(status)}
+                                            onChange={() => handleFilterChange('legalStatus', status)}
+                                        />
+                                        <label 
+                                            htmlFor={`legal-${status}`}
+                                            className={dimensionDescriptions[statusKey] ? "dimension-label" : ""}
+                                            onMouseEnter={(e) => dimensionDescriptions[statusKey] && handleDimensionHover(statusKey, e)}
+                                            onMouseMove={(e) => dimensionDescriptions[statusKey] && setTooltipPosition({ x: e.clientX + 15, y: e.clientY - 15 })}
+                                            onMouseLeave={handleDimensionLeave}
+                                        >
+                                            {formatFilterLabel(status)}
+                                        </label>
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    </div>
+
+                    {/* Labor Types Filter */}
+                    <div className="filter-section">
+                        <h3>Labor Types</h3>
+                        <div className="filter-checkboxes">
+                            {getAllLaborTypes().map(type => {
+                                // Convert type key to match description keys
+                                const typeKey = type.replace(/-/g, '_');
+                                return (
+                                    <div key={type} className="filter-checkbox">
+                                        <input
+                                            type="checkbox"
+                                            id={`labor-${type}`}
+                                            checked={filters.laborTypes.includes(type)}
+                                            onChange={() => handleFilterChange('laborTypes', type)}
+                                        />
+                                        <label 
+                                            htmlFor={`labor-${type}`}
+                                            className={dimensionDescriptions[typeKey] ? "dimension-label" : ""}
+                                            onMouseEnter={(e) => dimensionDescriptions[typeKey] && handleDimensionHover(typeKey, e)}
+                                            onMouseMove={(e) => dimensionDescriptions[typeKey] && setTooltipPosition({ x: e.clientX + 15, y: e.clientY - 15 })}
+                                            onMouseLeave={handleDimensionLeave}
+                                        >
+                                            {formatFilterLabel(type)}
+                                        </label>
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    </div>
+
+                    {/* Brutality Profile Filters */}
+                    <div className="filter-section">
+                        <h3>Brutality Profile (Minimum Threshold)</h3>
+                        <div className="filter-slider-group">
+                            <div className="filter-slider-label">
+                                <span 
+                                    className="dimension-label"
+                                    onMouseEnter={(e) => handleDimensionHover('transport_mortality', e)}
+                                    onMouseMove={(e) => setTooltipPosition({ x: e.clientX + 15, y: e.clientY - 15 })}
+                                    onMouseLeave={handleDimensionLeave}
+                                >
+                                    Transport Mortality
+                                </span>
+                                <span className="filter-slider-value">{filters.brutality.transport_mortality}</span>
+                            </div>
+                            <input
+                                type="range"
+                                min="0"
+                                max="3"
+                                value={filters.brutality.transport_mortality}
+                                onChange={(e) => handleBrutalityChange('transport_mortality', e.target.value)}
+                                className="filter-slider"
+                            />
+                        </div>
+                        <div className="filter-slider-group">
+                            <div className="filter-slider-label">
+                                <span 
+                                    className="dimension-label"
+                                    onMouseEnter={(e) => handleDimensionHover('bodily_mutilation', e)}
+                                    onMouseMove={(e) => setTooltipPosition({ x: e.clientX + 15, y: e.clientY - 15 })}
+                                    onMouseLeave={handleDimensionLeave}
+                                >
+                                    Bodily Mutilation
+                                </span>
+                                <span className="filter-slider-value">{filters.brutality.bodily_mutilation}</span>
+                            </div>
+                            <input
+                                type="range"
+                                min="0"
+                                max="3"
+                                value={filters.brutality.bodily_mutilation}
+                                onChange={(e) => handleBrutalityChange('bodily_mutilation', e.target.value)}
+                                className="filter-slider"
+                            />
+                        </div>
+                        <div className="filter-slider-group">
+                            <div className="filter-slider-label">
+                                <span 
+                                    className="dimension-label"
+                                    onMouseEnter={(e) => handleDimensionHover('sexual_exploitation', e)}
+                                    onMouseMove={(e) => setTooltipPosition({ x: e.clientX + 15, y: e.clientY - 15 })}
+                                    onMouseLeave={handleDimensionLeave}
+                                >
+                                    Sexual Exploitation
+                                </span>
+                                <span className="filter-slider-value">{filters.brutality.sexual_exploitation}</span>
+                            </div>
+                            <input
+                                type="range"
+                                min="0"
+                                max="3"
+                                value={filters.brutality.sexual_exploitation}
+                                onChange={(e) => handleBrutalityChange('sexual_exploitation', e.target.value)}
+                                className="filter-slider"
+                            />
+                        </div>
+                        <div className="filter-slider-group">
+                            <div className="filter-slider-label">
+                                <span 
+                                    className="dimension-label"
+                                    onMouseEnter={(e) => handleDimensionHover('hereditary_rigidity', e)}
+                                    onMouseMove={(e) => setTooltipPosition({ x: e.clientX + 15, y: e.clientY - 15 })}
+                                    onMouseLeave={handleDimensionLeave}
+                                >
+                                    Hereditary Rigidity
+                                </span>
+                                <span className="filter-slider-value">{filters.brutality.hereditary_rigidity}</span>
+                            </div>
+                            <input
+                                type="range"
+                                min="0"
+                                max="3"
+                                value={filters.brutality.hereditary_rigidity}
+                                onChange={(e) => handleBrutalityChange('hereditary_rigidity', e.target.value)}
+                                className="filter-slider"
+                            />
+                        </div>
+                        <div className="filter-slider-group">
+                            <div className="filter-slider-label">
+                                <span 
+                                    className="dimension-label"
+                                    onMouseEnter={(e) => handleDimensionHover('upward_mobility', e)}
+                                    onMouseMove={(e) => setTooltipPosition({ x: e.clientX + 15, y: e.clientY - 15 })}
+                                    onMouseLeave={handleDimensionLeave}
+                                >
+                                    Upward Mobility (inverted)
+                                </span>
+                                <span className="filter-slider-value">{filters.brutality.upward_mobility}</span>
+                            </div>
+                            <input
+                                type="range"
+                                min="0"
+                                max="3"
+                                value={filters.brutality.upward_mobility}
+                                onChange={(e) => handleBrutalityChange('upward_mobility', e.target.value)}
+                                className="filter-slider"
+                            />
+                        </div>
+                    </div>
+
+                    <div className="filter-actions">
+                        <button className="filter-btn filter-btn-reset" onClick={resetFilters}>
+                            Reset All
+                        </button>
+                        <button className="filter-btn filter-btn-apply" onClick={() => setShowFilterModal(false)}>
+                            Apply Filters
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            {/* Dimension Tooltip */}
+            {hoveredDimension && dimensionDescriptions[hoveredDimension] && (
+                <div 
+                    className={`dimension-tooltip visible`}
+                    style={{
+                        left: `${tooltipPosition.x}px`,
+                        top: `${tooltipPosition.y}px`
+                    }}
+                >
+                    <div className="dimension-tooltip-title">
+                        {dimensionDescriptions[hoveredDimension].title}
+                    </div>
+                    <div className="dimension-tooltip-text">
+                        {dimensionDescriptions[hoveredDimension].description}
+                    </div>
+                </div>
+            )}
+
+            {/* Category Tooltip */}
+            {hoveredCategory && formatCategoryDimensions(hoveredCategory) && (
+                <div 
+                    className={`category-tooltip visible`}
+                    style={{
+                        left: `${categoryTooltipPosition.x}px`,
+                        top: `${categoryTooltipPosition.y}px`
+                    }}
+                >
+                    <div className="category-tooltip-title" style={{ color: hoveredCategory.color }}>
+                        {hoveredCategory.name}
+                    </div>
+                    {formatCategoryDimensions(hoveredCategory).map((section, idx) => (
+                        <div key={idx} className="category-tooltip-section">
+                            <div className="category-tooltip-section-title">
+                                {section.title}
+                            </div>
+                            {section.values ? (
+                                <div className="category-tooltip-values">
+                                    {section.values.map((value, vIdx) => (
+                                        <span key={vIdx} className="category-tooltip-value">
+                                            {value}
+                                        </span>
+                                    ))}
+                                </div>
+                            ) : section.brutality ? (
+                                <div className="category-tooltip-brutality">
+                                    {section.brutality.map((item, bIdx) => (
+                                        <React.Fragment key={bIdx}>
+                                            <div className="category-tooltip-brutality-label">
+                                                {item.label}:
+                                            </div>
+                                            <div className="category-tooltip-brutality-value">
+                                                {item.value}
+                                            </div>
+                                        </React.Fragment>
+                                    ))}
+                                </div>
+                            ) : null}
+                        </div>
+                    ))}
+                </div>
+            )}
 
             <div className={`detail-modal ${selectedTrade ? 'visible' : ''}`} onClick={(e) => {
                 if (e.target.className.includes('detail-modal')) {
