@@ -1,0 +1,486 @@
+[
+  {
+    "id": "roman",
+    "name": "Roman Empire",
+    "period": "753 BCE - 476 CE",
+    "color": "#14b8a6",
+    "startYear": -753,
+    "endYear": 476,
+    "lowEstimate": 5000000,
+    "highEstimate": 15000000,
+    "flows": [
+      {
+        "source": "Gaul",
+        "destination": "Italy",
+        "value": 2000000
+      },
+      {
+        "source": "Germania",
+        "destination": "Italy",
+        "value": 1500000
+      },
+      {
+        "source": "Britain",
+        "destination": "Italy",
+        "value": 500000
+      },
+      {
+        "source": "North Africa",
+        "destination": "Italy",
+        "value": 1000000
+      },
+      {
+        "source": "Middle East",
+        "destination": "Roman East",
+        "value": 1200000
+      },
+      {
+        "source": "Balkans",
+        "destination": "Italy",
+        "value": 1500000
+      },
+      {
+        "source": "Various",
+        "destination": "Provinces",
+        "value": 2300000
+      }
+    ],
+    "description": "Slavery was fundamental to Roman society. Perhaps 10–30% of the Empire's population were enslaved at some point, concentrated in Italy and large provincial estates. People were enslaved through war, piracy, sale of children, exposure of infants, and penal slavery. Prisoners of war from Gaul, Germania, Britain and the East were sold into Italian markets, with some campaigns—like Caesar in Gaul or the First Punic War—generating tens of thousands of captives. Unlike later Atlantic systems, Roman slavery was not race-based but rooted in conquest, status and law.",
+    "ending": "Roman slavery never disappeared overnight but eroded over centuries. As imperial expansion slowed in the 2nd–3rd centuries CE, the supply of war captives shrank. Legal reforms, Christian moral critiques, and economic changes pushed landowners to rely more on tenant farmers (coloni) bound to the land rather than chattel slaves. By the late Empire and in successor kingdoms, slavery shaded gradually into forms of serfdom, with fewer large-scale markets and more local dependence ties.",
+    "destinationDetails": {
+      "Italy": "Italy—especially Rome and central Italian estates—was the core sink for enslaved people captured across the Empire. They worked in latifundia agriculture, urban households, workshops, mines and public construction. Many household slaves could be manumitted and become freedpersons, but plantation and mine labor remained brutal.",
+      "Roman East": "In the eastern provinces (Greece, Asia Minor, Syria, Egypt), slavery was deeply embedded in cities and villas. A larger share of enslaved people worked as skilled laborers, administrators, tutors and domestic servants, though agricultural and quarry work were also common. Eastern markets redistributed captives from frontier wars and piracy.",
+      "Provinces": "Outside Italy and the major eastern centers, provincial estates, mines and households absorbed captives from local rebellions, frontier wars and debt. In Gaul, Spain, North Africa and the Balkans, some enslaved people never left their home region but were pulled into the Roman legal and economic system as property."
+    }
+  },
+  {
+    "id": "trans-saharan",
+    "name": "Trans-Saharan Trade",
+    "period": "650 - 1900 CE",
+    "color": "#f59e0b",
+    "startYear": 650,
+    "endYear": 1900,
+    "lowEstimate": 6000000,
+    "highEstimate": 10000000,
+    "flows": [
+      {
+        "source": "West Sudan",
+        "destination": "Morocco",
+        "value": 800000
+      },
+      {
+        "source": "West Sudan",
+        "destination": "Algeria",
+        "value": 300000
+      },
+      {
+        "source": "Central Sudan",
+        "destination": "Libya",
+        "value": 900000
+      },
+      {
+        "source": "Central Sudan",
+        "destination": "Tunisia",
+        "value": 400000
+      },
+      {
+        "source": "Central Sudan",
+        "destination": "Ottoman Empire",
+        "value": 2500000
+      },
+      {
+        "source": "East Sudan",
+        "destination": "Egypt",
+        "value": 1800000
+      },
+      {
+        "source": "Sahel",
+        "destination": "North Africa",
+        "value": 1500000
+      },
+      {
+        "source": "Various",
+        "destination": "Middle East",
+        "value": 1800000
+      }
+    ],
+    "description": "The Trans-Saharan trade linked West, Central and East Sudan to North Africa and the Middle East for over a millennium. Estimates suggest 6–10 million people, many of them women and children, were taken across the desert in caravans. Enslaved people worked as domestic servants, concubines, soldiers, oasis farmers and craftspeople in cities such as Cairo, Tunis, Fez and Tripoli. Mortality on desert crossings could be very high, and female captives were especially numerous in this system compared to the Atlantic trade.",
+    "ending": "The Trans-Saharan slave trade declined gradually in the 19th and early 20th centuries. European conquest of North Africa and the Sahel disrupted caravan routes and imposed abolitionist laws; Ottoman reforms and Egyptian decrees formally banned slave trading; and new colonial border controls made large caravans harder to organize. Even after legal bans, forms of bondage and domestic slavery persisted in some Saharan and Sahelian societies well into the 20th century.",
+    "destinationDetails": {
+      "North Africa": "Across North Africa, enslaved people from West and Central Sudan labored in urban households, small workshops and agricultural estates. Cities such as Fez and Tlemcen relied on caravan routes bringing captives through oases like Timbuktu and Ghadames.",
+      "Egypt": "Egypt was both a terminus and redistribution hub. Enslaved people worked in Cairo households and estates, in the army and in administrative roles. Nubia and Sudan supplied many captives to Egyptian markets, and some were marched onward to the Arabian Peninsula.",
+      "Algeria": "Algerian cities such as Tlemcen and Algiers absorbed captives as domestic servants, artisans and rural laborers. Some West African captives were also re-exported towards the central Maghreb and the Ottoman world.",
+      "Tunisia": "Tunis served as an important port and political center where enslaved people worked in elite households, workshops and agricultural domains. Caravans from the Sahara and Fezzan often converged on Tunisian markets.",
+      "Libya": "Tripoli and other Libyan towns were key staging posts for desert caravans. Captives from the Sahel and central Sahara were sold into households, agriculture and service in Tripolitan coastal society or moved onward to the Ottoman Empire.",
+      "Morocco": "Moroccan cities such as Marrakesh and Fez drew in enslaved people from caravan routes through the western Sahara. They were used in royal courts, urban households and irrigated agriculture.",
+      "Ottoman Empire": "Some captives moving through North African ports were sent deeper into the Ottoman world—into Anatolia, the Levant and the Balkans—where they served in households, elite military units and rural estates.",
+      "Middle East": "Beyond the formal Ottoman territories, desert and Red Sea routes brought enslaved Africans into Arabia and the broader Middle East, where they were integrated into domestic, pastoral and religious economies."
+    }
+  },
+  {
+    "id": "crimean",
+    "name": "Crimean/Black Sea",
+    "period": "1440s - 1783",
+    "color": "#06b6d4",
+    "startYear": 1440,
+    "endYear": 1783,
+    "lowEstimate": 1000000,
+    "highEstimate": 3000000,
+    "flows": [
+      {
+        "source": "Ukraine",
+        "destination": "Crimean Markets",
+        "value": 800000
+      },
+      {
+        "source": "Poland-Lithuania",
+        "destination": "Crimean Markets",
+        "value": 600000
+      },
+      {
+        "source": "Russia",
+        "destination": "Ottoman Empire",
+        "value": 700000
+      },
+      {
+        "source": "Balkans",
+        "destination": "Ottoman Empire",
+        "value": 400000
+      },
+      {
+        "source": "Various",
+        "destination": "Middle East",
+        "value": 500000
+      }
+    ],
+    "description": "From the 15th to the late 18th century, Crimean Tatar raiders and other groups captured an estimated 1–3 million people from what is now Ukraine, Poland–Lithuania and Russia. Captives were marched to Crimean ports such as Caffa and sold in markets that supplied the Ottoman Empire and the wider Middle East. Many were peasants seized in seasonal raids; some were nobles ransomed back to their families. The trade helped sustain the Crimean Khanate's economy and its ties to Istanbul.",
+    "ending": "The trade collapsed when Russian expansion pushed south. Major wars in the 17th–18th centuries weakened the Crimean Khanate, and Russia's annexation of Crimea in 1783 effectively ended large-scale raiding and slave markets there. New borders, fortified frontiers and changing military technology made steppe raids more difficult, while diplomatic pressure from European and Russian powers curtailed the export of Christian captives into the Ottoman world.",
+    "destinationDetails": {
+      "Crimean Markets": "Ports such as Caffa, Kefe and Gezlev were central sorting points. Captives from Polish–Lithuanian, Ukrainian and Russian lands were branded, recorded and sold to Ottoman and Middle Eastern buyers or ransomed back through church and family networks.",
+      "Ottoman Empire": "The Ottoman Empire absorbed large numbers of captives as household servants, agricultural laborers, artisans and, in some cases, soldiers or administrators. Istanbul and other major cities were prime destinations.",
+      "Middle East": "Some captives were sent onward from Ottoman ports into the broader Middle East, including Egypt and the Levant, where they entered domestic service, agricultural work or military households."
+    }
+  },
+  {
+    "id": "indian-ocean",
+    "name": "Indian Ocean Trade",
+    "period": "1st - 20th Century",
+    "color": "#8b5cf6",
+    "startYear": 100,
+    "endYear": 1920,
+    "lowEstimate": 8000000,
+    "highEstimate": 8000000,
+    "flows": [
+      {
+        "source": "East Africa",
+        "destination": "Arabia",
+        "value": 2000000
+      },
+      {
+        "source": "East Africa",
+        "destination": "Persian Gulf",
+        "value": 1500000
+      },
+      {
+        "source": "East Africa",
+        "destination": "India",
+        "value": 1000000
+      },
+      {
+        "source": "Madagascar",
+        "destination": "Mascarene Islands",
+        "value": 500000
+      },
+      {
+        "source": "Madagascar",
+        "destination": "Red Sea Ports",
+        "value": 300000
+      },
+      {
+        "source": "Horn of Africa",
+        "destination": "Arabia",
+        "value": 800000
+      },
+      {
+        "source": "Zanzibar",
+        "destination": "Ottoman Empire",
+        "value": 900000
+      },
+      {
+        "source": "Various",
+        "destination": "Indian Ocean Islands",
+        "value": 1000000
+      }
+    ],
+    "description": "The Indian Ocean slave trade connected East Africa, Madagascar, the Horn and parts of Asia for many centuries. Estimates cluster around 8 million people over the long run, with peaks in the 18th–19th centuries. Enslaved people labored in date plantations and pearl diving in the Gulf, on clove and sugar plantations in islands like Zanzibar and Réunion, as porters and soldiers in East Africa, and as domestic servants and concubines in Arabia, India and the wider Ottoman world. The gender balance skewed heavily toward women and children in many routes.",
+    "ending": "This trade declined unevenly. British naval patrols after the early 1800s targeted slave dhows in the western Indian Ocean; treaties with Oman and other Gulf rulers formally outlawed oceanic trafficking. France abolished slavery in the Mascarene Islands in the mid-19th century, and European colonial rule in East Africa restricted public slave markets. Still, systems of domestic slavery and clientage persisted in parts of East Africa, Arabia and the Gulf into the early 20th century, only gradually dismantled by local abolition laws and international pressure.",
+    "destinationDetails": {
+      "Arabia": "Enslaved Africans and Malagasy were taken to ports like Muscat and Jeddah and dispersed into households, pastoral camps and royal courts across the Arabian Peninsula. Many worked as domestic servants, herders or concubines, with some employed in pilgrimage and caravan services.",
+      "Persian Gulf": "In the Gulf, enslaved people worked in pearl diving, date cultivation and urban service in ports like Basra, Kuwait and Bahrain. They formed a crucial labor force for the pearl industry before oil.",
+      "India": "Indian ports such as Surat, Goa and Calicut received enslaved Africans and other peoples who were used in domestic service, military units and port labor. Some were integrated into local societies over generations.",
+      "Mascarene Islands": "Mauritius, Réunion and other islands developed plantation economies reliant on enslaved Africans, Malagasy and South Asians, first under French and then British rule, producing sugar and other export crops.",
+      "Red Sea Ports": "Red Sea ports acted as waypoints where captives from East Africa and the Horn were transshipped to Arabia, Egypt and the Levant. Some remained in local households or coastal estates.",
+      "Ottoman Empire": "African captives passing through Red Sea and eastern Mediterranean routes entered Ottoman lands as domestic servants, soldiers, agricultural laborers and palace slaves.",
+      "Indian Ocean Islands": "Smaller island societies across the western Indian Ocean used enslaved labor for agriculture, shipping and household work, often blending African, South Asian and local populations over time."
+    }
+  },
+  {
+    "id": "barbary",
+    "name": "Barbary Corsairs",
+    "period": "1500s - 1830s",
+    "color": "#a855f7",
+    "startYear": 1500,
+    "endYear": 1830,
+    "lowEstimate": 1000000,
+    "highEstimate": 1250000,
+    "flows": [
+      {
+        "source": "Italy",
+        "destination": "Algiers",
+        "value": 300000
+      },
+      {
+        "source": "Spain",
+        "destination": "Algiers",
+        "value": 250000
+      },
+      {
+        "source": "France",
+        "destination": "Tunis",
+        "value": 150000
+      },
+      {
+        "source": "Britain/Ireland",
+        "destination": "Tripoli",
+        "value": 100000
+      },
+      {
+        "source": "Mediterranean Islands",
+        "destination": "Algiers",
+        "value": 150000
+      },
+      {
+        "source": "Various Europe",
+        "destination": "Morocco",
+        "value": 200000
+      },
+      {
+        "source": "Coastal Raids",
+        "destination": "Barbary Coast",
+        "value": 100000
+      }
+    ],
+    "description": "Between the 1500s and early 1800s, Barbary corsairs operating from Algiers, Tunis, Tripoli and Moroccan ports seized European sailors and coastal villagers. Robert Davis's estimates suggest around 1–1.25 million Christian captives over three centuries. Many became galley rowers, dock laborers or domestic servants; others awaited ransom funded by European states, religious orders or families. The system blended piracy, privateering and state revenue.",
+    "ending": "Barbary raiding declined as European naval power grew. By the late 18th century, stronger warships, convoy systems and diplomatic pressure limited corsair activity. The United States and European powers launched punitive expeditions, including the bombardment of Algiers in 1816. France's conquest of Algiers in 1830 and subsequent colonization of North Africa dismantled the corsair regimes and ended the legal enslavement of European Christians in the region.",
+    "destinationDetails": {
+      "Algiers": "Algiers was the most notorious corsair base. Captives were marched through the streets, sold in public markets and assigned to hard labor in quarries, building projects and galleys, or held for ransom in crowded prisons.",
+      "Tunis": "In Tunis, enslaved Europeans worked in fortifications, shipyards and elite households. The city profited heavily from ransom payments negotiated with European consuls and religious orders.",
+      "Tripoli": "Tripoli served as another corsair haven, with captives forced into harbor work, construction and domestic service while diplomatic missions attempted to buy their freedom.",
+      "Morocco": "Moroccan ports such as Salé and Rabat hosted corsair fleets targeting Atlantic shipping. Captives could end up in royal projects, urban labor or remote construction sites.",
+      "Barbary Coast": ""Barbary Coast" here represents smaller ports and coastal forts that absorbed part of the captive population, redistributing them among local rulers, corsair crews and merchants."
+    }
+  },
+  {
+    "id": "red-sea",
+    "name": "Red Sea Trade",
+    "period": "Ancient - 1962",
+    "color": "#ec4899",
+    "startYear": -100,
+    "endYear": 1962,
+    "lowEstimate": 500000,
+    "highEstimate": 1000000,
+    "flows": [
+      {
+        "source": "Ethiopia",
+        "destination": "Hejaz/Mecca",
+        "value": 250000
+      },
+      {
+        "source": "Ethiopia",
+        "destination": "Yemen",
+        "value": 200000
+      },
+      {
+        "source": "Sudan",
+        "destination": "Egypt",
+        "value": 150000
+      },
+      {
+        "source": "Sudan",
+        "destination": "Hejaz",
+        "value": 150000
+      },
+      {
+        "source": "Somalia",
+        "destination": "Arabia",
+        "value": 100000
+      },
+      {
+        "source": "Eritrea",
+        "destination": "Red Sea Ports",
+        "value": 150000
+      }
+    ],
+    "description": "The Red Sea trade linked East Africa and the Horn to Egypt, Arabia and the wider Islamic world from antiquity into the 20th century. Estimates suggest at least 500,000–1 million people over the long term, with perhaps half a million in the 19th century alone. Many captives were women and children taken from Ethiopia, Sudan and coastal East Africa, entering domestic service, concubinage, agriculture and pilgrimage support along the Red Sea littoral.",
+    "ending": "Because the Red Sea system overlapped with Indian Ocean and Saharan networks, it faded in stages. British pressure on Red Sea shipping, Ottoman and Egyptian decrees against the slave trade, and international treaties gradually restricted legal markets in the 19th century. Nevertheless, covert trafficking into the Arabian Peninsula continued until mid-20th-century abolition decrees—especially Saudi Arabia's and Yemen's bans in 1962—finally made chattel slavery illegal in the region.",
+    "destinationDetails": {
+      "Egypt": "Egyptian ports such as Suez and Cairo markets took in captives from Sudan, Ethiopia and coastal East Africa. Enslaved people worked in households, estates and Nile agriculture, or were sent onward into the Ottoman world.",
+      "Arabia": "Across the Arabian coast, enslaved Africans were integrated into pastoral, urban and religious economies—as domestic servants, herders, porters and concubines. Some supported the pilgrimage traffic to Mecca and Medina.",
+      "Hejaz/Mecca": "In the Hejaz, especially Mecca and Medina, enslaved people served in religious institutions, merchant households and services for pilgrims. Many came via Jeddah and other Red Sea ports.",
+      "Hejaz": "This label covers the broader western Arabian region, where enslaved Africans worked in towns, oases and caravan support roles.",
+      "Yemen": "Yemeni ports and highland towns used enslaved labor in agriculture, coffee production, domestic service and trade, drawing on routes from the Horn of Africa.",
+      "Red Sea Ports": "Smaller ports along both African and Arabian shores acted as transit points where captives were sold locally or shipped onward to Egypt, the Levant and the interior."
+    }
+  },
+  {
+    "id": "transatlantic",
+    "name": "Transatlantic Trade",
+    "period": "1500 - 1867",
+    "color": "#ef4444",
+    "startYear": 1500,
+    "endYear": 1867,
+    "lowEstimate": 10000000,
+    "highEstimate": 12800000,
+    "flows": [
+      {
+        "source": "West Africa",
+        "destination": "Brazil",
+        "value": 2500000
+      },
+      {
+        "source": "West Africa",
+        "destination": "Caribbean",
+        "value": 2000000
+      },
+      {
+        "source": "West Africa",
+        "destination": "Spanish America",
+        "value": 700000
+      },
+      {
+        "source": "West Africa",
+        "destination": "North America",
+        "value": 300000
+      },
+      {
+        "source": "West-Central Africa",
+        "destination": "Brazil",
+        "value": 2350000
+      },
+      {
+        "source": "West-Central Africa",
+        "destination": "Caribbean",
+        "value": 1650000
+      },
+      {
+        "source": "West-Central Africa",
+        "destination": "Spanish America",
+        "value": 500000
+      },
+      {
+        "source": "Southeast Africa",
+        "destination": "Brazil",
+        "value": 500000
+      },
+      {
+        "source": "Southeast Africa",
+        "destination": "Caribbean",
+        "value": 850000
+      },
+      {
+        "source": "Various Africa",
+        "destination": "Spanish America",
+        "value": 450000
+      }
+    ],
+    "description": "The Transatlantic trade moved about 12.5 million Africans onto slave ships; roughly 10.7 million survived to disembark in the Americas. West and West-Central Africa supplied most captives, with Southeast Africa added in the late period. The largest single destination was Brazil, followed by Caribbean sugar islands and Spanish America. Only about 3–4% of captives were landed directly in what became the United States. Mortality on voyages averaged around 12–15%, and many more people died in wars and marches that fed the trade.",
+    "ending": "Abolition unfolded in stages. Britain banned its slave trade in 1807 and used the Royal Navy to pressure other powers; the United States banned the transatlantic trade in 1808. Slavery itself was abolished across the British Empire in the 1830s, in French colonies in 1848, in most Spanish American republics between the 1810s–1850s, and in the United States in 1865 after the Civil War. Brazil was the last major slave society in the Americas to abolish slavery in 1888. Illegal trafficking persisted for decades, but by the late 19th century the transatlantic system had been dismantled by legal bans, naval suppression and slave uprisings.",
+    "destinationDetails": {
+      "Brazil": "Brazil received by far the largest share of enslaved Africans—over 5 million people—feeding sugar, coffee and mining economies from the 16th to 19th centuries. Plantation labor was harsh, with high mortality and constant demand for new imports. Afro-Brazilian cultures deeply shaped language, religion and music.",
+      "Caribbean": "The Caribbean islands (British, French, Dutch and Danish) imported more than 4 million Africans for sugar, coffee and other plantations. Brutal work regimes and disease produced extreme mortality and frequent revolts, culminating in the Haitian Revolution and later emancipation movements.",
+      "Spanish America": "Spanish America—including Mexico, Central America and northern South America—imported around 1–1.3 million Africans. They worked in mines, plantations, ranches and cities. Manumission, caste systems and regional revolutions created complex Afro-Latin societies.",
+      "North America": "British North America and later the United States received roughly 300–400 thousand Africans directly, but the enslaved population grew rapidly through natural increase. Plantation slavery concentrated in the Chesapeake and Deep South, and its destruction required a civil war and constitutional abolition."
+    }
+  },
+  {
+    "id": "modern",
+    "name": "MODERN SLAVERY",
+    "period": "2021 (Current)",
+    "color": "#dc2626",
+    "startYear": 2021,
+    "endYear": 2021,
+    "lowEstimate": 49600000,
+    "highEstimate": 50000000,
+    "flows": [
+      {
+        "source": "Asia-Pacific",
+        "destination": "Forced Labor",
+        "value": 13000000
+      },
+      {
+        "source": "Asia-Pacific",
+        "destination": "Forced Marriage",
+        "value": 14300000
+      },
+      {
+        "source": "Europe-C.Asia",
+        "destination": "Forced Labor",
+        "value": 3000000
+      },
+      {
+        "source": "Europe-C.Asia",
+        "destination": "Forced Marriage",
+        "value": 1600000
+      },
+      {
+        "source": "Africa",
+        "destination": "Forced Labor",
+        "value": 2700000
+      },
+      {
+        "source": "Africa",
+        "destination": "Forced Marriage",
+        "value": 3200000
+      },
+      {
+        "source": "Americas",
+        "destination": "Forced Labor",
+        "value": 2500000
+      },
+      {
+        "source": "Americas",
+        "destination": "Forced Marriage",
+        "value": 1100000
+      },
+      {
+        "source": "Arab States",
+        "destination": "Forced Labor",
+        "value": 500000
+      },
+      {
+        "source": "Arab States",
+        "destination": "Forced Marriage",
+        "value": 1100000
+      },
+      {
+        "source": "Global",
+        "destination": "Sex Trafficking",
+        "value": 6300000
+      },
+      {
+        "source": "Various",
+        "destination": "State-Imposed",
+        "value": 3800000
+      }
+    ],
+    "description": "In 2021, around 49.6–50 million people were estimated to be in "modern slavery": 27.6 million in forced labor and 22 million in forced marriage. These figures come from ILO, Walk Free and IOM modeling based on surveys and administrative data. Modern slavery includes exploitation in private economies, state-imposed labor, and coercive marriages across every region of the world.",
+    "ending": "Modern slavery is formally illegal everywhere, but it persists because of conflict, weak labor enforcement, discrimination, migration vulnerability and profit incentives. International conventions (1926 Slavery Convention, 1956 Supplementary Convention, ILO conventions, the Palermo Protocol and national anti-trafficking laws) aim to eliminate it, and some countries have strengthened due-diligence and supply-chain laws. However, prevalence has increased between 2016 and 2021, especially in forced labor and forced marriage, showing that abolition on paper is not yet abolition in practice.",
+    "destinationDetails": {
+      "Forced Labor": "Forced labor covers people compelled to work under threats, debt or confiscated documents in sectors such as construction, manufacturing, agriculture, domestic work and fishing. Many victims are migrants working abroad without full legal protection.",
+      "Forced Marriage": "Forced marriage includes situations where people—disproportionately women and girls—are married without free and informed consent, often facing lifelong domestic and sexual servitude. These arrangements may be framed as "traditional" but meet criteria for slavery-like practices.",
+      "Sex Trafficking": "Sex trafficking involves the recruitment, transport or harboring of people for sexual exploitation through coercion, deception or abuse of vulnerability. Victims are found in brothels, massage parlors, online platforms and informal venues across all regions.",
+      "State-Imposed": "State-imposed forced labor includes compulsory prison labor without due process, abusive conscription systems and forced participation in public works or political programs. Examples include prison camps, forced labor as punishment for dissent, and compulsory labor tied to ethnicity or religion."
+    }
+  }
+]
+

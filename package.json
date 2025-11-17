@@ -1,0 +1,22 @@
+{
+  "name": "slavery-visualizations",
+  "version": "1.0.0",
+  "description": "Interactive visualization of slavery throughout history",
+  "scripts": {
+    "dev": "live-server --port=3000 --open=/index.html",
+    "start": "live-server --port=3000 --open=/index.html"
+  },
+  "keywords": [
+    "visualization",
+    "slavery",
+    "history",
+    "d3",
+    "react"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
+
