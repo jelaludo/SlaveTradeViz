@@ -248,6 +248,62 @@
             box-shadow: 0 20px 60px rgba(0,0,0,0.5);
         }
 
+        /* Navigation Header Styles */
+        .main-header {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 0;
+            margin-bottom: 0;
+            position: sticky;
+            top: 0;
+            z-index: 1500;
+            width: 100%;
+            left: 0;
+            right: 0;
+        }
+
+        .header-nav {
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            max-width: 2400px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+
+        .nav-tab {
+            background: transparent;
+            border: none;
+            color: #aaa;
+            padding: 20px 30px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            border-bottom: 3px solid transparent;
+            position: relative;
+            white-space: nowrap;
+        }
+
+        .nav-tab:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .nav-tab.active {
+            color: #fff;
+            border-bottom-color: #4a90e2;
+        }
+
+        /* Filter Button Container */
+        .filter-button-container {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+            padding: 0 20px;
+        }
+
         /* Filter Modal Styles */
         .filter-header {
             display: flex;
@@ -255,6 +311,11 @@
             align-items: center;
             margin-bottom: 30px;
             padding: 0 20px;
+        }
+
+        .filter-header h1 {
+            margin: 0;
+            flex: 1;
         }
 
         .filter-button {
@@ -502,12 +563,170 @@
 
         /* Brutality Legend Styles */
         .brutality-legend {
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        /* Placeholder Section */
+        .placeholder-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .placeholder-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #fff;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+        }
+
+        .placeholder-section p {
+            color: #aaa;
+            font-size: 1.1rem;
+        }
+
+        /* Sources Section Styles */
+        .sources-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .sources-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #fff;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+        }
+
+        .sources-intro {
+            text-align: center;
+            color: #aaa;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .source-item {
             background: rgba(255, 255, 255, 0.03);
             border-radius: 12px;
-            padding: 25px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+        }
+
+        .chart-container {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 8px;
+            padding: 30px;
+        }
+
+        .chart-section-title {
+            text-align: center;
+            color: #fff;
+            font-size: 2rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+        }
+
+        .chart-container h3 {
+            text-align: center;
+            color: #fff;
+            font-size: 1.3rem;
             margin-bottom: 30px;
-            margin-left: 20px;
-            margin-right: 20px;
+            font-weight: 600;
+        }
+
+        .chart-attribution {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        .chart-attribution p {
+            margin-bottom: 8px;
+        }
+
+        .chart-attribution strong {
+            color: #fff;
+        }
+
+        .supplementary-note {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            font-style: italic;
+            color: #999;
+        }
+
+        /* Chart axis styles */
+        .y-axis line,
+        .x-axis line {
+            stroke: #666;
+            stroke-width: 1;
+        }
+
+        .y-axis path,
+        .x-axis path {
+            stroke: #666;
+            stroke-width: 1;
+        }
+
+        /* Severity Table Styles */
+        .severity-table-container {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+            overflow-x: auto;
+        }
+
+        .severity-table {
+            width: 100%;
+            border-collapse: collapse;
+            color: #e0e0e0;
+            font-size: 0.95rem;
+        }
+
+        .severity-table thead {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .severity-table th {
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            color: #fff;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+            font-size: 1rem;
+        }
+
+        .severity-table td {
+            padding: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            vertical-align: top;
+            line-height: 1.6;
+        }
+
+        .severity-table tbody tr:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .severity-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .severity-table strong {
+            color: #fff;
+            font-weight: 600;
         }
 
         .brutality-legend h3 {
@@ -1520,6 +1739,7 @@ const slaveryData = [
                 upward_mobility: 0
             }
         });
+        const [activeTab, setActiveTab] = useState('main');
 
     const openTradeDetail = (trade, destination = null) => {
         setSelectedTrade(trade);
@@ -1716,26 +1936,29 @@ const slaveryData = [
         };
 
         useEffect(() => {
-            if (svgRef.current) {
-                drawVisualization();
-            }
-            if (treemapRef.current) {
-                drawTreemap();
-            }
-
-            // Handle window resize for both visualizations
-            const handleResize = () => {
+            // Only render visualizations when main tab is active
+            if (activeTab === 'main') {
                 if (svgRef.current) {
                     drawVisualization();
                 }
                 if (treemapRef.current) {
                     drawTreemap();
                 }
-            };
 
-            window.addEventListener('resize', handleResize);
-            return () => window.removeEventListener('resize', handleResize);
-        }, [filters]);
+                // Handle window resize for both visualizations
+                const handleResize = () => {
+                    if (svgRef.current) {
+                        drawVisualization();
+                    }
+                    if (treemapRef.current) {
+                        drawTreemap();
+                    }
+                };
+
+                window.addEventListener('resize', handleResize);
+                return () => window.removeEventListener('resize', handleResize);
+            }
+        }, [filters, activeTab]);
 
     const drawVisualization = () => {
         // Use filtered trades instead of all slaveryData
@@ -2439,119 +2662,1071 @@ const slaveryData = [
     // Get filtered trades for rendering
     const filteredTrades = filterTrades(slaveryData);
 
+    // Middle Passage Death Rate Chart Data
+    const middlePassageData = [
+        { region: "Spanish Americas", rate: 18.75 },
+        { region: "Europe", rate: 17.94 },
+        { region: "Mainland North America", rate: 17.7 },
+        { region: "British Caribbean", rate: 16.11 },
+        { region: "Danish West Indies", rate: 16.07 },
+        { region: "French Caribbean", rate: 15.67 },
+        { region: "Total", rate: 14.52, isTotal: true },
+        { region: "Dutch Americas", rate: 13.51 },
+        { region: "Africa", rate: 13.04 },
+        { region: "Brazil", rate: 12.07 }
+    ];
+
+    const MiddlePassageChart = () => {
+        const chartRef = useRef(null);
+
+        useEffect(() => {
+            if (!chartRef.current) return;
+
+            const margin = { top: 60, right: 40, bottom: 100, left: 80 };
+            const width = 1000 - margin.left - margin.right;
+            const height = 500 - margin.top - margin.bottom;
+
+            d3.select(chartRef.current).selectAll('*').remove();
+
+            const svg = d3.select(chartRef.current)
+                .append('svg')
+                .attr('width', width + margin.left + margin.right)
+                .attr('height', height + margin.top + margin.bottom)
+                .append('g')
+                .attr('transform', `translate(${margin.left},${margin.top})`);
+
+            const xScale = d3.scaleBand()
+                .domain(middlePassageData.map(d => d.region))
+                .range([0, width])
+                .padding(0.3);
+
+            const yScale = d3.scaleLinear()
+                .domain([0, 25])
+                .nice()
+                .range([height, 0]);
+
+            // Grid lines
+            [5, 10, 15, 20, 25].forEach(tick => {
+                svg.append('line')
+                    .attr('class', 'grid-line')
+                    .attr('x1', 0)
+                    .attr('x2', width)
+                    .attr('y1', yScale(tick))
+                    .attr('y2', yScale(tick))
+                    .attr('stroke', '#333')
+                    .attr('stroke-width', 1)
+                    .attr('stroke-dasharray', '4,4')
+                    .attr('opacity', 0.5);
+            });
+
+            // Y-axis
+            svg.append('g')
+                .attr('class', 'y-axis')
+                .call(d3.axisLeft(yScale).tickFormat(d => d + '%'))
+                .selectAll('text')
+                .attr('fill', '#ccc')
+                .attr('font-size', '12px');
+
+            svg.append('text')
+                .attr('transform', 'rotate(-90)')
+                .attr('y', -50)
+                .attr('x', -height / 2)
+                .attr('text-anchor', 'middle')
+                .attr('fill', '#fff')
+                .attr('font-size', '14px')
+                .attr('font-weight', '600')
+                .text('Death rate');
+
+            // X-axis
+            svg.append('g')
+                .attr('class', 'x-axis')
+                .attr('transform', `translate(0,${height})`)
+                .call(d3.axisBottom(xScale))
+                .selectAll('text')
+                .attr('fill', '#ccc')
+                .attr('font-size', '11px')
+                .attr('transform', 'rotate(-45)')
+                .style('text-anchor', 'end');
+
+            // Bars
+            svg.selectAll('.bar')
+                .data(middlePassageData)
+                .enter()
+                .append('rect')
+                .attr('class', 'bar')
+                .attr('x', d => xScale(d.region))
+                .attr('width', xScale.bandwidth())
+                .attr('y', d => yScale(d.rate))
+                .attr('height', d => height - yScale(d.rate))
+                .attr('fill', d => d.isTotal ? '#888' : '#ef4444')
+                .attr('rx', 3);
+
+            // Value labels on bars
+            svg.selectAll('.bar-label')
+                .data(middlePassageData)
+                .enter()
+                .append('text')
+                .attr('class', 'bar-label')
+                .attr('x', d => xScale(d.region) + xScale.bandwidth() / 2)
+                .attr('y', d => yScale(d.rate) - 5)
+                .attr('text-anchor', 'middle')
+                .attr('fill', '#fff')
+                .attr('font-size', '12px')
+                .attr('font-weight', '600')
+                .text(d => d.rate + '%');
+        }, []);
+
+        return (
+            <div className="chart-container">
+                <h2 className="chart-section-title">Transatlantic Slave Trade</h2>
+                <h3>Share of captured slaves who died during the Middle Passage, by broad region of disembarkation, between 1501 and 1866</h3>
+                <div ref={chartRef}></div>
+                <div className="chart-attribution">
+                    <p><strong>Source:</strong> Statista</p>
+                    <p><strong>Release date:</strong> February 2021</p>
+                    <p><strong>Region:</strong> Worldwide</p>
+                    <p><strong>Survey time period:</strong> 1501 to 1866</p>
+                    <p className="supplementary-note">
+                        <strong>Supplementary notes:</strong> Data created by Statista by subtracting the total number of disembarkations from embarkations, and then calculating the difference as a percentage of total embarkations. Slaves who did not survive the Transatlantic passage started as high as 30% in 1501 until dropping to below 10% around 1800, then spiking up again to 18% in 1866 when the abolitionists successfully ended the atrocious practice.
+                    </p>
+                </div>
+            </div>
+        );
+    };
+
+    // Trans-Saharan Slave Trade Data
+    const transSaharanData = [
+        { category: "Desert Journey Deaths", rate: 75, range: "70% to 80%" },
+        { category: "Castration Deaths (Eunuchs)", rate: 75, range: "60% to 90%" }
+    ];
+
+    const TransSaharanChart = () => {
+        const chartRef = useRef(null);
+
+        useEffect(() => {
+            if (!chartRef.current) return;
+
+            const margin = { top: 60, right: 40, bottom: 80, left: 80 };
+            const width = 800 - margin.left - margin.right;
+            const height = 400 - margin.top - margin.bottom;
+
+            d3.select(chartRef.current).selectAll('*').remove();
+
+            const svg = d3.select(chartRef.current)
+                .append('svg')
+                .attr('width', width + margin.left + margin.right)
+                .attr('height', height + margin.top + margin.bottom)
+                .append('g')
+                .attr('transform', `translate(${margin.left},${margin.top})`);
+
+            const xScale = d3.scaleBand()
+                .domain(transSaharanData.map(d => d.category))
+                .range([0, width])
+                .padding(0.4);
+
+            const yScale = d3.scaleLinear()
+                .domain([0, 100])
+                .nice()
+                .range([height, 0]);
+
+            // Grid lines
+            [20, 40, 60, 80, 100].forEach(tick => {
+                svg.append('line')
+                    .attr('class', 'grid-line')
+                    .attr('x1', 0)
+                    .attr('x2', width)
+                    .attr('y1', yScale(tick))
+                    .attr('y2', yScale(tick))
+                    .attr('stroke', '#333')
+                    .attr('stroke-width', 1)
+                    .attr('stroke-dasharray', '4,4')
+                    .attr('opacity', 0.5);
+            });
+
+            // Y-axis
+            svg.append('g')
+                .attr('class', 'y-axis')
+                .call(d3.axisLeft(yScale).tickFormat(d => d + '%'))
+                .selectAll('text')
+                .attr('fill', '#ccc')
+                .attr('font-size', '12px');
+
+            svg.append('text')
+                .attr('transform', 'rotate(-90)')
+                .attr('y', -50)
+                .attr('x', -height / 2)
+                .attr('text-anchor', 'middle')
+                .attr('fill', '#fff')
+                .attr('font-size', '14px')
+                .attr('font-weight', '600')
+                .text('Death rate');
+
+            // X-axis
+            svg.append('g')
+                .attr('class', 'x-axis')
+                .attr('transform', `translate(0,${height})`)
+                .call(d3.axisBottom(xScale))
+                .selectAll('text')
+                .attr('fill', '#ccc')
+                .attr('font-size', '12px')
+                .attr('transform', 'rotate(-15)')
+                .style('text-anchor', 'end');
+
+            // Bars
+            svg.selectAll('.bar')
+                .data(transSaharanData)
+                .enter()
+                .append('rect')
+                .attr('class', 'bar')
+                .attr('x', d => xScale(d.category))
+                .attr('width', xScale.bandwidth())
+                .attr('y', d => yScale(d.rate))
+                .attr('height', d => height - yScale(d.rate))
+                .attr('fill', '#f59e0b')
+                .attr('rx', 3);
+
+            // Value labels on bars
+            svg.selectAll('.bar-label')
+                .data(transSaharanData)
+                .enter()
+                .append('text')
+                .attr('class', 'bar-label')
+                .attr('x', d => xScale(d.category) + xScale.bandwidth() / 2)
+                .attr('y', d => yScale(d.rate) - 5)
+                .attr('text-anchor', 'middle')
+                .attr('fill', '#fff')
+                .attr('font-size', '12px')
+                .attr('font-weight', '600')
+                .text(d => d.range);
+
+            // Range indicator lines
+            transSaharanData.forEach((d, i) => {
+                if (d.category === "Desert Journey Deaths") {
+                    // Draw range from 70% to 80%
+                    svg.append('line')
+                        .attr('x1', xScale(d.category) + xScale.bandwidth() / 2)
+                        .attr('x2', xScale(d.category) + xScale.bandwidth() / 2)
+                        .attr('y1', yScale(70))
+                        .attr('y2', yScale(80))
+                        .attr('stroke', '#fff')
+                        .attr('stroke-width', 2)
+                        .attr('opacity', 0.8);
+                } else {
+                    // Draw range from 60% to 90%
+                    svg.append('line')
+                        .attr('x1', xScale(d.category) + xScale.bandwidth() / 2)
+                        .attr('x2', xScale(d.category) + xScale.bandwidth() / 2)
+                        .attr('y1', yScale(60))
+                        .attr('y2', yScale(90))
+                        .attr('stroke', '#fff')
+                        .attr('stroke-width', 2)
+                        .attr('opacity', 0.8);
+                }
+            });
+        }, []);
+
+        return (
+            <div className="chart-container">
+                <h2 className="chart-section-title">Trans-Saharan Slave Trade</h2>
+                <h3>Share of slaves who died during transportation and castration</h3>
+                <div ref={chartRef}></div>
+                <div className="chart-attribution">
+                    <p className="supplementary-note">
+                        <strong>Desert Journey Deaths:</strong> Share of slaves who died of heat/dehydration/starvation during the desert journey: 70% to 80%
+                    </p>
+                    <p className="supplementary-note">
+                        <strong>Castration Deaths:</strong> Share of slaves who died during castration to become Eunuchs: 60% to 90% depending on age. Boys were often subjected to this horrific procedure around the ages of eight or nine, as it was believed they could survive it more easily than adults or adolescents. Nevertheless, the mortality rate among eunuchs remained high, making them the most expensive and prized slaves due to the risk involved in their procurement.
+                    </p>
+                    <p className="supplementary-note">
+                        <strong>Historical Context:</strong> It's important to note that Islam strictly forbade castration; however, slavers found ways to circumvent this prohibition. One approach was to purchase already castrated slaves, while another involved employing non-Muslims to perform the operation.
+                    </p>
+                    <p className="supplementary-note">
+                        <strong>Eunuchs in African Courts:</strong> Eunuchs, castrated male slaves, were employed at the courts of kingdoms and empires throughout Africa north of the equator. While the practice may have started as early as the 6th century BCE, it became widespread during the medieval and early modern eras. Eunuchs were part of palace culture in both East and West Africa and in both Muslim and animist polities. Ethiopia was a notable exception to this rule; there, uncastrated male servants held posts that in other polities were filled by eunuchs.
+                    </p>
+                    <p className="supplementary-note">
+                        The transportation and castration of African eunuchs formed part of a much larger trade in African slaves along overland caravan routes and through the Red Sea. A shifting collection of castration centers existed across supraequatorial Africa. In East Africa, Upper Egypt was a key center; in Central and West Africa, Bagirmi became a center in the 18th century.
+                    </p>
+                    <p className="supplementary-note">
+                        Court eunuchs performed an array of roles, notably those of gatekeepers and companions to the ruler, harem guardians, and supervisors of the palace treasury. Particularly in West Africa, they also took on military duties. African eunuchs were also widely employed at imperial courts outside Africa, particularly in the Near East and South Asia. Beginning in the 12th century CE, a corps of mostly African eunuchs also guarded the Prophet Muhammad's tomb in Medina and the Kaʿba in Mecca.
+                    </p>
+                    <p className="supplementary-note">
+                        Sporadic attempts to abolish the trade in eunuchs and their employment were unsuccessful before the British-led abolition movement of the 19th century. Even so, African eunuchs continued to serve in several West African kingdoms and in the Ottoman Empire until the early 20th century.
+                    </p>
+                    <p className="supplementary-note" style={{ marginTop: '20px', fontStyle: 'normal' }}>
+                        <strong>Sources:</strong> <a href="https://talkafricana.com/how-enslaved-africans-were-castrated-by-arab-slavers-during-the-arabian-slave-trade/" target="_blank" rel="noopener noreferrer" style={{ color: '#4a90e2' }}>TalkAfricana</a> | <a href="https://doi.org/10.1093/acrefore/9780190277734.013.856" target="_blank" rel="noopener noreferrer" style={{ color: '#4a90e2' }}>Oxford Research Encyclopedia</a>
+                    </p>
+                </div>
+            </div>
+        );
+    };
+
+    // Indian Ocean Slave Trade Data
+    const indianOceanData = [
+        { destination: "Mauritius", rate: 28, note: "up to 28%" }
+    ];
+
+    const IndianOceanChart = () => {
+        const chartRef = useRef(null);
+
+        useEffect(() => {
+            if (!chartRef.current) return;
+
+            const margin = { top: 60, right: 40, bottom: 80, left: 80 };
+            const width = 600 - margin.left - margin.right;
+            const height = 400 - margin.top - margin.bottom;
+
+            d3.select(chartRef.current).selectAll('*').remove();
+
+            const svg = d3.select(chartRef.current)
+                .append('svg')
+                .attr('width', width + margin.left + margin.right)
+                .attr('height', height + margin.top + margin.bottom)
+                .append('g')
+                .attr('transform', `translate(${margin.left},${margin.top})`);
+
+            const xScale = d3.scaleBand()
+                .domain(indianOceanData.map(d => d.destination))
+                .range([0, width])
+                .padding(0.4);
+
+            const yScale = d3.scaleLinear()
+                .domain([0, 35])
+                .nice()
+                .range([height, 0]);
+
+            // Grid lines
+            [5, 10, 15, 20, 25, 30, 35].forEach(tick => {
+                svg.append('line')
+                    .attr('class', 'grid-line')
+                    .attr('x1', 0)
+                    .attr('x2', width)
+                    .attr('y1', yScale(tick))
+                    .attr('y2', yScale(tick))
+                    .attr('stroke', '#333')
+                    .attr('stroke-width', 1)
+                    .attr('stroke-dasharray', '4,4')
+                    .attr('opacity', 0.5);
+            });
+
+            // Y-axis
+            svg.append('g')
+                .attr('class', 'y-axis')
+                .call(d3.axisLeft(yScale).tickFormat(d => d + '%'))
+                .selectAll('text')
+                .attr('fill', '#ccc')
+                .attr('font-size', '12px');
+
+            svg.append('text')
+                .attr('transform', 'rotate(-90)')
+                .attr('y', -50)
+                .attr('x', -height / 2)
+                .attr('text-anchor', 'middle')
+                .attr('fill', '#fff')
+                .attr('font-size', '14px')
+                .attr('font-weight', '600')
+                .text('Death rate');
+
+            // X-axis
+            svg.append('g')
+                .attr('class', 'x-axis')
+                .attr('transform', `translate(0,${height})`)
+                .call(d3.axisBottom(xScale))
+                .selectAll('text')
+                .attr('fill', '#ccc')
+                .attr('font-size', '12px');
+
+            // Bars
+            svg.selectAll('.bar')
+                .data(indianOceanData)
+                .enter()
+                .append('rect')
+                .attr('class', 'bar')
+                .attr('x', d => xScale(d.destination))
+                .attr('width', xScale.bandwidth())
+                .attr('y', d => yScale(d.rate))
+                .attr('height', d => height - yScale(d.rate))
+                .attr('fill', '#8b5cf6')
+                .attr('rx', 3);
+
+            // Value labels on bars
+            svg.selectAll('.bar-label')
+                .data(indianOceanData)
+                .enter()
+                .append('text')
+                .attr('class', 'bar-label')
+                .attr('x', d => xScale(d.destination) + xScale.bandwidth() / 2)
+                .attr('y', d => yScale(d.rate) - 5)
+                .attr('text-anchor', 'middle')
+                .attr('fill', '#fff')
+                .attr('font-size', '12px')
+                .attr('font-weight', '600')
+                .text(d => d.note);
+        }, []);
+
+        return (
+            <div className="chart-container">
+                <h2 className="chart-section-title">Indian Ocean Slave Trade</h2>
+                <h3>Share of slaves who died during transport</h3>
+                <div ref={chartRef}></div>
+                <div className="chart-attribution">
+                    <p className="supplementary-note">
+                        <strong>Transport Death Rate to Mauritius:</strong> Up to 28% of slaves died during transport to Mauritius. The estimated death rate during transport of slaves in the Indian Ocean slave trade is less precisely documented than the transatlantic slave trade, but aligns in its findings.
+                    </p>
+                    <p className="supplementary-note" style={{ marginTop: '20px', fontStyle: 'normal' }}>
+                        <strong>Sources:</strong> <a href="https://sahistory.org.za/sites/default/files/2019-05/2-_transition_from_slavery_slavery_and_the_slave_trade_1.pdf" target="_blank" rel="noopener noreferrer" style={{ color: '#4a90e2' }}>South African History Online</a> | <a href="https://journals.sagepub.com/doi/10.1177/025764309000600103" target="_blank" rel="noopener noreferrer" style={{ color: '#4a90e2' }}>Sage Journals</a>
+                    </p>
+                </div>
+            </div>
+        );
+    };
+
+    // Brutality Data for All Systems
+    const brutalityDataBySystem = {
+        "roman": {
+            name: "Roman Empire",
+            period: "753 BCE – 476 CE",
+            color: "#14b8a6",
+            practices: [
+                { practice: "Household discipline", severity: "Moderate", frequency: "Common" },
+                { practice: "Market display", severity: "Moderate", frequency: "Common" },
+                { practice: "Shackling", severity: "Moderate", frequency: "Common" },
+                { practice: "Whipping", severity: "High", frequency: "Common" },
+                { practice: "Forced labor in mines", severity: "High", frequency: "Common" },
+                { practice: "Chain gangs", severity: "High", frequency: "Common" },
+                { practice: "Branding", severity: "High", frequency: "Common" },
+                { practice: "Gladiator combat", severity: "Extreme", frequency: "Common" },
+                { practice: "Torture execution", severity: "Extreme", frequency: "Common" },
+                { practice: "Damnatio ad bestias", severity: "Extreme", frequency: "Common" },
+                { practice: "Lethal labor conditions (quarries)", severity: "Extreme", frequency: "Common" }
+            ]
+        },
+        "chinese-korean": {
+            name: "Chinese & Korean Internal Slavery",
+            period: "1000 BCE – 1900 CE",
+            color: "#10b981",
+            practices: [
+                { practice: "Domestic work", severity: "Moderate", frequency: "Common" },
+                { practice: "Forced servitude", severity: "Moderate", frequency: "Common" },
+                { practice: "Household control", severity: "Moderate", frequency: "Common" },
+                { practice: "Judicial punishments", severity: "High", frequency: "Common" },
+                { practice: "Beatings", severity: "High", frequency: "Common" },
+                { practice: "Forced relocation", severity: "High", frequency: "Common" },
+                { practice: "Confinement", severity: "High", frequency: "Common" },
+                { practice: "Castration (eunuchs)", severity: "Extreme", frequency: "Common" },
+                { practice: "Ritualized exorcisms", severity: "Extreme", frequency: "Common" },
+                { practice: "Infanticide for slave-born children", severity: "Extreme", frequency: "Rare" }
+            ]
+        },
+        "pre-columbian": {
+            name: "Pre-Columbian American Slavery",
+            period: "500 – 1500 CE",
+            color: "#f97316",
+            practices: [
+                { practice: "Forced tribute labor", severity: "Moderate", frequency: "Common" },
+                { practice: "Hierarchical servitude", severity: "Moderate", frequency: "Common" },
+                { practice: "Household bonding", severity: "Moderate", frequency: "Common" },
+                { practice: "Agricultural labor exhaustion", severity: "High", frequency: "Common" },
+                { practice: "Whipping (Aztec, Maya)", severity: "High", frequency: "Common" },
+                { practice: "Forced marching", severity: "High", frequency: "Common" },
+                { practice: "Human sacrifice (Aztec)", severity: "Extreme", frequency: "Common" },
+                { practice: "Ritual torture", severity: "Extreme", frequency: "Common" },
+                { practice: "Post-battle executions", severity: "Extreme", frequency: "Common" }
+            ]
+        },
+        "trans-saharan": {
+            name: "Trans-Saharan Slave Trade",
+            period: "650 – 1900 CE",
+            color: "#f59e0b",
+            practices: [
+                { practice: "Forced caravan travel", severity: "Moderate", frequency: "Common" },
+                { practice: "Shackling", severity: "Moderate", frequency: "Common" },
+                { practice: "Domestic servitude", severity: "Moderate", frequency: "Common" },
+                { practice: "Forced labor", severity: "High", frequency: "Common" },
+                { practice: "Water deprivation", severity: "High", frequency: "Common" },
+                { practice: "Whipping", severity: "High", frequency: "Common" },
+                { practice: "Castration (majority of male captives)", severity: "Extreme", frequency: "Common" },
+                { practice: "Death in desert transit", severity: "Extreme", frequency: "Common" },
+                { practice: "Conversion and forced circumcision", severity: "Extreme", frequency: "Common" }
+            ]
+        },
+        "slavic": {
+            name: "Slavic Slave Trade",
+            period: "600 – 1200 CE",
+            color: "#3b82f6",
+            practices: [
+                { practice: "Market presentation", severity: "Moderate", frequency: "Common" },
+                { practice: "Household work", severity: "Moderate", frequency: "Common" },
+                { practice: "Forced relocation", severity: "Moderate", frequency: "Common" },
+                { practice: "Beatings", severity: "High", frequency: "Common" },
+                { practice: "Shackled transport", severity: "High", frequency: "Common" },
+                { practice: "Whipping", severity: "High", frequency: "Common" },
+                { practice: "Sea crossing mortality", severity: "Extreme", frequency: "Common" },
+                { practice: "Sexual slavery in harems", severity: "Extreme", frequency: "Common" },
+                { practice: "Death during slave raids", severity: "Extreme", frequency: "Common" }
+            ]
+        },
+        "southeast-asian": {
+            name: "Southeast Asian Slave Systems",
+            period: "800 – 1900 CE",
+            color: "#a855f7",
+            practices: [
+                { practice: "Agricultural labor", severity: "Moderate", frequency: "Common" },
+                { practice: "Domestic servitude", severity: "Moderate", frequency: "Common" },
+                { practice: "Hierarchy-based labor", severity: "Moderate", frequency: "Common" },
+                { practice: "Forced tribute work", severity: "High", frequency: "Common" },
+                { practice: "Whipping", severity: "High", frequency: "Common" },
+                { practice: "Forced displacement", severity: "High", frequency: "Common" },
+                { practice: "Mass execution of captives", severity: "Extreme", frequency: "Common" },
+                { practice: "Ritual violence (Khmer)", severity: "Extreme", frequency: "Common" },
+                { practice: "Sexual enslavement / war capture", severity: "Extreme", frequency: "Common" }
+            ]
+        },
+        "mongol": {
+            name: "Mongol & Steppe Imperial Slavery",
+            period: "1200 – 1400 CE",
+            color: "#b91c1c",
+            practices: [
+                { practice: "Forced migration", severity: "Moderate", frequency: "Common" },
+                { practice: "Household work", severity: "Moderate", frequency: "Common" },
+                { practice: "Agricultural service", severity: "Moderate", frequency: "Common" },
+                { practice: "Forced labor", severity: "High", frequency: "Common" },
+                { practice: "Physical punishment", severity: "High", frequency: "Common" },
+                { practice: "Whipping", severity: "High", frequency: "Common" },
+                { practice: "Mass slaughter of cities", severity: "Extreme", frequency: "Common" },
+                { practice: "Deportation death marches", severity: "Extreme", frequency: "Common" },
+                { practice: "Use as human shields", severity: "Extreme", frequency: "Common" }
+            ]
+        },
+        "crimean": {
+            name: "Crimean / Black Sea Slave Trade",
+            period: "1440s – 1783",
+            color: "#06b6d4",
+            practices: [
+                { practice: "Domestic labor", severity: "Moderate", frequency: "Common" },
+                { practice: "Market display", severity: "Moderate", frequency: "Common" },
+                { practice: "Forced walk to Crimea", severity: "Moderate", frequency: "Common" },
+                { practice: "Shackled transport", severity: "High", frequency: "Common" },
+                { practice: "Whipping", severity: "High", frequency: "Common" },
+                { practice: "Agricultural toil", severity: "High", frequency: "Common" },
+                { practice: "Arctic/Eurasian death marches", severity: "Extreme", frequency: "Common" },
+                { practice: "Rape and sexual slavery", severity: "Extreme", frequency: "Common" },
+                { practice: "High transit loss", severity: "Extreme", frequency: "Common" }
+            ]
+        },
+        "indian-ocean": {
+            name: "Indian Ocean Slave Trade",
+            period: "1st – 20th century",
+            color: "#8b5cf6",
+            practices: [
+                { practice: "Domestic service", severity: "Moderate", frequency: "Common" },
+                { practice: "Boat transport", severity: "Moderate", frequency: "Common" },
+                { practice: "Household work", severity: "Moderate", frequency: "Common" },
+                { practice: "Forced labor", severity: "High", frequency: "Common" },
+                { practice: "Beatings", severity: "High", frequency: "Common" },
+                { practice: "Confinement", severity: "High", frequency: "Common" },
+                { practice: "Castration for palace slaves", severity: "Extreme", frequency: "Common" },
+                { practice: "High maritime mortality", severity: "Extreme", frequency: "Common" },
+                { practice: "Sexual slavery / concubinage", severity: "Extreme", frequency: "Common" }
+            ]
+        },
+        "barbary": {
+            name: "Barbary Corsairs",
+            period: "1500s – 1830s",
+            color: "#a855f7",
+            practices: [
+                { practice: "Market parading", severity: "Moderate", frequency: "Universal" },
+                { practice: "Humiliation", severity: "Moderate", frequency: "Common" },
+                { practice: "Light service", severity: "Moderate", frequency: "Common" },
+                { practice: "Beatings with sticks", severity: "High", frequency: "Common" },
+                { practice: "Manacling & chain-gangs", severity: "High", frequency: "Very Common" },
+                { practice: "Hard labor", severity: "High", frequency: "Very Common" },
+                { practice: "Foot caning (Bastinado)", severity: "Extreme", frequency: "Common" },
+                { practice: "Malnutrition & exhaustion", severity: "Extreme", frequency: "Common" },
+                { practice: "Stone-floor confinement", severity: "Extreme", frequency: "Very Common" },
+                { practice: "Harem sale / sexual slavery", severity: "Extreme", frequency: "Common" }
+            ]
+        },
+        "red-sea": {
+            name: "Red Sea Slave Trade",
+            period: "Ancient – 1962",
+            color: "#ec4899",
+            practices: [
+                { practice: "Plantation/domestic service", severity: "Moderate", frequency: "Common" },
+                { practice: "Forced concubinage", severity: "Moderate", frequency: "Common" },
+                { practice: "Forced transport", severity: "High", frequency: "Common" },
+                { practice: "Whipping", severity: "High", frequency: "Common" },
+                { practice: "Labor in isolation", severity: "High", frequency: "Common" },
+                { practice: "Eunuch castration", severity: "Extreme", frequency: "Common" },
+                { practice: "Death en route", severity: "Extreme", frequency: "Common" },
+                { practice: "Severe sexual exploitation", severity: "Extreme", frequency: "Common" }
+            ]
+        },
+        "transatlantic": {
+            name: "Transatlantic Slave Trade",
+            period: "1500 – 1867",
+            color: "#ef4444",
+            practices: [
+                { practice: "Forced marching", severity: "Moderate", frequency: "Common" },
+                { practice: "Display and branding", severity: "Moderate", frequency: "Common" },
+                { practice: "Domestic labor", severity: "Moderate", frequency: "Common" },
+                { practice: "Whipping (confirmed)", severity: "High", frequency: "Common" },
+                { practice: "Shackling", severity: "High", frequency: "Common" },
+                { practice: "Forced separation", severity: "High", frequency: "Common" },
+                { practice: "Sexual exploitation", severity: "High", frequency: "Common" },
+                { practice: "Middle Passage mortality", severity: "Extreme", frequency: "Common" },
+                { practice: "Sugar & cotton plantation death toll", severity: "Extreme", frequency: "Common" },
+                { practice: "Mutilation & torture", severity: "Extreme", frequency: "Common" },
+                { practice: "Mass child mortality", severity: "Extreme", frequency: "Common" }
+            ]
+        },
+        "modern": {
+            name: "Modern Slavery",
+            period: "2021+",
+            color: "#dc2626",
+            practices: [
+                { practice: "Restricted movement", severity: "Moderate", frequency: "Common" },
+                { practice: "Withholding pay", severity: "Moderate", frequency: "Common" },
+                { practice: "Exploitative conditions", severity: "Moderate", frequency: "Common" },
+                { practice: "Physical abuse", severity: "High", frequency: "Common" },
+                { practice: "Coercion & intimidation", severity: "High", frequency: "Common" },
+                { practice: "Confiscation of documents", severity: "High", frequency: "Common" },
+                { practice: "Organ trafficking", severity: "Extreme", frequency: "Rare" },
+                { practice: "Forced sex work", severity: "Extreme", frequency: "Common" },
+                { practice: "Child trafficking (combat/mining)", severity: "Extreme", frequency: "Common" }
+            ]
+        },
+        "devshirme": {
+            name: "Devshirme (Ottoman Child Levy)",
+            period: "1420 – 1705",
+            color: "#22c55e",
+            practices: [
+                { practice: "Child separation", severity: "Moderate", frequency: "Common" },
+                { practice: "Forced conversion", severity: "Moderate", frequency: "Common" },
+                { practice: "Indoctrination", severity: "Moderate", frequency: "Common" },
+                { practice: "Intense military training", severity: "High", frequency: "Common" },
+                { practice: "Whipping", severity: "High", frequency: "Common" },
+                { practice: "Forced relocation", severity: "High", frequency: "Common" },
+                { practice: "Occasional castration (rare)", severity: "Extreme", frequency: "Rare" },
+                { practice: "Early battlefield death", severity: "Extreme", frequency: "Common" }
+            ]
+        }
+    };
+
+    // Reusable Brutality Chart Component
+    const BrutalityChart = ({ systemId }) => {
+        const chartRef = useRef(null);
+        const systemData = brutalityDataBySystem[systemId];
+
+        useEffect(() => {
+            if (!chartRef.current || !systemData) return;
+
+            const margin = { top: 60, right: 40, bottom: 120, left: 200 };
+            const width = 900 - margin.left - margin.right;
+            const height = Math.max(400, systemData.practices.length * 40) - margin.top - margin.bottom;
+
+            d3.select(chartRef.current).selectAll('*').remove();
+
+            const svg = d3.select(chartRef.current)
+                .append('svg')
+                .attr('width', width + margin.left + margin.right)
+                .attr('height', height + margin.top + margin.bottom)
+                .append('g')
+                .attr('transform', `translate(${margin.left},${margin.top})`);
+
+            const severityMap = { "Moderate": 1, "High": 2, "Extreme": 3 };
+            const frequencyMap = { "Rare": 0.4, "Common": 0.6, "Very Common": 0.9, "Universal": 1.0 };
+
+            const xScale = d3.scaleBand()
+                .domain(systemData.practices.map(d => d.practice))
+                .range([0, width])
+                .padding(0.3);
+
+            const yScale = d3.scaleLinear()
+                .domain([0, 3.5])
+                .range([height, 0]);
+
+            // Grid lines
+            [0.5, 1, 1.5, 2, 2.5, 3].forEach(tick => {
+                svg.append('line')
+                    .attr('class', 'grid-line')
+                    .attr('x1', 0)
+                    .attr('x2', width)
+                    .attr('y1', yScale(tick))
+                    .attr('y2', yScale(tick))
+                    .attr('stroke', '#333')
+                    .attr('stroke-width', 1)
+                    .attr('stroke-dasharray', '4,4')
+                    .attr('opacity', 0.5);
+            });
+
+            // Y-axis
+            svg.append('g')
+                .attr('class', 'y-axis')
+                .call(d3.axisLeft(yScale).tickValues([0, 1, 2, 3]).tickFormat((d) => {
+                    const labels = ["", "Moderate", "High", "Extreme"];
+                    return labels[d] || "";
+                }))
+                .selectAll('text')
+                .attr('fill', '#ccc')
+                .attr('font-size', '12px');
+
+            svg.append('text')
+                .attr('transform', 'rotate(-90)')
+                .attr('y', -150)
+                .attr('x', -height / 2)
+                .attr('text-anchor', 'middle')
+                .attr('fill', '#fff')
+                .attr('font-size', '14px')
+                .attr('font-weight', '600')
+                .text('Severity Level');
+
+            // X-axis
+            svg.append('g')
+                .attr('class', 'x-axis')
+                .attr('transform', `translate(0,${height})`)
+                .call(d3.axisBottom(xScale))
+                .selectAll('text')
+                .attr('fill', '#ccc')
+                .attr('font-size', '10px')
+                .attr('transform', 'rotate(-45)')
+                .style('text-anchor', 'end');
+
+            // Bars with opacity based on frequency
+            svg.selectAll('.bar')
+                .data(systemData.practices)
+                .enter()
+                .append('rect')
+                .attr('class', 'bar')
+                .attr('x', d => xScale(d.practice))
+                .attr('width', xScale.bandwidth())
+                .attr('y', d => yScale(severityMap[d.severity]))
+                .attr('height', d => height - yScale(severityMap[d.severity]))
+                .attr('fill', systemData.color)
+                .attr('opacity', d => frequencyMap[d.frequency] || 0.6)
+                .attr('rx', 3);
+
+            // Severity labels
+            svg.selectAll('.bar-label')
+                .data(systemData.practices)
+                .enter()
+                .append('text')
+                .attr('class', 'bar-label')
+                .attr('x', d => xScale(d.practice) + xScale.bandwidth() / 2)
+                .attr('y', d => yScale(severityMap[d.severity]) - 5)
+                .attr('text-anchor', 'middle')
+                .attr('fill', '#fff')
+                .attr('font-size', '10px')
+                .attr('font-weight', '600')
+                .text(d => d.severity);
+        }, [systemId, systemData]);
+
+        if (!systemData) return null;
+
+        return (
+            <div className="chart-container">
+                <h2 className="chart-section-title">{systemData.name}</h2>
+                <h3>Forms of brutality and mistreatment ({systemData.period})</h3>
+                <div ref={chartRef}></div>
+            </div>
+        );
+    };
+
+
     return (
         <div className="container">
-            <div className="filter-header">
-                <h1>The Scale of Slavery Throughout History</h1>
-                <button className="filter-button" onClick={() => setShowFilterModal(true)}>
-                    <span>🔍</span>
-                    <span>Filters</span>
+            {/* Navigation Header */}
+            <header className="main-header">
+                <nav className="header-nav">
+                    <button 
+                        className={`nav-tab ${activeTab === 'main' ? 'active' : ''}`}
+                        onClick={() => setActiveTab('main')}
+                    >
+                        Main
+                    </button>
+                    <button 
+                        className={`nav-tab ${activeTab === 'transport' ? 'active' : ''}`}
+                        onClick={() => setActiveTab('transport')}
+                    >
+                        Transport
+                    </button>
+                    <button 
+                        className={`nav-tab ${activeTab === 'brutality' ? 'active' : ''}`}
+                        onClick={() => setActiveTab('brutality')}
+                    >
+                        Brutality
+                    </button>
+                    <button 
+                        className={`nav-tab ${activeTab === 'markets' ? 'active' : ''}`}
+                        onClick={() => setActiveTab('markets')}
+                    >
+                        Markets
+                    </button>
+                    <button 
+                        className={`nav-tab ${activeTab === 'born' ? 'active' : ''}`}
+                        onClick={() => setActiveTab('born')}
+                    >
+                        Born in Slavery
+                    </button>
+                    <button 
+                        className={`nav-tab ${activeTab === 'modern' ? 'active' : ''}`}
+                        onClick={() => setActiveTab('modern')}
+                    >
+                        Modern
+                    </button>
+                </nav>
+            </header>
+
+            {activeTab === 'main' && (
+                <>
+                    {/* Filter Header - Title only */}
+                    <div className="filter-header">
+                        <h1>The Scale of Slavery Throughout History</h1>
+                    </div>
+                    
+                    <p className="subtitle">
+                        An integrated timeline visualization showing sources, flows, and destinations of enslaved people from Ancient Rome to the present day. "all models are wrong, some are useful", the numbers here are based on historical consensus, but data is sometime sparse and incomplete. It is certainly directionality accurate, despite your nitpick.
+                    </p>
+
+                    {/* Active Filter Chips */}
                     {getActiveFilterCount() > 0 && (
-                        <span style={{ background: '#3b82f6', borderRadius: '10px', padding: '2px 8px', fontSize: '0.85rem' }}>
-                            {getActiveFilterCount()}
-                        </span>
+                        <div className="active-filters">
+                            {filters.acquisition.map(mode => (
+                                <div key={mode} className="filter-chip">
+                                    <span>Acquisition: {formatFilterLabel(mode)}</span>
+                                    <button className="filter-chip-remove" onClick={() => handleFilterChange('acquisition', mode)}>×</button>
+                                </div>
+                            ))}
+                            {filters.legalStatus.map(status => (
+                                <div key={status} className="filter-chip">
+                                    <span>Legal: {formatFilterLabel(status)}</span>
+                                    <button className="filter-chip-remove" onClick={() => handleFilterChange('legalStatus', status)}>×</button>
+                                </div>
+                            ))}
+                            {filters.laborTypes.map(type => (
+                                <div key={type} className="filter-chip">
+                                    <span>Labor: {formatFilterLabel(type)}</span>
+                                    <button className="filter-chip-remove" onClick={() => handleFilterChange('laborTypes', type)}>×</button>
+                                </div>
+                            ))}
+                            {Object.entries(filters.brutality).map(([dim, val]) => (
+                                val > 0 && (
+                                    <div key={dim} className="filter-chip">
+                                        <span>{formatFilterLabel(dim)}: ≥{val}</span>
+                                        <button className="filter-chip-remove" onClick={() => handleBrutalityChange(dim, 0)}>×</button>
+                                    </div>
+                                )
+                            ))}
+                        </div>
                     )}
-                </button>
-            </div>
-            <p className="subtitle">
-                An integrated timeline visualization showing sources, flows, and destinations of enslaved people from Ancient Rome to the present day. "all models are wrong, some are useful", the numbers here are based on historical consensus, but data is sometime sparse and incomplete. It is certainly directionality accurate, despite your nitpick.
-            </p>
 
-            {/* Brutality Legend */}
-            <div className="legend brutality-legend">
-                <h3>Brutality Dimensions (0–3 Scale)</h3>
-                <div className="legend-scale">
-                    <div className="legend-scale-row">
-                        <span className="legend-chip level-0"></span>
-                        <span className="legend-label"><strong>0</strong> – rare / not structurally central</span>
+                    {/* Treemap */}
+                    <div className="stats-banner">
+                        <div className="treemap-container" ref={treemapRef}></div>
                     </div>
-                    <div className="legend-scale-row">
-                        <span className="legend-chip level-1"></span>
-                        <span className="legend-label"><strong>1</strong> – present but limited</span>
-                    </div>
-                    <div className="legend-scale-row">
-                        <span className="legend-chip level-2"></span>
-                        <span className="legend-label"><strong>2</strong> – frequent / important</span>
-                    </div>
-                    <div className="legend-scale-row">
-                        <span className="legend-chip level-3"></span>
-                        <span className="legend-label"><strong>3</strong> – defining and extreme</span>
-                    </div>
-                </div>
-                <dl className="legend-dimensions">
-                    <div className="legend-dimension">
-                        <dt>Transport Mortality</dt>
-                        <dd>How deadly the routes were (marches, sea voyages, desert crossings).</dd>
-                    </div>
-                    <div className="legend-dimension">
-                        <dt>Bodily Mutilation</dt>
-                        <dd>Use of castration, branding, amputation or similar permanent violence.</dd>
-                    </div>
-                    <div className="legend-dimension">
-                        <dt>Sexual Exploitation</dt>
-                        <dd>How central coerced sexual access / concubinage / rape were to the system.</dd>
-                    </div>
-                    <div className="legend-dimension">
-                        <dt>Hereditary Rigidity</dt>
-                        <dd>How strongly slave status was inherited by children with no realistic exit.</dd>
-                    </div>
-                    <div className="legend-dimension">
-                        <dt>Upward Mobility <span className="legend-note">(inverted)</span></dt>
-                        <dd>
-                            <strong>0</strong> – almost no chance to rise beyond slavery<br/>
-                            <strong>3</strong> – some enslaved people regularly rose into elite roles
-                        </dd>
-                    </div>
-                </dl>
-            </div>
 
-            {/* Active Filter Chips */}
-            {getActiveFilterCount() > 0 && (
-                <div className="active-filters">
-                    {filters.acquisition.map(mode => (
-                        <div key={mode} className="filter-chip">
-                            <span>Acquisition: {formatFilterLabel(mode)}</span>
-                            <button className="filter-chip-remove" onClick={() => handleFilterChange('acquisition', mode)}>×</button>
+                    {/* Filter Button - Between Treemap and Sankey */}
+                    <div className="filter-button-container">
+                        <button className="filter-button" onClick={() => setShowFilterModal(true)}>
+                            <span>🔍</span>
+                            <span>Filters</span>
+                            {getActiveFilterCount() > 0 && (
+                                <span style={{ background: '#3b82f6', borderRadius: '10px', padding: '2px 8px', fontSize: '0.85rem' }}>
+                                    {getActiveFilterCount()}
+                                </span>
+                            )}
+                        </button>
+                    </div>
+
+                    {/* Sankey Chart */}
+                    <div className="visualization-container">
+                        <div ref={svgRef}></div>
+                        <div className="legend">
+                            {slaveryData.map(trade => (
+                                <div key={trade.id} className="legend-item">
+                                    <div className="legend-color" style={{ background: trade.color }}></div>
+                                    <span>{trade.name} ({trade.period})</span>
+                                </div>
+                            ))}
                         </div>
-                    ))}
-                    {filters.legalStatus.map(status => (
-                        <div key={status} className="filter-chip">
-                            <span>Legal: {formatFilterLabel(status)}</span>
-                            <button className="filter-chip-remove" onClick={() => handleFilterChange('legalStatus', status)}>×</button>
-                        </div>
-                    ))}
-                    {filters.laborTypes.map(type => (
-                        <div key={type} className="filter-chip">
-                            <span>Labor: {formatFilterLabel(type)}</span>
-                            <button className="filter-chip-remove" onClick={() => handleFilterChange('laborTypes', type)}>×</button>
-                        </div>
-                    ))}
-                    {Object.entries(filters.brutality).map(([dim, val]) => (
-                        val > 0 && (
-                            <div key={dim} className="filter-chip">
-                                <span>{formatFilterLabel(dim)}: ≥{val}</span>
-                                <button className="filter-chip-remove" onClick={() => handleBrutalityChange(dim, 0)}>×</button>
+                    </div>
+
+                    {/* Brutality Legend - Moved to bottom */}
+                    <div className="legend brutality-legend">
+                        <h3>Brutality Dimensions (0–3 Scale)</h3>
+                        <div className="legend-scale">
+                            <div className="legend-scale-row">
+                                <span className="legend-chip level-0"></span>
+                                <span className="legend-label"><strong>0</strong> – rare / not structurally central</span>
                             </div>
-                        )
-                    ))}
+                            <div className="legend-scale-row">
+                                <span className="legend-chip level-1"></span>
+                                <span className="legend-label"><strong>1</strong> – present but limited</span>
+                            </div>
+                            <div className="legend-scale-row">
+                                <span className="legend-chip level-2"></span>
+                                <span className="legend-label"><strong>2</strong> – frequent / important</span>
+                            </div>
+                            <div className="legend-scale-row">
+                                <span className="legend-chip level-3"></span>
+                                <span className="legend-label"><strong>3</strong> – defining and extreme</span>
+                            </div>
+                        </div>
+                        <dl className="legend-dimensions">
+                            <div className="legend-dimension">
+                                <dt>Transport Mortality</dt>
+                                <dd>How deadly the routes were (marches, sea voyages, desert crossings).</dd>
+                            </div>
+                            <div className="legend-dimension">
+                                <dt>Bodily Mutilation</dt>
+                                <dd>Use of castration, branding, amputation or similar permanent violence.</dd>
+                            </div>
+                            <div className="legend-dimension">
+                                <dt>Sexual Exploitation</dt>
+                                <dd>How central coerced sexual access / concubinage / rape were to the system.</dd>
+                            </div>
+                            <div className="legend-dimension">
+                                <dt>Hereditary Rigidity</dt>
+                                <dd>How strongly slave status was inherited by children with no realistic exit.</dd>
+                            </div>
+                            <div className="legend-dimension">
+                                <dt>Upward Mobility <span className="legend-note">(inverted)</span></dt>
+                                <dd>
+                                    <strong>0</strong> – almost no chance to rise beyond slavery<br/>
+                                    <strong>3</strong> – some enslaved people regularly rose into elite roles
+                                </dd>
+                            </div>
+                        </dl>
+                    </div>
+                </>
+            )}
+
+            {/* Transport Tab */}
+            {activeTab === 'transport' && (
+                <div className="sources-section">
+                    <h2>Transport</h2>
+                    <p className="sources-intro">
+                        Visualizations and data related to the transportation of enslaved people.
+                    </p>
+                    <div className="source-item">
+                        <MiddlePassageChart />
+                    </div>
+                    <div className="source-item">
+                        <TransSaharanChart />
+                    </div>
+                    <div className="source-item">
+                        <IndianOceanChart />
+                    </div>
                 </div>
             )}
 
-            <div className="stats-banner">
-                <div className="treemap-container" ref={treemapRef}></div>
-            </div>
+            {/* Brutality Tab */}
+            {activeTab === 'brutality' && (
+                <div className="sources-section">
+                    <h2>Brutality</h2>
+                    <p className="sources-intro">
+                        Visualizations and data related to the brutality and mistreatment endured by enslaved people across different slave trade systems.
+                    </p>
+                    
+                    {/* Severity Definitions Table */}
+                    <div className="severity-table-container">
+                        <table className="severity-table">
+                            <thead>
+                                <tr>
+                                    <th>Severity</th>
+                                    <th>Definition</th>
+                                    <th>Effects</th>
+                                    <th>Examples</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Moderate</strong> 🟡</td>
+                                    <td>Systemic but not intended to destroy</td>
+                                    <td>Social control, intimidation</td>
+                                    <td>Market display, forced marching, domestic discipline</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>High</strong> 🟠</td>
+                                    <td>Regular and strategically used to increase output</td>
+                                    <td>Bodily harm, productivity pressure</td>
+                                    <td>Whipping, chain labor, routine beatings</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Extreme</strong> 🔴</td>
+                                    <td>Intended to break body/mind or serve systemic dominance</td>
+                                    <td>High mortality, identity destruction</td>
+                                    <td>Castration, sugar plantation, torture, sexual slavery, desert crossing, Middle Passage</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
-            <div className="visualization-container">
-                <div ref={svgRef}></div>
-                <div className="legend">
-                    {slaveryData.map(trade => (
-                        <div key={trade.id} className="legend-item">
-                            <div className="legend-color" style={{ background: trade.color }}></div>
-                            <span>{trade.name} ({trade.period})</span>
-                        </div>
-                    ))}
+                    {/* All Brutality Charts */}
+                    <div className="source-item">
+                        <BrutalityChart systemId="roman" />
+                    </div>
+                    <div className="source-item">
+                        <BrutalityChart systemId="chinese-korean" />
+                    </div>
+                    <div className="source-item">
+                        <BrutalityChart systemId="pre-columbian" />
+                    </div>
+                    <div className="source-item">
+                        <BrutalityChart systemId="trans-saharan" />
+                    </div>
+                    <div className="source-item">
+                        <BrutalityChart systemId="slavic" />
+                    </div>
+                    <div className="source-item">
+                        <BrutalityChart systemId="southeast-asian" />
+                    </div>
+                    <div className="source-item">
+                        <BrutalityChart systemId="mongol" />
+                    </div>
+                    <div className="source-item">
+                        <BrutalityChart systemId="crimean" />
+                    </div>
+                    <div className="source-item">
+                        <BrutalityChart systemId="indian-ocean" />
+                    </div>
+                    <div className="source-item">
+                        <BrutalityChart systemId="barbary" />
+                    </div>
+                    <div className="source-item">
+                        <BrutalityChart systemId="red-sea" />
+                    </div>
+                    <div className="source-item">
+                        <BrutalityChart systemId="transatlantic" />
+                    </div>
+                    <div className="source-item">
+                        <BrutalityChart systemId="modern" />
+                    </div>
+                    <div className="source-item">
+                        <BrutalityChart systemId="devshirme" />
+                    </div>
                 </div>
-            </div>
+            )}
+
+            {activeTab === 'markets' && (
+                <div className="placeholder-section">
+                    <h2>Markets</h2>
+                    <p>Content coming soon...</p>
+                </div>
+            )}
+
+            {activeTab === 'born' && (
+                <div className="placeholder-section">
+                    <h2>Born in Slavery</h2>
+                    <p>Content coming soon...</p>
+                </div>
+            )}
+
+            {activeTab === 'modern' && (
+                <div className="placeholder-section">
+                    <h2>Modern</h2>
+                    <p>Content coming soon...</p>
+                </div>
+            )}
 
             <div ref={tooltipRef} className="tooltip"></div>
 
