@@ -792,6 +792,7 @@
             background: rgba(255, 255, 255, 0.02);
             border-radius: 8px;
             padding: 30px;
+            overflow-x: auto;
         }
 
         .chart-section-title {
@@ -1263,6 +1264,200 @@
                 font-size: 0.75rem;
             }
         }
+
+        /* Abolition Timeline */
+        .abolition-timeline {
+            background: rgba(139, 92, 246, 0.06);
+            border: 1px solid rgba(139, 92, 246, 0.25);
+            border-radius: 10px;
+            padding: 24px 28px;
+            margin: 0 auto 30px;
+            max-width: 900px;
+        }
+
+        .abolition-timeline h3 {
+            color: #a78bfa;
+            font-size: 1.15rem;
+            margin-bottom: 16px;
+        }
+
+        .abolition-timeline .timeline-intro {
+            color: #b4a5d6;
+            font-size: 0.92rem;
+            line-height: 1.6;
+            margin-bottom: 18px;
+        }
+
+        .abolition-century-group {
+            margin-bottom: 16px;
+        }
+
+        .abolition-century-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .abolition-century-label {
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: #a78bfa;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+        }
+
+        .abolition-entry {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+            padding: 6px 0;
+            border-bottom: 1px solid rgba(139, 92, 246, 0.1);
+            font-size: 0.9rem;
+            color: #c4b5e0;
+            line-height: 1.5;
+        }
+
+        .abolition-entry:last-child {
+            border-bottom: none;
+        }
+
+        .abolition-year {
+            font-weight: 700;
+            color: #c4b5fd;
+            min-width: 50px;
+            flex-shrink: 0;
+        }
+
+        .abolition-name {
+            font-weight: 600;
+            color: #e0d6f5;
+            min-width: 180px;
+            flex-shrink: 0;
+        }
+
+        .abolition-note {
+            color: #9a8cb8;
+            font-size: 0.85rem;
+        }
+
+        .abolition-highlight {
+            background: rgba(139, 92, 246, 0.15);
+            padding: 2px 10px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: #c4b5fd;
+        }
+
+        /* Ethnic Composition Section */
+        .ethnic-composition {
+            background: rgba(16, 185, 129, 0.06);
+            border: 1px solid rgba(16, 185, 129, 0.25);
+            border-radius: 10px;
+            padding: 24px 28px;
+            margin: 0 auto 30px;
+            max-width: 900px;
+        }
+
+        .ethnic-composition h3 {
+            color: #34d399;
+            font-size: 1.15rem;
+            margin-bottom: 12px;
+        }
+
+        .ethnic-composition .composition-intro {
+            color: #8ec5ae;
+            font-size: 0.92rem;
+            line-height: 1.6;
+            margin-bottom: 18px;
+        }
+
+        .ethnic-bar-chart {
+            margin-bottom: 18px;
+        }
+
+        .ethnic-bar-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+
+        .ethnic-bar-label {
+            min-width: 110px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: #d0e8dc;
+            text-align: right;
+            flex-shrink: 0;
+        }
+
+        .ethnic-bar-track {
+            flex: 1;
+            height: 24px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ethnic-bar-fill {
+            height: 100%;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 8px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: #fff;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            position: relative;
+        }
+
+        .ethnic-bar-range-marker {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            border-left: 2px dashed rgba(255, 255, 255, 0.35);
+        }
+
+        .ethnic-bar-range-text {
+            font-size: 0.78rem;
+            color: #8ec5ae;
+            min-width: 70px;
+            flex-shrink: 0;
+        }
+
+        .ethnic-disclaimers {
+            background: rgba(245, 158, 11, 0.06);
+            border-left: 3px solid rgba(245, 158, 11, 0.4);
+            padding: 12px 16px;
+            margin-top: 14px;
+            font-size: 0.85rem;
+            color: #d4a853;
+            line-height: 1.6;
+        }
+
+        .ethnic-disclaimers ul {
+            margin: 6px 0 0 16px;
+        }
+
+        .ethnic-disclaimers li {
+            margin-bottom: 4px;
+        }
+
+        @media (max-width: 600px) {
+            .abolition-entry {
+                flex-direction: column;
+                gap: 2px;
+            }
+            .abolition-name {
+                min-width: auto;
+            }
+            .ethnic-bar-label {
+                min-width: 80px;
+                font-size: 0.8rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1290,10 +1485,10 @@ const slaveryData = [
       { "source": "Balkans", "destination": "Italian Peninsula", "value": 1500000 },
       { "source": "Various", "destination": "Provinces", "value": 2300000 }
     ],
-    "description": "Slavery was fundamental to Roman society. Perhaps 10–30% of the Empire's population were enslaved at some point, concentrated in Italy and large provincial estates. People were enslaved through war, piracy, sale of children, exposure of infants, and penal slavery. Prisoners of war from Gaul, Germania, Britain and the East were sold into Italian markets, with some campaigns—like Caesar in Gaul or the First Punic War—generating tens of thousands of captives. Unlike later Atlantic systems, Roman slavery was not race-based but rooted in conquest, status and law.",
+    "description": "Slavery was fundamental to Roman society. Perhaps 10–30% of the Empire's population were enslaved at some point, concentrated in Italy and large provincial estates. People were enslaved through war, piracy, sale of children, exposure of infants, and penal slavery. Prisoners of war from Gaul, Germania, Britain and the East were sold into Italian markets, with some campaigns (like Caesar in Gaul or the First Punic War) generating tens of thousands of captives. Unlike later Atlantic systems, Roman slavery was not race-based but rooted in conquest, status and law.",
     "ending": "Roman slavery never disappeared overnight but eroded over centuries. As imperial expansion slowed in the 2nd–3rd centuries CE, the supply of war captives shrank. Legal reforms, Christian moral critiques, and economic changes pushed landowners to rely more on tenant farmers (coloni) bound to the land rather than chattel slaves. By the late Empire and in successor kingdoms, slavery shaded gradually into forms of serfdom, with fewer large-scale markets and more local dependence ties.",
     "destinationDetails": {
-      "Italian Peninsula": "The Italian Peninsula — especially Rome and the central latifundia estates — was the core sink for enslaved people captured across the Empire. They worked in large-scale agriculture, urban households, workshops, mines and public construction. Many household slaves could be manumitted and become freedpersons, but plantation and mine labor remained brutal.",
+      "Italian Peninsula": "The Italian Peninsula, especially Rome and the central latifundia estates, was the core sink for enslaved people captured across the Empire. They worked in large-scale agriculture, urban households, workshops, mines and public construction. Many household slaves could be manumitted and become freedpersons, but plantation and mine labor remained brutal.",
       "Roman East": "In the eastern provinces (Greece, Asia Minor, Syria, Egypt), slavery was deeply embedded in cities and villas. A larger share of enslaved people worked as skilled laborers, administrators, tutors and domestic servants, though agricultural and quarry work were also common. Eastern markets redistributed captives from frontier wars and piracy.",
       "Provinces": "Outside Italy and the major eastern centers, provincial estates, mines and households absorbed captives from local rebellions, frontier wars and debt. In Gaul, Spain, North Africa and the Balkans, some enslaved people never left their home region but were pulled into the Roman legal and economic system as property."
     },
@@ -1434,7 +1629,7 @@ const slaveryData = [
       "Tunisia": "Tunis served as an important port and political center where enslaved people worked in elite households, workshops and agricultural domains. Caravans from the Sahara and Fezzan often converged on Tunisian markets.",
       "Libya": "Tripoli and other Libyan towns were key staging posts for desert caravans. Captives from the Sahel and central Sahara were sold into households, agriculture and service in Tripolitan coastal society or moved onward to the Ottoman Empire.",
       "Morocco": "Moroccan cities such as Marrakesh and Fez drew in enslaved people from caravan routes through the western Sahara. They were used in royal courts, urban households and irrigated agriculture.",
-      "Ottoman Empire": "Some captives moving through North African ports were sent deeper into the Ottoman world—into Anatolia, the Levant and the Balkans—where they served in households, elite military units and rural estates.",
+      "Ottoman Empire": "Some captives moving through North African ports were sent deeper into the Ottoman world (into Anatolia, the Levant and the Balkans) where they served in households, elite military units and rural estates.",
       "Middle East": "Beyond the formal Ottoman territories, desert and Red Sea routes brought enslaved Africans into Arabia and the broader Middle East, where they were integrated into domestic, pastoral and religious economies."
     },
     "acquisition_mode": ["raid", "war_captive", "kidnapping_trafficking"],
@@ -1596,7 +1791,7 @@ const slaveryData = [
       "upward_mobility": 1
     },
     "intraGroupPercent": [30, 50],
-    "intraGroupNote": "Mongol enslavement was driven by conquest across vast distances. While steppe peoples enslaved other steppe groups (intra-group), a large share of captives came from conquered sedentary civilisations — Chinese, Persian, Russian, and others — making this one of the more inter-group systems."
+    "intraGroupNote": "Mongol enslavement was driven by conquest across vast distances. While steppe peoples enslaved other steppe groups (intra-group), a large share of captives came from conquered sedentary civilisations (Chinese, Persian, Russian, and others), making this one of the more inter-group systems."
   },
   {
     "id": "devshirme",
@@ -1678,7 +1873,7 @@ const slaveryData = [
       "upward_mobility": 0
     },
     "intraGroupPercent": [20, 40],
-    "intraGroupNote": "Crimean Tatar raids targeted ethnically and religiously distinct populations — Ukrainian, Polish, and Russian Christians — making this a predominantly inter-group system. Captives were sold into Ottoman and Middle Eastern markets."
+    "intraGroupNote": "Crimean Tatar raids targeted ethnically and religiously distinct populations (Ukrainian, Polish, and Russian Christians), making this a predominantly inter-group system. Captives were sold into Ottoman and Middle Eastern markets."
   },
   {
     "id": "indian-ocean",
@@ -1790,10 +1985,10 @@ const slaveryData = [
       { "source": "Eritrea", "destination": "Red Sea Ports", "value": 150000 }
     ],
     "description": "The Red Sea trade linked East Africa and the Horn to Egypt, Arabia and the wider Islamic world from antiquity into the 20th century. Estimates suggest at least 500,000–1 million people over the long term, with perhaps half a million in the 19th century alone. Many captives were women and children taken from Ethiopia, Sudan and coastal East Africa, entering domestic service, concubinage, agriculture and pilgrimage support along the Red Sea littoral.",
-    "ending": "Because the Red Sea system overlapped with Indian Ocean and Saharan networks, it faded in stages. British pressure on Red Sea shipping, Ottoman and Egyptian decrees against the slave trade, and international treaties gradually restricted legal markets in the 19th century. Nevertheless, covert trafficking into the Arabian Peninsula continued until mid-20th-century abolition decrees—especially Saudi Arabia's and Yemen's bans in 1962—finally made chattel slavery illegal in the region.",
+    "ending": "Because the Red Sea system overlapped with Indian Ocean and Saharan networks, it faded in stages. British pressure on Red Sea shipping, Ottoman and Egyptian decrees against the slave trade, and international treaties gradually restricted legal markets in the 19th century. Nevertheless, covert trafficking into the Arabian Peninsula continued until mid-20th-century abolition decrees, especially Saudi Arabia's and Yemen's bans in 1962, finally made chattel slavery illegal in the region.",
     "destinationDetails": {
       "Egypt": "Egyptian ports such as Suez and Cairo markets took in captives from Sudan, Ethiopia and coastal East Africa. Enslaved people worked in households, estates and Nile agriculture, or were sent onward into the Ottoman world.",
-      "Arabia": "Across the Arabian coast, enslaved Africans were integrated into pastoral, urban and religious economies—as domestic servants, herders, porters and concubines. Some supported the pilgrimage traffic to Mecca and Medina.",
+      "Arabia": "Across the Arabian coast, enslaved Africans were integrated into pastoral, urban and religious economies, serving as domestic servants, herders, porters and concubines. Some supported the pilgrimage traffic to Mecca and Medina.",
       "Hejaz/Mecca": "In the Hejaz, especially Mecca and Medina, enslaved people served in religious institutions, merchant households and services for pilgrims. Many came via Jeddah and other Red Sea ports.",
       "Hejaz": "This label covers the broader western Arabian region, where enslaved Africans worked in towns, oases and caravan support roles.",
       "Yemen": "Yemeni ports and highland towns used enslaved labor in agriculture, coffee production, domestic service and trade, drawing on routes from the Horn of Africa.",
@@ -1840,9 +2035,9 @@ const slaveryData = [
     "description": "The Transatlantic trade moved about 12.5 million Africans onto slave ships; roughly 10.7 million survived to disembark in the Americas. West and West-Central Africa supplied most captives, with Southeast Africa added in the late period. The largest single destination was Brazil, followed by Caribbean sugar islands and Spanish America. Only about 3–4% of captives were landed directly in what became the United States. Mortality on voyages averaged around 12–15%, and many more people died in wars and marches that fed the trade.",
     "ending": "Abolition unfolded in stages. Britain banned its slave trade in 1807 and used the Royal Navy to pressure other powers; the United States banned the transatlantic trade in 1808. Slavery itself was abolished across the British Empire in the 1830s, in French colonies in 1848, in most Spanish American republics between the 1810s–1850s, and in the United States in 1865 after the Civil War. Brazil was the last major slave society in the Americas to abolish slavery in 1888. Illegal trafficking persisted for decades, but by the late 19th century the transatlantic system had been dismantled by legal bans, naval suppression and slave uprisings.",
     "destinationDetails": {
-      "Brazil": "Brazil received by far the largest share of enslaved Africans—over 5 million people—feeding sugar, coffee and mining economies from the 16th to 19th centuries. Plantation labor was harsh, with high mortality and constant demand for new imports. Afro-Brazilian cultures deeply shaped language, religion and music.",
+      "Brazil": "Brazil received by far the largest share of enslaved Africans (over 5 million people), feeding sugar, coffee and mining economies from the 16th to 19th centuries. Plantation labor was harsh, with high mortality and constant demand for new imports. Afro-Brazilian cultures deeply shaped language, religion and music.",
       "Caribbean": "The Caribbean islands (British, French, Dutch and Danish) imported more than 4 million Africans for sugar, coffee and other plantations. Brutal work regimes and disease produced extreme mortality and frequent revolts, culminating in the Haitian Revolution and later emancipation movements.",
-      "Spanish America": "Spanish America—including Mexico, Central America and northern South America—imported around 1–1.3 million Africans. They worked in mines, plantations, ranches and cities. Manumission, caste systems and regional revolutions created complex Afro-Latin societies.",
+      "Spanish America": "Spanish America, including Mexico, Central America and northern South America, imported around 1–1.3 million Africans. They worked in mines, plantations, ranches and cities. Manumission, caste systems and regional revolutions created complex Afro-Latin societies.",
       "North America": "British North America and later the United States received roughly 300–400 thousand Africans directly, but the enslaved population grew rapidly through natural increase. Plantation slavery concentrated in the Chesapeake and Deep South, and its destruction required a civil war and constitutional abolition."
     },
     "acquisition_mode": ["kidnapping_trafficking", "raid", "war_captive", "birth_into_slavery"],
@@ -1886,10 +2081,10 @@ const slaveryData = [
       { "source": "Arab States", "destination": "Domestic Work", "value": 200000 },
       { "source": "Various", "destination": "Fishing/Maritime", "value": 1200000 }
     ],
-    "description": "The ILO's 2022 estimate places 27.6 million people in forced labour globally, but methodological uncertainty and undercounting of informal sectors suggest a plausible range of 25-30 million. This includes private-economy exploitation across construction, manufacturing, agriculture, domestic work, fishing and mining. Victims are compelled to work through debt bondage, confiscated documents, threats of violence, or immigration-status coercion. Asia-Pacific accounts for the largest share by region, but forced labour exists in every country. The 2016 ILO estimate was 24.9 million — the increase partly reflects better measurement, not only worsening conditions.",
+    "description": "The ILO's 2022 estimate places 27.6 million people in forced labour globally, but methodological uncertainty and undercounting of informal sectors suggest a plausible range of 25-30 million. This includes private-economy exploitation across construction, manufacturing, agriculture, domestic work, fishing and mining. Victims are compelled to work through debt bondage, confiscated documents, threats of violence, or immigration-status coercion. Asia-Pacific accounts for the largest share by region, but forced labour exists in every country. The 2016 ILO estimate was 24.9 million; the increase partly reflects better measurement, not only worsening conditions.",
     "ending": "Forced labour is illegal everywhere but persists due to weak enforcement, migration vulnerability, conflict, supply-chain opacity and profit incentives. International instruments (ILO Conventions 29 and 105, the Palermo Protocol) and national supply-chain due-diligence laws aim to combat it, but prevalence increased between 2016 and 2021.",
     "destinationDetails": {
-      "Construction": "Construction is one of the largest sectors for forced labour globally. Workers — often migrants — face debt bondage, withheld wages, confiscated passports and dangerous conditions, particularly in Gulf states, South and Southeast Asia.",
+      "Construction": "Construction is one of the largest sectors for forced labour globally. Workers, often migrants, face debt bondage, withheld wages, confiscated passports and dangerous conditions, particularly in Gulf states, South and Southeast Asia.",
       "Manufacturing": "Forced labour in manufacturing spans garment factories, electronics assembly, brick kilns and food processing. Supply-chain pressure and subcontracting obscure exploitation from end consumers.",
       "Agriculture": "Agricultural forced labour occurs in plantations, farms and fishing operations worldwide. Seasonal migrant workers are particularly vulnerable to debt bondage and geographic isolation.",
       "Domestic Work": "Domestic workers in private households face confinement, wage theft, physical and sexual abuse. Legal protections are weak in many countries because domestic work falls outside standard labour regulation.",
@@ -1937,11 +2132,11 @@ const slaveryData = [
       { "source": "Arab States", "destination": "Child Marriage", "value": 700000 },
       { "source": "Arab States", "destination": "Adult Forced Marriage", "value": 400000 }
     ],
-    "description": "The ILO estimates 22 million people in forced marriage globally (2021), but definitional boundary issues — particularly around consent in contexts of extreme social pressure — suggest the true range is 20-25 million. Forced marriage disproportionately affects women and girls: 80% of victims are female, and a significant share involves children. Asia-Pacific has the largest absolute numbers, but the practice is present across all regions. Forced marriage often results in lifelong domestic and sexual servitude, with victims unable to leave due to social, economic or legal constraints.",
+    "description": "The ILO estimates 22 million people in forced marriage globally (2021), but definitional boundary issues, particularly around consent in contexts of extreme social pressure, suggest the true range is 20-25 million. Forced marriage disproportionately affects women and girls: 80% of victims are female, and a significant share involves children. Asia-Pacific has the largest absolute numbers, but the practice is present across all regions. Forced marriage often results in lifelong domestic and sexual servitude, with victims unable to leave due to social, economic or legal constraints.",
     "ending": "Forced marriage is illegal under international law (UDHR Article 16, CEDAW) and most national legal systems, but persists due to poverty, gender inequality, family honour codes, conflict and weak enforcement. Many countries have raised legal marriage ages, but enforcement gaps remain enormous, especially in rural and conflict-affected areas.",
     "destinationDetails": {
-      "Child Marriage": "Children — overwhelmingly girls — are married before age 18, often to much older men. Causes include poverty (bride price), gender norms, family honour, and conflict. Consequences include truncated education, early pregnancy, isolation and domestic violence.",
-      "Adult Forced Marriage": "Adults coerced into marriage through family pressure, threats, violence or economic dependency. Includes situations where consent is formally given but under conditions that remove genuine choice — such as debt repayment, immigration-status dependency or threat of ostracism."
+      "Child Marriage": "Children, overwhelmingly girls, are married before age 18, often to much older men. Causes include poverty (bride price), gender norms, family honour, and conflict. Consequences include truncated education, early pregnancy, isolation and domestic violence.",
+      "Adult Forced Marriage": "Adults coerced into marriage through family pressure, threats, violence or economic dependency. Includes situations where consent is formally given but under conditions that remove genuine choice, such as debt repayment, immigration-status dependency or threat of ostracism."
     },
     "acquisition_mode": ["coercion", "fraud", "debt_bondage"],
     "legal_status": ["forced_marriage"],
@@ -1981,7 +2176,7 @@ const slaveryData = [
     "description": "The ILO estimates 6.3 million people in commercial sexual exploitation (2021), but underreporting and the hidden nature of the crime suggest a range of 5.4-8 million. Sex trafficking involves recruitment, transport or harbouring of people for sexual exploitation through force, fraud or coercion. Victims are found in brothels, massage parlours, escort services, online platforms, pornography and street prostitution. Women and girls make up the overwhelming majority of victims, though boys and men are also affected. Criminal networks generate an estimated $99 billion annually from sexual exploitation.",
     "ending": "Sex trafficking is a criminal offence in virtually every jurisdiction and is targeted by the Palermo Protocol (2000), national anti-trafficking laws and specialised law enforcement units. However, demand, poverty, migration vulnerability, online platforms and corruption sustain the practice. Conviction rates remain very low relative to estimated prevalence.",
     "destinationDetails": {
-      "Brothels/Venues": "Physical venues — brothels, massage parlours, karaoke bars, hotels — where trafficked people are forced to provide sexual services. Victims are controlled through debt bondage, violence, drug dependency and confiscated documents.",
+      "Brothels/Venues": "Physical venues (brothels, massage parlours, karaoke bars, hotels) where trafficked people are forced to provide sexual services. Victims are controlled through debt bondage, violence, drug dependency and confiscated documents.",
       "Online Exploitation": "Growing category involving forced participation in live-streaming, webcam sexual exploitation and production of abuse material. The Philippines, Romania and parts of Latin America are significant source regions.",
       "Pornography/Webcam": "Victims forced to produce pornographic content or perform on webcam platforms. Often involves severe coercion, confinement and distribution of material without consent."
     },
@@ -1999,7 +2194,7 @@ const slaveryData = [
       "upward_mobility": 0
     },
     "intraGroupPercent": [40, 60],
-    "intraGroupNote": "Sex trafficking has a higher inter-group component than other forms of modern slavery. Cross-border trafficking is common — victims are frequently moved across national and ethnic boundaries by criminal networks, though domestic trafficking within countries also accounts for a large share."
+    "intraGroupNote": "Sex trafficking has a higher inter-group component than other forms of modern slavery. Cross-border trafficking is common, and victims are frequently moved across national and ethnic boundaries by criminal networks, though domestic trafficking within countries also accounts for a large share."
   },
   {
     "id": "modern-state-imposed",
@@ -2022,7 +2217,7 @@ const slaveryData = [
     "description": "The ILO estimates 3.9 million people in state-imposed forced labour (2021), with a plausible range of 3.5-5 million given the opacity of state systems. This category includes compulsory prison labour without due process, forced conscription (military and civil), forced participation in public works and political re-education programmes, and labour tied to ethnic or religious persecution. States responsible include both authoritarian regimes and democracies with abusive prison-labour systems. The distinction from other forced labour is that the coercing agent is the state itself, not a private actor.",
     "ending": "State-imposed forced labour violates ILO Convention 105 and numerous human rights instruments, but enforcement depends on political will within sovereign states. International pressure, sanctions, import bans on goods produced with forced labour and diplomatic advocacy have had limited but growing impact.",
     "destinationDetails": {
-      "Prison Labour": "Compulsory labour in prison systems that goes beyond rehabilitation — including for-profit manufacturing, agriculture and service provision where prisoners work under coercion without fair wages or due process. Significant in China, the US, and other countries.",
+      "Prison Labour": "Compulsory labour in prison systems that goes beyond rehabilitation, including for-profit manufacturing, agriculture and service provision where prisoners work under coercion without fair wages or due process. Significant in China, the US, and other countries.",
       "Forced Conscription": "Forced military or civil conscription beyond lawful national service obligations, including child soldiers, indefinite conscription and conscription used as political punishment.",
       "Political Forced Labour": "Labour imposed as punishment for political dissent, religious practice or ethnic identity. Includes forced labour in political detention camps.",
       "Re-education/Camps": "Labour imposed within re-education or internment facilities, often targeting ethnic or religious minorities. Includes situations documented in China's Xinjiang region and similar programmes elsewhere."
@@ -2251,15 +2446,15 @@ const slaveryData = [
                 if (trade) {
                     setHoveredCategory(trade);
                     setCategoryTooltipPosition({
-                        x: event.clientX + 15,
-                        y: event.clientY - 15
+                        x: event.pageX + 15,
+                        y: event.pageY - 15
                     });
                 }
             })
             .on('mousemove', function(event) {
                 setCategoryTooltipPosition({
-                    x: event.clientX + 15,
-                    y: event.clientY - 15
+                    x: event.pageX + 15,
+                    y: event.pageY - 15
                 });
             })
             .on('mouseout', function() {
@@ -2445,14 +2640,14 @@ const slaveryData = [
                 .on('mouseover', function(event) {
                     setHoveredCategory(trade);
                     setCategoryTooltipPosition({
-                        x: event.clientX + 15,
-                        y: event.clientY - 15
+                        x: event.pageX + 15,
+                        y: event.pageY - 15
                     });
                 })
                 .on('mousemove', function(event) {
                     setCategoryTooltipPosition({
-                        x: event.clientX + 15,
-                        y: event.clientY - 15
+                        x: event.pageX + 15,
+                        y: event.pageY - 15
                     });
                 })
                 .on('mouseout', function() {
@@ -2504,14 +2699,14 @@ const slaveryData = [
                 .on('mouseover', function(event) {
                     setHoveredCategory(trade);
                     setCategoryTooltipPosition({
-                        x: event.clientX + 15,
-                        y: event.clientY - 15
+                        x: event.pageX + 15,
+                        y: event.pageY - 15
                     });
                 })
                 .on('mousemove', function(event) {
                     setCategoryTooltipPosition({
-                        x: event.clientX + 15,
-                        y: event.clientY - 15
+                        x: event.pageX + 15,
+                        y: event.pageY - 15
                     });
                 })
                 .on('mouseout', function() {
@@ -3121,10 +3316,14 @@ const slaveryData = [
 
             d3.select(chartRef.current).selectAll('*').remove();
 
+            const totalW = width + margin.left + margin.right;
+            const totalH = height + margin.top + margin.bottom;
             const svg = d3.select(chartRef.current)
                 .append('svg')
-                .attr('width', width + margin.left + margin.right)
-                .attr('height', height + margin.top + margin.bottom)
+                .attr('viewBox', `0 0 ${totalW} ${totalH}`)
+                .attr('preserveAspectRatio', 'xMidYMid meet')
+                .style('width', '100%')
+                .style('height', 'auto')
                 .append('g')
                 .attr('transform', `translate(${margin.left},${margin.top})`);
 
@@ -3245,10 +3444,14 @@ const slaveryData = [
 
             d3.select(chartRef.current).selectAll('*').remove();
 
+            const totalW = width + margin.left + margin.right;
+            const totalH = height + margin.top + margin.bottom;
             const svg = d3.select(chartRef.current)
                 .append('svg')
-                .attr('width', width + margin.left + margin.right)
-                .attr('height', height + margin.top + margin.bottom)
+                .attr('viewBox', `0 0 ${totalW} ${totalH}`)
+                .attr('preserveAspectRatio', 'xMidYMid meet')
+                .style('width', '100%')
+                .style('height', 'auto')
                 .append('g')
                 .attr('transform', `translate(${margin.left},${margin.top})`);
 
@@ -3410,10 +3613,14 @@ const slaveryData = [
 
             d3.select(chartRef.current).selectAll('*').remove();
 
+            const totalW = width + margin.left + margin.right;
+            const totalH = height + margin.top + margin.bottom;
             const svg = d3.select(chartRef.current)
                 .append('svg')
-                .attr('width', width + margin.left + margin.right)
-                .attr('height', height + margin.top + margin.bottom)
+                .attr('viewBox', `0 0 ${totalW} ${totalH}`)
+                .attr('preserveAspectRatio', 'xMidYMid meet')
+                .style('width', '100%')
+                .style('height', 'auto')
                 .append('g')
                 .attr('transform', `translate(${margin.left},${margin.top})`);
 
@@ -3799,10 +4006,14 @@ const slaveryData = [
 
             d3.select(chartRef.current).selectAll('*').remove();
 
+            const totalW = width + margin.left + margin.right;
+            const totalH = height + margin.top + margin.bottom;
             const svg = d3.select(chartRef.current)
                 .append('svg')
-                .attr('width', width + margin.left + margin.right)
-                .attr('height', height + margin.top + margin.bottom)
+                .attr('viewBox', `0 0 ${totalW} ${totalH}`)
+                .attr('preserveAspectRatio', 'xMidYMid meet')
+                .style('width', '100%')
+                .style('height', 'auto')
                 .append('g')
                 .attr('transform', `translate(${margin.left},${margin.top})`);
 
@@ -3951,20 +4162,7 @@ const slaveryData = [
                     </div>
 
                     <div className="disclaimer-box">
-                        <strong>Data accuracy note:</strong> Precise figures for historical slavery are impossible to determine. Records are fragmentary, definitions vary (chattel, debt bondage, war captives, serfdom), and most systems predate reliable census data. The estimates shown here reflect scholarly consensus ranges — they are directionally accurate, not exact counts. All figures should be read as orders of magnitude.
-                    </div>
-
-                    <div className="intra-group-callout">
-                        <h3>The Overlooked Pattern: Intra-Group Slavery</h3>
-                        <p>
-                            A commonly overlooked historical reality: across all documented systems, an estimated <span className="stat-highlight">~70-85%</span> of all people ever enslaved were enslaved by members of their own broad ethnic or regional group. Slavery was driven by war, debt, punishment and power, not primarily by racial or ethnic difference. The racialised, inter-continental model (e.g. the Transatlantic trade) is historically significant but atypical of the broader pattern.
-                        </p>
-                        <p>
-                            Even in the Transatlantic system, the initial capture and enslavement of most victims was carried out by African kingdoms and groups warring with neighbouring peoples, before sale to European traders at coastal forts. The cross-ocean trade itself was entirely inter-group, making the Transatlantic system uniquely dual-natured.
-                        </p>
-                        <p style={{fontSize: '0.85rem', color: '#7a9bc5', marginBottom: 0}}>
-                            Global average estimate: <span className="stat-highlight">~70-85% intra-group</span> | <span className="stat-highlight">~15-30% inter-group</span>. Click any system below for its specific breakdown.
-                        </p>
+                        <strong>Data accuracy note:</strong> Precise figures for historical slavery are impossible to determine. Records are fragmentary, definitions vary (chattel, debt bondage, war captives, serfdom), and most systems predate reliable census data. The estimates shown here reflect scholarly consensus ranges.  They are directionally accurate, not exact counts. All figures should be read as orders of magnitude.
                     </div>
 
                     {/* Active Filter Chips */}
@@ -4038,6 +4236,133 @@ const slaveryData = [
                                     <span>{trade.name} ({trade.period})</span>
                                 </div>
                             ))}
+                        </div>
+                    </div>
+
+                    {/* Intra-Group Callout */}
+                    <div className="intra-group-callout">
+                        <h3>The Overlooked Pattern: Intra-Group Slavery</h3>
+                        <p>
+                            A commonly overlooked historical reality: across all documented systems, an estimated <span className="stat-highlight">~70-85%</span> of all people ever enslaved were enslaved by members of their own broad ethnic or regional group. Slavery was driven by war, debt, punishment and power, not primarily by racial or ethnic difference. The racialised, inter-continental model (e.g. the Transatlantic trade) is historically significant but atypical of the broader pattern.
+                        </p>
+                        <p>
+                            Even in the Transatlantic system, the initial capture and enslavement of most victims was carried out by African kingdoms and groups warring with neighbouring peoples, before sale to European traders at coastal forts. The cross-ocean trade itself was entirely inter-group, making the Transatlantic system uniquely dual-natured.
+                        </p>
+                        <p style={{fontSize: '0.85rem', color: '#7a9bc5', marginBottom: 0}}>
+                            Global average estimate: <span className="stat-highlight">~70-85% intra-group</span> | <span className="stat-highlight">~15-30% inter-group</span>. Click any system below for its specific breakdown.
+                        </p>
+                    </div>
+
+                    {/* Abolition Timeline */}
+                    <div className="abolition-timeline">
+                        <h3>The Last Places to Abolish Pre-Modern Slavery</h3>
+                        <p className="timeline-intro">
+                            Slavery did not end everywhere at once. While Western abolition movements peaked in the 19th century, many systems persisted well into the 20th century. The timeline below shows when each documented system effectively ended, sorted by date.
+                        </p>
+                        {(() => {
+                            const historicalSystems = slaveryData
+                                .filter(s => !s.id.startsWith('modern-'))
+                                .map(s => ({
+                                    name: s.name,
+                                    endYear: s.endYear,
+                                    color: s.color,
+                                    id: s.id,
+                                    abolitionNote: {
+                                        'red-sea': 'Saudi Arabia & Yemen abolition decrees',
+                                        'indian-ocean': 'British naval pressure, colonial abolition',
+                                        'chinese-korean': 'Qing reforms, Japanese colonial abolition in Korea',
+                                        'trans-saharan': 'Colonial abolition, disruption of caravan routes',
+                                        'southeast-asian': 'European colonial abolition, replaced with forced labour',
+                                        'transatlantic': 'Brazil 1888 (last major), Cuba 1886',
+                                        'barbary': 'French conquest of Algiers',
+                                        'crimean': 'Russian annexation of Crimea',
+                                        'devshirme': 'Declining Ottoman need, Janissary self-recruitment',
+                                        'pre-columbian': 'European conquest, epidemic depopulation',
+                                        'slavic': 'Christianisation, state consolidation',
+                                        'mongol': 'Empire fragmentation, successor state stabilisation',
+                                        'roman': 'Gradual erosion into serfdom over centuries'
+                                    }[s.id] || ''
+                                }))
+                                .sort((a, b) => b.endYear - a.endYear);
+
+                            const centuryGroups = {};
+                            historicalSystems.forEach(s => {
+                                let label;
+                                if (s.endYear >= 1900) label = '20th Century';
+                                else if (s.endYear >= 1800) label = '19th Century';
+                                else if (s.endYear >= 1700) label = '18th Century';
+                                else if (s.endYear >= 1400) label = '13th–16th Century';
+                                else label = 'Ancient';
+                                if (!centuryGroups[label]) centuryGroups[label] = [];
+                                centuryGroups[label].push(s);
+                            });
+
+                            const groupOrder = ['20th Century', '19th Century', '18th Century', '13th–16th Century', 'Ancient'];
+                            return groupOrder.filter(g => centuryGroups[g]).map(group => (
+                                <div key={group} className="abolition-century-group">
+                                    <div className="abolition-century-label">{group}</div>
+                                    {centuryGroups[group].map(s => (
+                                        <div key={s.id} className="abolition-entry" onClick={() => {
+                                            const system = slaveryData.find(d => d.id === s.id);
+                                            if (system) { setSelectedTrade(system); setSelectedDestination(null); }
+                                        }} style={{cursor: 'pointer'}}>
+                                            <span className={s.id === 'red-sea' ? 'abolition-year abolition-highlight' : 'abolition-year'}>
+                                                {s.endYear < 0 ? `${Math.abs(s.endYear)} BCE` : s.endYear}
+                                            </span>
+                                            <span className="abolition-name" style={{color: s.color}}>{s.name}</span>
+                                            <span className="abolition-note">{s.abolitionNote}</span>
+                                        </div>
+                                    ))}
+                                </div>
+                            ));
+                        })()}
+                        <p style={{fontSize: '0.85rem', color: '#9a8cb8', marginTop: '14px', marginBottom: 0}}>
+                            The <span className="abolition-highlight">Red Sea trade (1962)</span> was the last pre-modern system to be formally abolished. Saudi Arabia and Yemen issued abolition decrees that year. The cluster of systems ending around 1900 reflects the reach of European colonial power and local reform movements occurring simultaneously across Africa, Asia and the Middle East.
+                        </p>
+                    </div>
+
+                    {/* Ethnic Composition Estimate */}
+                    <div className="ethnic-composition">
+                        <h3>Estimated Ethnic Composition of All Enslaved People in History</h3>
+                        <p className="composition-intro">
+                            A rough extrapolation based on the documented systems in this dataset, scholarly population estimates, and the duration of each system. These ranges represent order-of-magnitude estimates, not census data.
+                        </p>
+                        <div className="ethnic-bar-chart">
+                            {[
+                                { label: 'Asian', low: 35, high: 55, color: '#10b981', note: 'Chinese, Korean, SE Asian, Indian systems spanning millennia' },
+                                { label: 'White/European', low: 15, high: 30, color: '#6366f1', note: 'Roman, Slavic, Crimean, Barbary, Devshirme captives' },
+                                { label: 'Black/African', low: 15, high: 25, color: '#f59e0b', note: 'Transatlantic, Trans-Saharan, Indian Ocean, Red Sea trades' },
+                                { label: 'Middle Eastern', low: 10, high: 20, color: '#ec4899', note: 'Ancient Near East, Persian, segments of Roman East' },
+                                { label: 'Indigenous American', low: 1, high: 5, color: '#f97316', note: 'Pre-Columbian Aztec, Maya, Inca systems' },
+                                { label: 'Other/Mixed', low: 5, high: 10, color: '#6b7280', note: 'Central Asian steppe, Pacific Islander, unclassified' }
+                            ].map(group => (
+                                <div key={group.label} className="ethnic-bar-row">
+                                    <span className="ethnic-bar-label">{group.label}</span>
+                                    <div className="ethnic-bar-track">
+                                        <div className="ethnic-bar-fill" style={{
+                                            width: `${group.high}%`,
+                                            background: `linear-gradient(90deg, ${group.color}88 0%, ${group.color} ${Math.round(group.low / group.high * 100)}%, ${group.color} 100%)`,
+                                            opacity: 0.85
+                                        }}>
+                                            <div className="ethnic-bar-range-marker" style={{left: `${Math.round(group.low / group.high * 100)}%`}}></div>
+                                        </div>
+                                    </div>
+                                    <span className="ethnic-bar-range-text">{group.low}–{group.high}%</span>
+                                </div>
+                            ))}
+                        </div>
+                        <div style={{fontSize: '0.85rem', color: '#8ec5ae', lineHeight: 1.6, marginBottom: 12}}>
+                            <strong>How to read:</strong> Each bar shows the estimated range. The lighter left portion represents the low estimate; the solid portion extends to the high estimate. The dashed line marks the low-end boundary.
+                        </div>
+                        <div className="ethnic-disclaimers">
+                            <strong>Important caveats:</strong>
+                            <ul>
+                                <li><strong>Racial and ethnic categories are modern constructs</strong> applied retroactively. A Roman enslaver would not have categorised captives by "race" as we understand the term today.</li>
+                                <li><strong>Most slavery was intra-group</strong> (~70–85%). These percentages describe the ethnicity of victims, not the nature of the systems.</li>
+                                <li>The <strong>Black/African percentage may be conservative</strong>: internal African slavery systems (not fully captured in this dataset) could push the range to 20–30%.</li>
+                                <li>Percentages depend heavily on the assumed <strong>global total</strong> (200M–500M+). Higher totals weight ancient systems (Roman, Chinese) more heavily.</li>
+                                <li>Ancient Asian systems have <strong>much wider uncertainty bands</strong> than the well-documented African trade routes.</li>
+                            </ul>
                         </div>
                     </div>
 
@@ -4221,11 +4546,11 @@ const slaveryData = [
                             <div className="source-desc">David Eltis & David Richardson. The definitive dataset: 36,000+ voyages, 12.5M embarked. Peer-reviewed, digitised primary records.</div>
                         </div>
                         <div className="source-entry">
-                            <div className="source-name">ILO / Walk Free / IOM (2022) — Global Estimates of Modern Slavery</div>
+                            <div className="source-name">ILO / Walk Free / IOM (2022): Global Estimates of Modern Slavery</div>
                             <div className="source-desc">UN-affiliated statistical modelling. Source for the 49.6M modern slavery figure.</div>
                         </div>
                         <div className="source-entry">
-                            <div className="source-name">Hacker, J.D. (2020) — "From '20 and odd' to 10 million"</div>
+                            <div className="source-name">Hacker, J.D. (2020): "From '20 and odd' to 10 million"</div>
                             <div className="source-desc">The growth of the slave population in the United States. Demographic Research. PMC/peer-reviewed.</div>
                         </div>
                         <div className="source-entry">
@@ -4233,7 +4558,7 @@ const slaveryData = [
                             <div className="source-desc">Leading authority on Trans-Saharan and Islamic slave trades. Published estimates of 9-18M across the Arab trades.</div>
                         </div>
                         <div className="source-entry">
-                            <div className="source-name">Robert Davis (2003) — Christian Slaves, Muslim Masters</div>
+                            <div className="source-name">Robert Davis (2003): Christian Slaves, Muslim Masters</div>
                             <div className="source-desc">White Slavery in the Mediterranean, the Barbary Coast and Italy, 1500-1800. Ohio State University Press. Source for the 1-1.25M Barbary estimate.</div>
                         </div>
                         <div className="source-entry">
@@ -4246,27 +4571,27 @@ const slaveryData = [
                         <h3><span className="source-tier tier-2">Tier 2</span> Respected Academic & Institutional Sources</h3>
                         <div className="source-entry">
                             <div className="source-name">Digital History (University of Houston)</div>
-                            <div className="source-desc">digitalhistory.uh.edu — Educational resource with comparative slavery data.</div>
+                            <div className="source-desc">digitalhistory.uh.edu: Educational resource with comparative slavery data.</div>
                         </div>
                         <div className="source-entry">
                             <div className="source-name">Gilder Lehrman Institute</div>
-                            <div className="source-desc">gilderlehrman.org — Historical context and primary documents.</div>
+                            <div className="source-desc">gilderlehrman.org: Historical context and primary documents.</div>
                         </div>
                         <div className="source-entry">
                             <div className="source-name">British Museum</div>
-                            <div className="source-desc">britishmuseum.org — Roman slavery contextual materials.</div>
+                            <div className="source-desc">britishmuseum.org: Roman slavery contextual materials.</div>
                         </div>
                         <div className="source-entry">
                             <div className="source-name">Equal Justice Initiative</div>
-                            <div className="source-desc">eji.org — Transatlantic trade documentation.</div>
+                            <div className="source-desc">eji.org: Transatlantic trade documentation.</div>
                         </div>
                         <div className="source-entry">
                             <div className="source-name">Oxford Research Encyclopedias</div>
-                            <div className="source-desc">oxfordre.com — European/North African slave trade scholarship.</div>
+                            <div className="source-desc">oxfordre.com: European/North African slave trade scholarship.</div>
                         </div>
                         <div className="source-entry">
                             <div className="source-name">Harvard DASH</div>
-                            <div className="source-desc">dash.harvard.edu — Central Asian slavery research.</div>
+                            <div className="source-desc">dash.harvard.edu: Central Asian slavery research.</div>
                         </div>
                     </div>
 
@@ -4274,14 +4599,14 @@ const slaveryData = [
                         <h3><span className="source-tier tier-3">Tier 3</span> Credible Journalism & Data Journalism</h3>
                         <div className="source-entry">
                             <div className="source-name">Walk Free Foundation / Global Slavery Index</div>
-                            <div className="source-desc">walkfree.org — Modern slavery prevalence data.</div>
+                            <div className="source-desc">walkfree.org: Modern slavery prevalence data.</div>
                         </div>
                         <div className="source-entry">
-                            <div className="source-name">The Guardian — "One in 200 people is a slave" series</div>
+                            <div className="source-name">The Guardian: "One in 200 people is a slave" series</div>
                             <div className="source-desc">Investigative reporting on modern slavery.</div>
                         </div>
                         <div className="source-entry">
-                            <div className="source-name">NPR — "India, China Top List of Nations With Most Slaves"</div>
+                            <div className="source-name">NPR: "India, China Top List of Nations With Most Slaves"</div>
                             <div className="source-desc">Reporting on Global Slavery Index findings.</div>
                         </div>
                         <div className="source-entry">
@@ -4290,15 +4615,15 @@ const slaveryData = [
                         </div>
                         <div className="source-entry">
                             <div className="source-name">Pew Research Center</div>
-                            <div className="source-desc">pewresearch.org — Survey data on African-American ancestry/slavery knowledge.</div>
+                            <div className="source-desc">pewresearch.org: Survey data on African-American ancestry/slavery knowledge.</div>
                         </div>
                         <div className="source-entry">
-                            <div className="source-name">Reason Magazine — "Slavery Was a Global Phenomenon" (Wilfred Reilly)</div>
+                            <div className="source-name">Reason Magazine: "Slavery Was a Global Phenomenon" (Wilfred Reilly)</div>
                             <div className="source-desc">Historical synthesis article.</div>
                         </div>
                         <div className="source-entry">
                             <div className="source-name">The Conversation</div>
-                            <div className="source-desc">theconversation.com — Modern slavery measurement methodology.</div>
+                            <div className="source-desc">theconversation.com: Modern slavery measurement methodology.</div>
                         </div>
                     </div>
 
@@ -4309,15 +4634,15 @@ const slaveryData = [
                             <div className="source-desc">Various slavery articles. Good for overviews and links to primary sources, but verify claims independently.</div>
                         </div>
                         <div className="source-entry">
-                            <div className="source-name">Medium — Brayden Gerrard</div>
-                            <div className="source-desc">"Are There Really More Slaves Now Than Anytime In History?" — Useful synthesis but not peer-reviewed.</div>
+                            <div className="source-name">Medium: Brayden Gerrard</div>
+                            <div className="source-desc">"Are There Really More Slaves Now Than Anytime In History?": Useful synthesis but not peer-reviewed.</div>
                         </div>
                         <div className="source-entry">
                             <div className="source-name">Reddit (r/AskHistorians)</div>
                             <div className="source-desc">Moderated, often cites academic sources, but community-generated.</div>
                         </div>
                         <div className="source-entry">
-                            <div className="source-name">YouTube — "History's Biggest Slavers" and similar</div>
+                            <div className="source-name">YouTube: "History's Biggest Slavers" and similar</div>
                             <div className="source-desc">Popular synthesis, not scholarly. Useful as entry points only.</div>
                         </div>
                     </div>
