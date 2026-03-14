@@ -141,7 +141,7 @@
 
         .node-label {
             fill: #fff;
-            font-size: 11px;
+            font-size: 19px;
             pointer-events: none;
             text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
         }
@@ -155,7 +155,7 @@
 
         .axis text {
             fill: #ccc;
-            font-size: 13px;
+            font-size: 20px;
         }
 
         .axis line,
@@ -209,6 +209,17 @@
             align-items: center;
             gap: 10px;
             font-size: 13px;
+        }
+
+        .legend-item-clickable {
+            cursor: pointer;
+            padding: 4px 8px;
+            border-radius: 6px;
+            transition: background 0.2s;
+        }
+
+        .legend-item-clickable:hover {
+            background: rgba(255, 255, 255, 0.1);
         }
 
         .legend-color {
@@ -567,24 +578,183 @@
             margin-bottom: 20px;
         }
 
-        /* Placeholder Section */
-        .placeholder-section {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
+        /* Intro Section */
+        .intro-section {
+            max-width: 900px;
+            margin: 0 auto 30px;
             text-align: center;
+            line-height: 1.7;
         }
 
-        .placeholder-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: #fff;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+        .intro-section p {
+            color: #ccc;
+            font-size: 1.05rem;
+            margin-bottom: 15px;
         }
 
-        .placeholder-section p {
+        .disclaimer-box {
+            background: rgba(245, 158, 11, 0.08);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            border-radius: 8px;
+            padding: 18px 24px;
+            margin: 20px auto;
+            max-width: 860px;
+            text-align: left;
+            color: #d4a853;
+            font-size: 0.92rem;
+            line-height: 1.6;
+        }
+
+        .disclaimer-box strong {
+            color: #f59e0b;
+        }
+
+        /* Intra-group callout */
+        .intra-group-callout {
+            background: rgba(59, 130, 246, 0.06);
+            border: 1px solid rgba(59, 130, 246, 0.25);
+            border-radius: 10px;
+            padding: 24px 28px;
+            margin: 0 auto 30px;
+            max-width: 900px;
+            text-align: left;
+            color: #93b8e8;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .intra-group-callout h3 {
+            color: #60a5fa;
+            font-size: 1.15rem;
+            margin-bottom: 12px;
+        }
+
+        .intra-group-callout p {
+            margin-bottom: 10px;
+        }
+
+        .intra-group-callout .stat-highlight {
+            display: inline-block;
+            background: rgba(59, 130, 246, 0.15);
+            padding: 2px 10px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: #93c5fd;
+        }
+
+        /* Intra-group bar in detail modal */
+        .intra-group-bar-container {
+            margin: 15px 0;
+        }
+
+        .intra-group-bar-container h4 {
+            font-size: 0.95rem;
+            margin-bottom: 8px;
             color: #aaa;
-            font-size: 1.1rem;
+        }
+
+        .intra-group-bar {
+            display: flex;
+            height: 28px;
+            border-radius: 6px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .intra-group-bar .intra-segment {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #fff;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .intra-group-bar .inter-segment {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #fff;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .intra-group-bar-labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.78rem;
+            color: #888;
+            margin-top: 4px;
+        }
+
+        .detail-accuracy-note {
+            background: rgba(245, 158, 11, 0.06);
+            border-left: 3px solid rgba(245, 158, 11, 0.4);
+            padding: 10px 14px;
+            margin-bottom: 15px;
+            font-size: 0.88rem;
+            color: #d4a853;
+            line-height: 1.5;
+        }
+
+        /* Sources tab tier badges */
+        .source-tier {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-right: 8px;
+            text-transform: uppercase;
+        }
+
+        .tier-1 { background: rgba(16, 185, 129, 0.2); color: #34d399; }
+        .tier-2 { background: rgba(59, 130, 246, 0.2); color: #60a5fa; }
+        .tier-3 { background: rgba(245, 158, 11, 0.2); color: #fbbf24; }
+        .tier-4 { background: rgba(156, 163, 175, 0.2); color: #9ca3af; }
+
+        .sources-tier-group {
+            margin-bottom: 30px;
+        }
+
+        .sources-tier-group h3 {
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+            color: #fff;
+        }
+
+        .source-entry {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .source-entry:last-child {
+            border-bottom: none;
+        }
+
+        .source-entry .source-name {
+            font-weight: 600;
+            color: #e0e0e0;
+        }
+
+        .source-entry .source-desc {
+            color: #999;
+            font-size: 0.9rem;
+            margin-top: 3px;
+        }
+
+        /* Footer */
+        .site-footer {
+            max-width: 900px;
+            margin: 40px auto 0;
+            padding: 20px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #666;
+            font-size: 0.85rem;
+            line-height: 1.6;
         }
 
         /* Sources Section Styles */
@@ -994,6 +1164,7 @@
             display: block;
             max-width: 100%;
             height: auto;
+            overflow: visible;
         }
 
         @media (max-width: 768px) {
@@ -1111,18 +1282,18 @@ const slaveryData = [
     "lowEstimate": 5000000,
     "highEstimate": 15000000,
     "flows": [
-      { "source": "Gaul", "destination": "Italy", "value": 2000000 },
-      { "source": "Germania", "destination": "Italy", "value": 1500000 },
-      { "source": "Britain", "destination": "Italy", "value": 500000 },
-      { "source": "North Africa", "destination": "Italy", "value": 1000000 },
+      { "source": "Gaul", "destination": "Italian Peninsula", "value": 2000000 },
+      { "source": "Germania", "destination": "Italian Peninsula", "value": 1500000 },
+      { "source": "Britain", "destination": "Italian Peninsula", "value": 500000 },
+      { "source": "North Africa", "destination": "Italian Peninsula", "value": 1000000 },
       { "source": "Middle East", "destination": "Roman East", "value": 1200000 },
-      { "source": "Balkans", "destination": "Italy", "value": 1500000 },
+      { "source": "Balkans", "destination": "Italian Peninsula", "value": 1500000 },
       { "source": "Various", "destination": "Provinces", "value": 2300000 }
     ],
     "description": "Slavery was fundamental to Roman society. Perhaps 10–30% of the Empire's population were enslaved at some point, concentrated in Italy and large provincial estates. People were enslaved through war, piracy, sale of children, exposure of infants, and penal slavery. Prisoners of war from Gaul, Germania, Britain and the East were sold into Italian markets, with some campaigns—like Caesar in Gaul or the First Punic War—generating tens of thousands of captives. Unlike later Atlantic systems, Roman slavery was not race-based but rooted in conquest, status and law.",
     "ending": "Roman slavery never disappeared overnight but eroded over centuries. As imperial expansion slowed in the 2nd–3rd centuries CE, the supply of war captives shrank. Legal reforms, Christian moral critiques, and economic changes pushed landowners to rely more on tenant farmers (coloni) bound to the land rather than chattel slaves. By the late Empire and in successor kingdoms, slavery shaded gradually into forms of serfdom, with fewer large-scale markets and more local dependence ties.",
     "destinationDetails": {
-      "Italy": "Italy—especially Rome and central Italian estates—was the core sink for enslaved people captured across the Empire. They worked in latifundia agriculture, urban households, workshops, mines and public construction. Many household slaves could be manumitted and become freedpersons, but plantation and mine labor remained brutal.",
+      "Italian Peninsula": "The Italian Peninsula — especially Rome and the central latifundia estates — was the core sink for enslaved people captured across the Empire. They worked in large-scale agriculture, urban households, workshops, mines and public construction. Many household slaves could be manumitted and become freedpersons, but plantation and mine labor remained brutal.",
       "Roman East": "In the eastern provinces (Greece, Asia Minor, Syria, Egypt), slavery was deeply embedded in cities and villas. A larger share of enslaved people worked as skilled laborers, administrators, tutors and domestic servants, though agricultural and quarry work were also common. Eastern markets redistributed captives from frontier wars and piracy.",
       "Provinces": "Outside Italy and the major eastern centers, provincial estates, mines and households absorbed captives from local rebellions, frontier wars and debt. In Gaul, Spain, North Africa and the Balkans, some enslaved people never left their home region but were pulled into the Roman legal and economic system as property."
     },
@@ -1143,7 +1314,9 @@ const slaveryData = [
       "sexual_exploitation": 2,
       "hereditary_rigidity": 3,
       "upward_mobility": 1
-    }
+    },
+    "intraGroupPercent": [40, 70],
+    "intraGroupNote": "Roman slavery drew on conquered peoples from across the Empire. Internal enslavement through debt, criminal penalty and birth into slavery accounted for a large share, while war captives from frontier campaigns supplied the inter-group component."
   },
   {
     "id": "chinese-korean",
@@ -1186,7 +1359,9 @@ const slaveryData = [
       "sexual_exploitation": 2,
       "hereditary_rigidity": 2,
       "upward_mobility": 1
-    }
+    },
+    "intraGroupPercent": [80, 95],
+    "intraGroupNote": "Chinese and Korean slavery was overwhelmingly internal. The vast majority of enslaved people were ethnic Han or Korean, enslaved through debt, judicial punishment, or birth. Ethnic minorities constituted a small fraction of the total."
   },
   {
     "id": "pre-columbian",
@@ -1227,7 +1402,9 @@ const slaveryData = [
       "sexual_exploitation": 1,
       "hereditary_rigidity": 2,
       "upward_mobility": 0
-    }
+    },
+    "intraGroupPercent": [70, 90],
+    "intraGroupNote": "Pre-Columbian slavery was predominantly intra-group. Aztec, Maya, and Inca societies enslaved their own populations through war between neighbouring city-states, debt, and judicial punishment. Most captives shared broad cultural and ethnic ties with their captors."
   },
   {
     "id": "trans-saharan",
@@ -1275,7 +1452,9 @@ const slaveryData = [
       "sexual_exploitation": 3,
       "hereditary_rigidity": 2,
       "upward_mobility": 0
-    }
+    },
+    "intraGroupPercent": [50, 80],
+    "intraGroupNote": "The trans-Saharan trade involved both intra-African enslavement (wars between neighbouring kingdoms and peoples) and inter-group trafficking across the Sahara to North Africa and the Middle East. Initial capture was overwhelmingly by African groups enslaving neighbours."
   },
   {
     "id": "slavic",
@@ -1321,7 +1500,9 @@ const slaveryData = [
       "sexual_exploitation": 2,
       "hereditary_rigidity": 2,
       "upward_mobility": 1
-    }
+    },
+    "intraGroupPercent": [40, 60],
+    "intraGroupNote": "The Slavic slave trade was roughly evenly split. Slavic peoples raided and enslaved neighbouring Slavic groups, while Viking, Khazar and other external traders also captured and sold Slavic peoples into Byzantine and Islamic markets."
   },
   {
     "id": "southeast-asian",
@@ -1364,7 +1545,9 @@ const slaveryData = [
       "sexual_exploitation": 2,
       "hereditary_rigidity": 2,
       "upward_mobility": 1
-    }
+    },
+    "intraGroupPercent": [70, 90],
+    "intraGroupNote": "Southeast Asian slavery was predominantly intra-regional. Burmese, Thai, Khmer, and other kingdoms enslaved war captives from neighbouring polities that shared broad cultural ties. Hill tribes were also enslaved by lowland kingdoms."
   },
   {
     "id": "mongol",
@@ -1411,7 +1594,9 @@ const slaveryData = [
       "sexual_exploitation": 2,
       "hereditary_rigidity": 1,
       "upward_mobility": 1
-    }
+    },
+    "intraGroupPercent": [30, 50],
+    "intraGroupNote": "Mongol enslavement was driven by conquest across vast distances. While steppe peoples enslaved other steppe groups (intra-group), a large share of captives came from conquered sedentary civilisations — Chinese, Persian, Russian, and others — making this one of the more inter-group systems."
   },
   {
     "id": "devshirme",
@@ -1451,7 +1636,9 @@ const slaveryData = [
       "sexual_exploitation": 1,
       "hereditary_rigidity": 1,
       "upward_mobility": 3
-    }
+    },
+    "intraGroupPercent": [0, 5],
+    "intraGroupNote": "The devshirme was almost entirely inter-group by design. The Ottoman state systematically levied Christian boys from Balkan and Anatolian communities, converting them to Islam for elite military and administrative service."
   },
   {
     "id": "crimean",
@@ -1489,7 +1676,9 @@ const slaveryData = [
       "sexual_exploitation": 2,
       "hereditary_rigidity": 2,
       "upward_mobility": 0
-    }
+    },
+    "intraGroupPercent": [20, 40],
+    "intraGroupNote": "Crimean Tatar raids targeted ethnically and religiously distinct populations — Ukrainian, Polish, and Russian Christians — making this a predominantly inter-group system. Captives were sold into Ottoman and Middle Eastern markets."
   },
   {
     "id": "indian-ocean",
@@ -1535,7 +1724,9 @@ const slaveryData = [
       "sexual_exploitation": 3,
       "hereditary_rigidity": 2,
       "upward_mobility": 1
-    }
+    },
+    "intraGroupPercent": [50, 70],
+    "intraGroupNote": "The Indian Ocean trade involved both intra-African enslavement (East African groups raiding neighbours) and inter-group trafficking to Arabia, Persia, and India. Initial capture was predominantly by local African and Malagasy groups."
   },
   {
     "id": "barbary",
@@ -1577,7 +1768,9 @@ const slaveryData = [
       "sexual_exploitation": 1,
       "hereditary_rigidity": 1,
       "upward_mobility": 0
-    }
+    },
+    "intraGroupPercent": [5, 15],
+    "intraGroupNote": "Barbary corsair slavery was overwhelmingly inter-group. North African Muslim raiders captured European Christians from Mediterranean shipping and coastal raids. This was one of the most clearly inter-group systems in history."
   },
   {
     "id": "red-sea",
@@ -1619,7 +1812,9 @@ const slaveryData = [
       "sexual_exploitation": 3,
       "hereditary_rigidity": 2,
       "upward_mobility": 0
-    }
+    },
+    "intraGroupPercent": [40, 60],
+    "intraGroupNote": "The Red Sea trade blended intra-African enslavement (Horn of Africa and Sudanese groups raiding neighbours) with inter-group trafficking to Egypt, Arabia, and Yemen. Initial capture was largely by regional African groups."
   },
   {
     "id": "transatlantic",
@@ -1664,47 +1859,137 @@ const slaveryData = [
       "sexual_exploitation": 2,
       "hereditary_rigidity": 3,
       "upward_mobility": 0
-    }
+    },
+    "intraGroupPercent": [50, 80],
+    "intraGroupNote": "The Transatlantic trade's initial capture phase was predominantly intra-African: African kingdoms and groups warred with and enslaved neighbouring peoples, then sold captives to European traders. The transatlantic voyage and New World plantation system were entirely inter-group. This dual nature makes it unique among major systems."
   },
   {
-    "id": "modern",
-    "name": "MODERN SLAVERY",
+    "id": "modern-forced-labor",
+    "name": "Modern: Forced Labour",
     "period": "2021 (Current)",
     "color": "#dc2626",
     "startYear": 2021,
     "endYear": 2021,
-    "lowEstimate": 49600000,
-    "highEstimate": 50000000,
+    "lowEstimate": 24900000,
+    "highEstimate": 30000000,
     "flows": [
-      { "source": "Asia-Pacific", "destination": "Forced Labor", "value": 13000000 },
-      { "source": "Asia-Pacific", "destination": "Forced Marriage", "value": 14300000 },
-      { "source": "Europe-C.Asia", "destination": "Forced Labor", "value": 3000000 },
-      { "source": "Europe-C.Asia", "destination": "Forced Marriage", "value": 1600000 },
-      { "source": "Africa", "destination": "Forced Labor", "value": 2700000 },
-      { "source": "Africa", "destination": "Forced Marriage", "value": 3200000 },
-      { "source": "Americas", "destination": "Forced Labor", "value": 2500000 },
-      { "source": "Americas", "destination": "Forced Marriage", "value": 1100000 },
-      { "source": "Arab States", "destination": "Forced Labor", "value": 500000 },
-      { "source": "Arab States", "destination": "Forced Marriage", "value": 1100000 },
-      { "source": "Global", "destination": "Sex Trafficking", "value": 6300000 },
-      { "source": "Various", "destination": "State-Imposed", "value": 3800000 }
+      { "source": "Asia-Pacific", "destination": "Construction", "value": 5200000 },
+      { "source": "Asia-Pacific", "destination": "Manufacturing", "value": 4800000 },
+      { "source": "Asia-Pacific", "destination": "Agriculture", "value": 3000000 },
+      { "source": "Europe-C.Asia", "destination": "Construction", "value": 1200000 },
+      { "source": "Europe-C.Asia", "destination": "Domestic Work", "value": 1800000 },
+      { "source": "Africa", "destination": "Agriculture", "value": 1400000 },
+      { "source": "Africa", "destination": "Mining", "value": 1300000 },
+      { "source": "Americas", "destination": "Agriculture", "value": 1200000 },
+      { "source": "Americas", "destination": "Manufacturing", "value": 1300000 },
+      { "source": "Arab States", "destination": "Construction", "value": 300000 },
+      { "source": "Arab States", "destination": "Domestic Work", "value": 200000 },
+      { "source": "Various", "destination": "Fishing/Maritime", "value": 1200000 }
     ],
-    "description": "In 2021, around 49.6–50 million people were estimated to be in \"modern slavery\": 27.6 million in forced labor and 22 million in forced marriage. These figures come from ILO, Walk Free and IOM modeling based on surveys and administrative data. Modern slavery includes exploitation in private economies, state-imposed labor, and coercive marriages across every region of the world.",
-    "ending": "Modern slavery is formally illegal everywhere, but it persists because of conflict, weak labor enforcement, discrimination, migration vulnerability and profit incentives. International conventions (1926 Slavery Convention, 1956 Supplementary Convention, ILO conventions, the Palermo Protocol and national anti-trafficking laws) aim to eliminate it, and some countries have strengthened due-diligence and supply-chain laws. However, prevalence has increased between 2016 and 2021, especially in forced labor and forced marriage, showing that abolition on paper is not yet abolition in practice.",
+    "description": "The ILO's 2022 estimate places 27.6 million people in forced labour globally, but methodological uncertainty and undercounting of informal sectors suggest a plausible range of 25-30 million. This includes private-economy exploitation across construction, manufacturing, agriculture, domestic work, fishing and mining. Victims are compelled to work through debt bondage, confiscated documents, threats of violence, or immigration-status coercion. Asia-Pacific accounts for the largest share by region, but forced labour exists in every country. The 2016 ILO estimate was 24.9 million — the increase partly reflects better measurement, not only worsening conditions.",
+    "ending": "Forced labour is illegal everywhere but persists due to weak enforcement, migration vulnerability, conflict, supply-chain opacity and profit incentives. International instruments (ILO Conventions 29 and 105, the Palermo Protocol) and national supply-chain due-diligence laws aim to combat it, but prevalence increased between 2016 and 2021.",
     "destinationDetails": {
-      "Forced Labor": "Forced labor covers people compelled to work under threats, debt or confiscated documents in sectors such as construction, manufacturing, agriculture, domestic work and fishing. Many victims are migrants working abroad without full legal protection.",
-      "Forced Marriage": "Forced marriage includes situations where people—disproportionately women and girls—are married without free and informed consent, often facing lifelong domestic and sexual servitude. These arrangements may be framed as \"traditional\" but meet criteria for slavery-like practices.",
-      "Sex Trafficking": "Sex trafficking involves the recruitment, transport or harboring of people for sexual exploitation through coercion, deception or abuse of vulnerability. Victims are found in brothels, massage parlors, online platforms and informal venues across all regions.",
-      "State-Imposed": "State-imposed forced labor includes compulsory prison labor without due process, abusive conscription systems and forced participation in public works or political programs. Examples include prison camps, forced labor as punishment for dissent, and compulsory labor tied to ethnicity or religion."
+      "Construction": "Construction is one of the largest sectors for forced labour globally. Workers — often migrants — face debt bondage, withheld wages, confiscated passports and dangerous conditions, particularly in Gulf states, South and Southeast Asia.",
+      "Manufacturing": "Forced labour in manufacturing spans garment factories, electronics assembly, brick kilns and food processing. Supply-chain pressure and subcontracting obscure exploitation from end consumers.",
+      "Agriculture": "Agricultural forced labour occurs in plantations, farms and fishing operations worldwide. Seasonal migrant workers are particularly vulnerable to debt bondage and geographic isolation.",
+      "Domestic Work": "Domestic workers in private households face confinement, wage theft, physical and sexual abuse. Legal protections are weak in many countries because domestic work falls outside standard labour regulation.",
+      "Mining": "Artisanal and small-scale mining in Africa and Asia uses forced and child labour to extract gold, cobalt, tin, tantalum and other minerals feeding global supply chains.",
+      "Fishing/Maritime": "Forced labour in fishing involves confinement on vessels for months or years, especially in Southeast Asian, West African and South American fisheries. Workers may be trafficked, beaten and denied pay."
     },
-    "acquisition_mode": ["kidnapping_trafficking", "debt_bondage", "coercion", "fraud"],
-    "legal_status": ["illegal_slavery", "forced_labor", "forced_marriage"],
+    "acquisition_mode": ["debt_bondage", "coercion", "kidnapping_trafficking", "fraud"],
+    "legal_status": ["illegal_slavery", "forced_labor"],
     "labor_types": [
+      "construction_infrastructure",
       "manufacturing",
-      "domestic_household",
       "agriculture_smallholder",
+      "domestic_household",
+      "mining_quarry",
+      "maritime_labor"
+    ],
+    "brutality_profile": {
+      "transport_mortality": 1,
+      "bodily_mutilation": 1,
+      "sexual_exploitation": 1,
+      "hereditary_rigidity": 0,
+      "upward_mobility": 0
+    },
+    "intraGroupPercent": [65, 85],
+    "intraGroupNote": "Most forced labour is intra-group: victims are exploited within their own country or by employers of the same broad ethnic/national background. Migrant forced labour (inter-group) is significant but represents the minority of cases globally."
+  },
+  {
+    "id": "modern-forced-marriage",
+    "name": "Modern: Forced Marriage",
+    "period": "2021 (Current)",
+    "color": "#e11d48",
+    "startYear": 2021,
+    "endYear": 2021,
+    "lowEstimate": 20000000,
+    "highEstimate": 25000000,
+    "flows": [
+      { "source": "Asia-Pacific", "destination": "Child Marriage", "value": 9000000 },
+      { "source": "Asia-Pacific", "destination": "Adult Forced Marriage", "value": 5300000 },
+      { "source": "Africa", "destination": "Child Marriage", "value": 2400000 },
+      { "source": "Africa", "destination": "Adult Forced Marriage", "value": 800000 },
+      { "source": "Europe-C.Asia", "destination": "Adult Forced Marriage", "value": 1100000 },
+      { "source": "Europe-C.Asia", "destination": "Child Marriage", "value": 500000 },
+      { "source": "Americas", "destination": "Child Marriage", "value": 600000 },
+      { "source": "Americas", "destination": "Adult Forced Marriage", "value": 500000 },
+      { "source": "Arab States", "destination": "Child Marriage", "value": 700000 },
+      { "source": "Arab States", "destination": "Adult Forced Marriage", "value": 400000 }
+    ],
+    "description": "The ILO estimates 22 million people in forced marriage globally (2021), but definitional boundary issues — particularly around consent in contexts of extreme social pressure — suggest the true range is 20-25 million. Forced marriage disproportionately affects women and girls: 80% of victims are female, and a significant share involves children. Asia-Pacific has the largest absolute numbers, but the practice is present across all regions. Forced marriage often results in lifelong domestic and sexual servitude, with victims unable to leave due to social, economic or legal constraints.",
+    "ending": "Forced marriage is illegal under international law (UDHR Article 16, CEDAW) and most national legal systems, but persists due to poverty, gender inequality, family honour codes, conflict and weak enforcement. Many countries have raised legal marriage ages, but enforcement gaps remain enormous, especially in rural and conflict-affected areas.",
+    "destinationDetails": {
+      "Child Marriage": "Children — overwhelmingly girls — are married before age 18, often to much older men. Causes include poverty (bride price), gender norms, family honour, and conflict. Consequences include truncated education, early pregnancy, isolation and domestic violence.",
+      "Adult Forced Marriage": "Adults coerced into marriage through family pressure, threats, violence or economic dependency. Includes situations where consent is formally given but under conditions that remove genuine choice — such as debt repayment, immigration-status dependency or threat of ostracism."
+    },
+    "acquisition_mode": ["coercion", "fraud", "debt_bondage"],
+    "legal_status": ["forced_marriage"],
+    "labor_types": [
+      "domestic_household",
+      "sexual_concubinage"
+    ],
+    "brutality_profile": {
+      "transport_mortality": 0,
+      "bodily_mutilation": 0,
+      "sexual_exploitation": 3,
+      "hereditary_rigidity": 1,
+      "upward_mobility": 0
+    },
+    "intraGroupPercent": [85, 95],
+    "intraGroupNote": "Forced marriage is overwhelmingly intra-group. The vast majority occurs within communities, families and ethnic groups, driven by economic pressures, gender norms and social customs rather than inter-group dynamics."
+  },
+  {
+    "id": "modern-sex-trafficking",
+    "name": "Modern: Sex Trafficking",
+    "period": "2021 (Current)",
+    "color": "#be123c",
+    "startYear": 2021,
+    "endYear": 2021,
+    "lowEstimate": 5400000,
+    "highEstimate": 8000000,
+    "flows": [
+      { "source": "Asia-Pacific", "destination": "Brothels/Venues", "value": 2000000 },
+      { "source": "Europe-C.Asia", "destination": "Brothels/Venues", "value": 1200000 },
+      { "source": "Africa", "destination": "Brothels/Venues", "value": 700000 },
+      { "source": "Americas", "destination": "Brothels/Venues", "value": 900000 },
+      { "source": "Americas", "destination": "Online Exploitation", "value": 400000 },
+      { "source": "Europe-C.Asia", "destination": "Online Exploitation", "value": 500000 },
+      { "source": "Arab States", "destination": "Brothels/Venues", "value": 200000 },
+      { "source": "Various", "destination": "Pornography/Webcam", "value": 400000 }
+    ],
+    "description": "The ILO estimates 6.3 million people in commercial sexual exploitation (2021), but underreporting and the hidden nature of the crime suggest a range of 5.4-8 million. Sex trafficking involves recruitment, transport or harbouring of people for sexual exploitation through force, fraud or coercion. Victims are found in brothels, massage parlours, escort services, online platforms, pornography and street prostitution. Women and girls make up the overwhelming majority of victims, though boys and men are also affected. Criminal networks generate an estimated $99 billion annually from sexual exploitation.",
+    "ending": "Sex trafficking is a criminal offence in virtually every jurisdiction and is targeted by the Palermo Protocol (2000), national anti-trafficking laws and specialised law enforcement units. However, demand, poverty, migration vulnerability, online platforms and corruption sustain the practice. Conviction rates remain very low relative to estimated prevalence.",
+    "destinationDetails": {
+      "Brothels/Venues": "Physical venues — brothels, massage parlours, karaoke bars, hotels — where trafficked people are forced to provide sexual services. Victims are controlled through debt bondage, violence, drug dependency and confiscated documents.",
+      "Online Exploitation": "Growing category involving forced participation in live-streaming, webcam sexual exploitation and production of abuse material. The Philippines, Romania and parts of Latin America are significant source regions.",
+      "Pornography/Webcam": "Victims forced to produce pornographic content or perform on webcam platforms. Often involves severe coercion, confinement and distribution of material without consent."
+    },
+    "acquisition_mode": ["kidnapping_trafficking", "coercion", "fraud", "debt_bondage"],
+    "legal_status": ["illegal_slavery"],
+    "labor_types": [
       "sex_trafficking",
-      "construction_infrastructure"
+      "sexual_concubinage"
     ],
     "brutality_profile": {
       "transport_mortality": 1,
@@ -1712,7 +1997,53 @@ const slaveryData = [
       "sexual_exploitation": 3,
       "hereditary_rigidity": 0,
       "upward_mobility": 0
-    }
+    },
+    "intraGroupPercent": [40, 60],
+    "intraGroupNote": "Sex trafficking has a higher inter-group component than other forms of modern slavery. Cross-border trafficking is common — victims are frequently moved across national and ethnic boundaries by criminal networks, though domestic trafficking within countries also accounts for a large share."
+  },
+  {
+    "id": "modern-state-imposed",
+    "name": "Modern: State-Imposed Labour",
+    "period": "2021 (Current)",
+    "color": "#991b1b",
+    "startYear": 2021,
+    "endYear": 2021,
+    "lowEstimate": 3500000,
+    "highEstimate": 5000000,
+    "flows": [
+      { "source": "Asia-Pacific", "destination": "Prison Labour", "value": 1200000 },
+      { "source": "Asia-Pacific", "destination": "Forced Conscription", "value": 500000 },
+      { "source": "Africa", "destination": "Forced Conscription", "value": 400000 },
+      { "source": "Africa", "destination": "Political Forced Labour", "value": 300000 },
+      { "source": "Europe-C.Asia", "destination": "Prison Labour", "value": 500000 },
+      { "source": "Americas", "destination": "Prison Labour", "value": 300000 },
+      { "source": "Various", "destination": "Re-education/Camps", "value": 600000 }
+    ],
+    "description": "The ILO estimates 3.9 million people in state-imposed forced labour (2021), with a plausible range of 3.5-5 million given the opacity of state systems. This category includes compulsory prison labour without due process, forced conscription (military and civil), forced participation in public works and political re-education programmes, and labour tied to ethnic or religious persecution. States responsible include both authoritarian regimes and democracies with abusive prison-labour systems. The distinction from other forced labour is that the coercing agent is the state itself, not a private actor.",
+    "ending": "State-imposed forced labour violates ILO Convention 105 and numerous human rights instruments, but enforcement depends on political will within sovereign states. International pressure, sanctions, import bans on goods produced with forced labour and diplomatic advocacy have had limited but growing impact.",
+    "destinationDetails": {
+      "Prison Labour": "Compulsory labour in prison systems that goes beyond rehabilitation — including for-profit manufacturing, agriculture and service provision where prisoners work under coercion without fair wages or due process. Significant in China, the US, and other countries.",
+      "Forced Conscription": "Forced military or civil conscription beyond lawful national service obligations, including child soldiers, indefinite conscription and conscription used as political punishment.",
+      "Political Forced Labour": "Labour imposed as punishment for political dissent, religious practice or ethnic identity. Includes forced labour in political detention camps.",
+      "Re-education/Camps": "Labour imposed within re-education or internment facilities, often targeting ethnic or religious minorities. Includes situations documented in China's Xinjiang region and similar programmes elsewhere."
+    },
+    "acquisition_mode": ["coercion", "judicial_penal"],
+    "legal_status": ["illegal_slavery", "forced_labor"],
+    "labor_types": [
+      "manufacturing",
+      "construction_infrastructure",
+      "agriculture_smallholder",
+      "military"
+    ],
+    "brutality_profile": {
+      "transport_mortality": 1,
+      "bodily_mutilation": 1,
+      "sexual_exploitation": 1,
+      "hereditary_rigidity": 0,
+      "upward_mobility": 0
+    },
+    "intraGroupPercent": [50, 70],
+    "intraGroupNote": "State-imposed forced labour is mixed. Some is applied broadly within a national population (intra-group, e.g. prison labour), while some specifically targets ethnic or religious minorities (inter-group, e.g. persecution of Uyghurs, Rohingya, Eritrean conscription)."
   }
 ];
 
@@ -1827,8 +2158,9 @@ const slaveryData = [
         };
 
         const formatNumber = (num) => {
-            if (num >= 1000000) return `${(num / 1000000).toFixed(1)}M`;
-            return num.toLocaleString();
+            if (num >= 1000000) return `~${(num / 1000000).toFixed(1)}M`;
+            if (num >= 1000) return `~${(num / 1000).toFixed(0)}K`;
+            return `~${num.toLocaleString()}`;
         };
 
         const drawTreemap = () => {
@@ -1895,7 +2227,7 @@ const slaveryData = [
                     if (trade) {
                         showTooltip(
                             event,
-                            `<strong>${d.data.name}</strong><br/>${formatNumber(d.data.value)} people<br/>${d.data.period}`
+                            `<strong>${d.data.name}</strong><br/>${formatNumber(d.data.value)} people (est.)<br/>Range: ${formatNumber(trade.lowEstimate)} – ${formatNumber(trade.highEstimate)}<br/>${d.data.period}`
                         );
                     }
                 })
@@ -1985,14 +2317,14 @@ const slaveryData = [
         const isMobile = window.innerWidth < 768;
         const isTablet = window.innerWidth < 1024 && window.innerWidth >= 768;
         
-        const margin = isMobile 
-            ? { top: 60, right: 50, bottom: 60, left: 50 }
+        const margin = isMobile
+            ? { top: 80, right: 160, bottom: 70, left: 160 }
             : isTablet
-            ? { top: 70, right: 150, bottom: 70, left: 100 }
-            : { top: 80, right: 300, bottom: 80, left: 250 };
+            ? { top: 80, right: 200, bottom: 80, left: 170 }
+            : { top: 100, right: 350, bottom: 90, left: 300 };
         
         const trackHeight = isMobile ? 200 : isTablet ? 240 : 280;
-        const baseWidth = isMobile ? 1200 : isTablet ? 1600 : 2200;
+        const baseWidth = isMobile ? 1500 : isTablet ? 1800 : 2200;
         const width = baseWidth - margin.left - margin.right;
         const height = (dataToVisualize.length * trackHeight) + margin.top + margin.bottom;
 
@@ -2029,9 +2361,11 @@ const slaveryData = [
             .attr('stroke', d => d === 0 ? '#666' : '#333')
             .attr('stroke-width', d => d === 0 ? 2 : 1);
 
+        const axisTickFormat = d => d < 0 ? `${Math.abs(d)}` : d === 0 ? '0' : `${d}`;
+
         const xAxisTop = d3.axisTop(xScale)
             .tickValues(gridLines)
-            .tickFormat(d => d < 0 ? `${Math.abs(d)} BCE` : d === 0 ? '0' : d);
+            .tickFormat(axisTickFormat);
 
         svg.append('g')
             .attr('class', 'axis')
@@ -2040,16 +2374,41 @@ const slaveryData = [
 
         const xAxisBottom = d3.axisBottom(xScale)
             .tickValues(gridLines)
-            .tickFormat(d => d < 0 ? `${Math.abs(d)} BCE` : d === 0 ? '0' : d);
+            .tickFormat(axisTickFormat);
 
         svg.append('g')
             .attr('class', 'axis')
             .attr('transform', `translate(0,${height - margin.top - margin.bottom})`)
             .call(xAxisBottom);
 
+        // Single BCE / CE era labels
+        const eraFontSize = isMobile ? '22px' : isTablet ? '18px' : '20px';
+        const bceMidX = (xScale(-800) + xScale(0)) / 2;
+        const ceMidX = (xScale(0) + xScale(2025)) / 2;
+
+        svg.append('text')
+            .attr('x', bceMidX)
+            .attr('y', -50)
+            .attr('text-anchor', 'middle')
+            .attr('fill', '#666')
+            .attr('font-size', eraFontSize)
+            .attr('font-weight', '600')
+            .text('BCE');
+
+        svg.append('text')
+            .attr('x', ceMidX)
+            .attr('y', -50)
+            .attr('text-anchor', 'middle')
+            .attr('fill', '#666')
+            .attr('font-size', eraFontSize)
+            .attr('font-weight', '600')
+            .text('CE');
+
         dataToVisualize.forEach((trade, index) => {
             const yOffset = index * trackHeight;
             const tradeGroup = svg.append('g')
+                .attr('class', 'trade-track')
+                .attr('data-track-id', trade.id)
                 .attr('transform', `translate(0,${yOffset})`);
 
             const startX = xScale(trade.startYear);
@@ -2059,6 +2418,7 @@ const slaveryData = [
             const flowHeight = trackHeight - 60;
 
             tradeGroup.append('rect')
+                .attr('class', 'track-bg')
                 .attr('x', startX)
                 .attr('y', 0)
                 .attr('width', flowWidth)
@@ -2068,14 +2428,14 @@ const slaveryData = [
                 .attr('rx', 8);
 
             // Combined title: Name | Estimate | Period, centered at top of colored area
-            const titleFontSize = isMobile ? '11px' : isTablet ? '12px' : '14px';
-            const titleText = isMobile 
-                ? `${trade.name} | ${(trade.lowEstimate/1000000).toFixed(1)}-${(trade.highEstimate/1000000).toFixed(1)}M`
-                : `${trade.name} | ${(trade.lowEstimate/1000000).toFixed(1)}-${(trade.highEstimate/1000000).toFixed(1)}M | ${trade.period}`;
+            const titleFontSize = isMobile ? '32px' : isTablet ? '28px' : '30px';
+            const titleText = isMobile
+                ? `${trade.name} | ~${(trade.lowEstimate/1000000).toFixed(1)}-${(trade.highEstimate/1000000).toFixed(1)}M`
+                : `${trade.name} | ~${(trade.lowEstimate/1000000).toFixed(1)}-${(trade.highEstimate/1000000).toFixed(1)}M | ${trade.period}`;
             const titleElement = tradeGroup.append('text')
                 .attr('class', 'trade-title')
                 .attr('x', startX + flowWidth / 2)
-                .attr('y', isMobile ? 12 : 15)
+                .attr('y', isMobile ? 24 : 26)
                 .attr('text-anchor', 'middle')
                 .attr('fill', trade.color)
                 .attr('font-weight', '600')
@@ -2099,8 +2459,47 @@ const slaveryData = [
                     setHoveredCategory(null);
                 });
 
+            // Intra/inter-group indicator bar below title
+            if (trade.intraGroupPercent) {
+                const intraAvg = (trade.intraGroupPercent[0] + trade.intraGroupPercent[1]) / 2;
+                const barWidth = isMobile ? 140 : isTablet ? 180 : 220;
+                const barHeight = 10;
+                const barX = startX + flowWidth / 2 - barWidth / 2;
+                const barY = isMobile ? 32 : 36;
+
+                // Background
+                tradeGroup.append('rect')
+                    .attr('x', barX)
+                    .attr('y', barY)
+                    .attr('width', barWidth)
+                    .attr('height', barHeight)
+                    .attr('rx', 3)
+                    .attr('fill', trade.color)
+                    .attr('opacity', 0.9);
+
+                // Intra segment (lighter)
+                tradeGroup.append('rect')
+                    .attr('x', barX)
+                    .attr('y', barY)
+                    .attr('width', barWidth * intraAvg / 100)
+                    .attr('height', barHeight)
+                    .attr('rx', 3)
+                    .attr('fill', trade.color)
+                    .attr('opacity', 0.4);
+
+                // Label
+                if (!isMobile) {
+                    tradeGroup.append('text')
+                        .attr('x', barX + barWidth + 6)
+                        .attr('y', barY + barHeight - 1)
+                        .attr('fill', '#888')
+                        .attr('font-size', isMobile ? '22px' : isTablet ? '18px' : '20px')
+                        .text(`${Math.round(intraAvg)}% intra-group`);
+                }
+            }
+
             // Also add hover to the colored background rectangle
-            tradeGroup.select('rect')
+            tradeGroup.select('.track-bg')
                 .style('cursor', 'help')
                 .on('mouseover', function(event) {
                     setHoveredCategory(trade);
@@ -2140,7 +2539,7 @@ const slaveryData = [
 
             const destPositions = {};
             const destFlowPositions = {}; // Track flow positions within each destination
-            let cumulativeDestY = 40;
+            let cumulativeDestY = 55;
             destinations.forEach(dest => {
                 const destHeightProp = (destinationTotals[dest] / totalValue) * flowHeight * 0.7;
                 
@@ -2172,9 +2571,13 @@ const slaveryData = [
             // For single-year entries, ensure nodes are positioned correctly
             const actualEndX = trade.startYear === trade.endYear ? startX + flowWidth : endX;
             const endXNode = actualEndX - 30;
-            const destLabelX = actualEndX + 30; // Position labels outside colored area
+            const destLabelX = actualEndX + 20;
+            const destLabelFontSize = isMobile ? '24px' : isTablet ? '18px' : '19px';
+            const destMinSpacing = isMobile ? 28 : isTablet ? 22 : 22;
+            const needsDestFan = destinations.length > 3 &&
+                (destPositions[destinations[destinations.length - 1]].midY - destPositions[destinations[0]].midY) < destinations.length * destMinSpacing;
 
-            destinations.forEach(dest => {
+            destinations.forEach((dest, di) => {
                 const pos = destPositions[dest];
                 tradeGroup.append('rect')
                     .attr('class', 'dest-node')
@@ -2196,18 +2599,29 @@ const slaveryData = [
                         hideTooltip();
                     });
 
-                const labelFontSize = isMobile ? '9px' : isTablet ? '10px' : '11px';
-                tradeGroup.append('text')
+                // Fan-out angle when labels are too dense
+                let labelAngle = 0;
+                if (needsDestFan) {
+                    const spread = destinations.length > 1 ? 40 : 0;
+                    labelAngle = -spread / 2 + (di / (destinations.length - 1)) * spread;
+                }
+
+                const label = tradeGroup.append('text')
                     .attr('class', 'node-label')
                     .attr('x', destLabelX)
                     .attr('y', pos.midY)
                     .attr('dy', '0.35em')
                     .attr('text-anchor', 'start')
-                    .attr('font-size', labelFontSize)
+                    .attr('font-size', destLabelFontSize)
                     .text(`${dest} (${(destinationTotals[dest]/1000000).toFixed(1)}M)`);
+
+                if (labelAngle !== 0) {
+                    label.attr('transform', `rotate(${labelAngle}, ${destLabelX}, ${pos.midY})`);
+                }
             });
 
             const sourceGroups = {};
+            const sourcePositionsForFan = [];
             trade.flows.forEach(flow => {
                 if (!sourceGroups[flow.source]) sourceGroups[flow.source] = [];
                 sourceGroups[flow.source].push(flow);
@@ -2218,7 +2632,7 @@ const slaveryData = [
                 sourceTotals[source] = sourceGroups[source].reduce((sum, f) => sum + f.value, 0);
             });
 
-            let cumulativeSourceY = 40;
+            let cumulativeSourceY = 55;
             // Position source nodes at the left edge of the colored area
             const sourceNodeX = trade.startYear === trade.endYear ? startX + 5 : startX + 10;
 
@@ -2314,25 +2728,44 @@ const slaveryData = [
                 });
 
                 const midY = cumulativeSourceY + sourceHeight / 2;
-                const sourceLabelX = startX - 30; // Position labels outside colored area
-                const sourceLabelFontSize = isMobile ? '9px' : isTablet ? '10px' : '11px';
-                tradeGroup.append('text')
+                sourcePositionsForFan.push({ source, midY, height: sourceHeight });
+                cumulativeSourceY += sourceHeight + nodePadding;
+            });
+
+            // Source labels with fan-out
+            const sourceLabelX = startX - 20;
+            const sourceLabelFontSize = isMobile ? '24px' : isTablet ? '18px' : '19px';
+            const sourceMinSpacing = isMobile ? 28 : isTablet ? 22 : 22;
+            const needsSourceFan = sourcePositionsForFan.length > 3 &&
+                sourcePositionsForFan.length > 0 &&
+                (sourcePositionsForFan[sourcePositionsForFan.length - 1].midY - sourcePositionsForFan[0].midY) < sourcePositionsForFan.length * sourceMinSpacing;
+
+            sourcePositionsForFan.forEach((sp, si) => {
+                let labelAngle = 0;
+                if (needsSourceFan && sourcePositionsForFan.length > 1) {
+                    const spread = 40;
+                    labelAngle = spread / 2 - (si / (sourcePositionsForFan.length - 1)) * spread;
+                }
+
+                const label = tradeGroup.append('text')
                     .attr('class', 'node-label')
                     .attr('x', sourceLabelX)
-                    .attr('y', midY)
+                    .attr('y', sp.midY)
                     .attr('dy', '0.35em')
                     .attr('text-anchor', 'end')
                     .attr('font-size', sourceLabelFontSize)
-                    .text(`${source} (${(sourceTotals[source]/1000000).toFixed(1)}M)`);
+                    .text(`${sp.source} (${(sourceTotals[sp.source]/1000000).toFixed(1)}M)`);
 
-                cumulativeSourceY += sourceHeight + nodePadding;
+                if (labelAngle !== 0) {
+                    label.attr('transform', `rotate(${labelAngle}, ${sourceLabelX}, ${sp.midY})`);
+                }
             });
         });
     };
 
 
     const totalHistorical = slaveryData
-        .filter(d => d.id !== 'modern')
+        .filter(d => !d.id.startsWith('modern-'))
         .reduce((sum, d) => sum + (d.highEstimate + d.lowEstimate) / 2, 0);
 
     // Get all unique values for filter options
@@ -3279,20 +3712,60 @@ const slaveryData = [
                 { practice: "Mass child mortality", severity: "Extreme", frequency: "Common" }
             ]
         },
-        "modern": {
-            name: "Modern Slavery",
+        "modern-forced-labor": {
+            name: "Modern: Forced Labour",
             period: "2021+",
             color: "#dc2626",
             practices: [
                 { practice: "Restricted movement", severity: "Moderate", frequency: "Common" },
-                { practice: "Withholding pay", severity: "Moderate", frequency: "Common" },
-                { practice: "Exploitative conditions", severity: "Moderate", frequency: "Common" },
-                { practice: "Physical abuse", severity: "High", frequency: "Common" },
-                { practice: "Coercion & intimidation", severity: "High", frequency: "Common" },
+                { practice: "Withholding pay", severity: "Moderate", frequency: "Very Common" },
+                { practice: "Exploitative conditions", severity: "Moderate", frequency: "Very Common" },
                 { practice: "Confiscation of documents", severity: "High", frequency: "Common" },
-                { practice: "Organ trafficking", severity: "Extreme", frequency: "Rare" },
-                { practice: "Forced sex work", severity: "Extreme", frequency: "Common" },
-                { practice: "Child trafficking (combat/mining)", severity: "Extreme", frequency: "Common" }
+                { practice: "Physical abuse", severity: "High", frequency: "Common" },
+                { practice: "Debt bondage traps", severity: "High", frequency: "Very Common" },
+                { practice: "Child labour (mining/agriculture)", severity: "Extreme", frequency: "Common" },
+                { practice: "Death in hazardous work", severity: "Extreme", frequency: "Common" }
+            ]
+        },
+        "modern-forced-marriage": {
+            name: "Modern: Forced Marriage",
+            period: "2021+",
+            color: "#e11d48",
+            practices: [
+                { practice: "Denial of education", severity: "Moderate", frequency: "Very Common" },
+                { practice: "Social isolation", severity: "Moderate", frequency: "Common" },
+                { practice: "Economic dependency", severity: "Moderate", frequency: "Very Common" },
+                { practice: "Domestic violence", severity: "High", frequency: "Common" },
+                { practice: "Marital rape", severity: "High", frequency: "Common" },
+                { practice: "Child pregnancy", severity: "Extreme", frequency: "Common" },
+                { practice: "Honour-based violence", severity: "Extreme", frequency: "Common" }
+            ]
+        },
+        "modern-sex-trafficking": {
+            name: "Modern: Sex Trafficking",
+            period: "2021+",
+            color: "#be123c",
+            practices: [
+                { practice: "Deceptive recruitment", severity: "Moderate", frequency: "Very Common" },
+                { practice: "Confinement", severity: "High", frequency: "Common" },
+                { practice: "Drug dependency", severity: "High", frequency: "Common" },
+                { practice: "Physical violence", severity: "High", frequency: "Common" },
+                { practice: "Forced sex work", severity: "Extreme", frequency: "Very Common" },
+                { practice: "Child sexual exploitation", severity: "Extreme", frequency: "Common" },
+                { practice: "Organ trafficking", severity: "Extreme", frequency: "Rare" }
+            ]
+        },
+        "modern-state-imposed": {
+            name: "Modern: State-Imposed Labour",
+            period: "2021+",
+            color: "#991b1b",
+            practices: [
+                { practice: "Compulsory labour assignments", severity: "Moderate", frequency: "Common" },
+                { practice: "Coercion & intimidation", severity: "High", frequency: "Common" },
+                { practice: "Forced conscription", severity: "High", frequency: "Common" },
+                { practice: "Detention without due process", severity: "High", frequency: "Common" },
+                { practice: "Re-education/internment camps", severity: "Extreme", frequency: "Common" },
+                { practice: "Forced labour as political punishment", severity: "Extreme", frequency: "Common" }
             ]
         },
         "devshirme": {
@@ -3437,41 +3910,29 @@ const slaveryData = [
             {/* Navigation Header */}
             <header className="main-header">
                 <nav className="header-nav">
-                    <button 
+                    <button
                         className={`nav-tab ${activeTab === 'main' ? 'active' : ''}`}
                         onClick={() => setActiveTab('main')}
                     >
-                        Main
+                        Overview
                     </button>
-                    <button 
+                    <button
                         className={`nav-tab ${activeTab === 'transport' ? 'active' : ''}`}
                         onClick={() => setActiveTab('transport')}
                     >
-                        Transport
+                        Transport Mortality
                     </button>
-                    <button 
+                    <button
                         className={`nav-tab ${activeTab === 'brutality' ? 'active' : ''}`}
                         onClick={() => setActiveTab('brutality')}
                     >
-                        Brutality
+                        Brutality Profiles
                     </button>
-                    <button 
-                        className={`nav-tab ${activeTab === 'markets' ? 'active' : ''}`}
-                        onClick={() => setActiveTab('markets')}
+                    <button
+                        className={`nav-tab ${activeTab === 'sources' ? 'active' : ''}`}
+                        onClick={() => setActiveTab('sources')}
                     >
-                        Markets
-                    </button>
-                    <button 
-                        className={`nav-tab ${activeTab === 'born' ? 'active' : ''}`}
-                        onClick={() => setActiveTab('born')}
-                    >
-                        Born in Slavery
-                    </button>
-                    <button 
-                        className={`nav-tab ${activeTab === 'modern' ? 'active' : ''}`}
-                        onClick={() => setActiveTab('modern')}
-                    >
-                        Modern
+                        Sources
                     </button>
                 </nav>
             </header>
@@ -3483,9 +3944,28 @@ const slaveryData = [
                         <h1>The Scale of Slavery Throughout History</h1>
                     </div>
                     
-                    <p className="subtitle">
-                        An integrated timeline visualization showing sources, flows, and destinations of enslaved people from Ancient Rome to the present day. "all models are wrong, some are useful", the numbers here are based on historical consensus, but data is sometime sparse and incomplete. It is certainly directionality accurate, despite your nitpick.
-                    </p>
+                    <div className="intro-section">
+                        <p>
+                            Slavery is a near-universal human institution spanning virtually all civilisations, continents, and eras.  It was never limited to any one region, race, or period. This visualisation places the most documented systems side by side to reveal comparative scale, geography, and duration. It is designed for education and historical perspective.
+                        </p>
+                    </div>
+
+                    <div className="disclaimer-box">
+                        <strong>Data accuracy note:</strong> Precise figures for historical slavery are impossible to determine. Records are fragmentary, definitions vary (chattel, debt bondage, war captives, serfdom), and most systems predate reliable census data. The estimates shown here reflect scholarly consensus ranges — they are directionally accurate, not exact counts. All figures should be read as orders of magnitude.
+                    </div>
+
+                    <div className="intra-group-callout">
+                        <h3>The Overlooked Pattern: Intra-Group Slavery</h3>
+                        <p>
+                            A commonly overlooked historical reality: across all documented systems, an estimated <span className="stat-highlight">~70-85%</span> of all people ever enslaved were enslaved by members of their own broad ethnic or regional group. Slavery was driven by war, debt, punishment and power, not primarily by racial or ethnic difference. The racialised, inter-continental model (e.g. the Transatlantic trade) is historically significant but atypical of the broader pattern.
+                        </p>
+                        <p>
+                            Even in the Transatlantic system, the initial capture and enslavement of most victims was carried out by African kingdoms and groups warring with neighbouring peoples, before sale to European traders at coastal forts. The cross-ocean trade itself was entirely inter-group, making the Transatlantic system uniquely dual-natured.
+                        </p>
+                        <p style={{fontSize: '0.85rem', color: '#7a9bc5', marginBottom: 0}}>
+                            Global average estimate: <span className="stat-highlight">~70-85% intra-group</span> | <span className="stat-highlight">~15-30% inter-group</span>. Click any system below for its specific breakdown.
+                        </p>
+                    </div>
 
                     {/* Active Filter Chips */}
                     {getActiveFilterCount() > 0 && (
@@ -3527,7 +4007,6 @@ const slaveryData = [
                     {/* Filter Button - Between Treemap and Sankey */}
                     <div className="filter-button-container">
                         <button className="filter-button" onClick={() => setShowFilterModal(true)}>
-                            <span>🔍</span>
                             <span>Filters</span>
                             {getActiveFilterCount() > 0 && (
                                 <span style={{ background: '#3b82f6', borderRadius: '10px', padding: '2px 8px', fontSize: '0.85rem' }}>
@@ -3542,7 +4021,19 @@ const slaveryData = [
                         <div ref={svgRef}></div>
                         <div className="legend">
                             {slaveryData.map(trade => (
-                                <div key={trade.id} className="legend-item">
+                                <div key={trade.id} className="legend-item legend-item-clickable" onClick={() => {
+                                    const trackEl = svgRef.current?.querySelector(`[data-track-id="${trade.id}"]`);
+                                    if (trackEl) {
+                                        trackEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                                        // Flash highlight
+                                        const bg = trackEl.querySelector('.track-bg');
+                                        if (bg) {
+                                            const origOpacity = bg.getAttribute('opacity');
+                                            bg.setAttribute('opacity', '0.25');
+                                            setTimeout(() => bg.setAttribute('opacity', origOpacity), 1500);
+                                        }
+                                    }
+                                }}>
                                     <div className="legend-color" style={{ background: trade.color }}></div>
                                     <span>{trade.name} ({trade.period})</span>
                                 </div>
@@ -3600,10 +4091,10 @@ const slaveryData = [
                 </>
             )}
 
-            {/* Transport Tab */}
+            {/* Transport Mortality Tab */}
             {activeTab === 'transport' && (
                 <div className="sources-section">
-                    <h2>Transport</h2>
+                    <h2>Transport Mortality</h2>
                     <p className="sources-intro">
                         Visualizations and data related to the transportation of enslaved people.
                     </p>
@@ -3619,10 +4110,10 @@ const slaveryData = [
                 </div>
             )}
 
-            {/* Brutality Tab */}
+            {/* Brutality Profiles Tab */}
             {activeTab === 'brutality' && (
                 <div className="sources-section">
-                    <h2>Brutality</h2>
+                    <h2>Brutality Profiles</h2>
                     <p className="sources-intro">
                         Visualizations and data related to the brutality and mistreatment endured by enslaved people across different slave trade systems.
                     </p>
@@ -3640,19 +4131,19 @@ const slaveryData = [
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><strong>Moderate</strong> 🟡</td>
+                                    <td><strong>Moderate</strong></td>
                                     <td>Systemic but not intended to destroy</td>
                                     <td>Social control, intimidation</td>
                                     <td>Market display, forced marching, domestic discipline</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>High</strong> 🟠</td>
+                                    <td><strong>High</strong></td>
                                     <td>Regular and strategically used to increase output</td>
                                     <td>Bodily harm, productivity pressure</td>
                                     <td>Whipping, chain labor, routine beatings</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Extreme</strong> 🔴</td>
+                                    <td><strong>Extreme</strong></td>
                                     <td>Intended to break body/mind or serve systemic dominance</td>
                                     <td>High mortality, identity destruction</td>
                                     <td>Castration, sugar plantation, torture, sexual slavery, desert crossing, Middle Passage</td>
@@ -3699,7 +4190,16 @@ const slaveryData = [
                         <BrutalityChart systemId="transatlantic" />
                     </div>
                     <div className="source-item">
-                        <BrutalityChart systemId="modern" />
+                        <BrutalityChart systemId="modern-forced-labor" />
+                    </div>
+                    <div className="source-item">
+                        <BrutalityChart systemId="modern-forced-marriage" />
+                    </div>
+                    <div className="source-item">
+                        <BrutalityChart systemId="modern-sex-trafficking" />
+                    </div>
+                    <div className="source-item">
+                        <BrutalityChart systemId="modern-state-imposed" />
                     </div>
                     <div className="source-item">
                         <BrutalityChart systemId="devshirme" />
@@ -3707,24 +4207,120 @@ const slaveryData = [
                 </div>
             )}
 
-            {activeTab === 'markets' && (
-                <div className="placeholder-section">
-                    <h2>Markets</h2>
-                    <p>Content coming soon...</p>
-                </div>
-            )}
+            {activeTab === 'sources' && (
+                <div className="sources-section">
+                    <h2>Sources & Methodology</h2>
+                    <p className="sources-intro">
+                        Sources are rated by scholarly rigour, not by agreement with any position. Tier 1 sources are peer-reviewed or based on primary records. Lower tiers are useful for context but should be verified against primary scholarship.
+                    </p>
 
-            {activeTab === 'born' && (
-                <div className="placeholder-section">
-                    <h2>Born in Slavery</h2>
-                    <p>Content coming soon...</p>
-                </div>
-            )}
+                    <div className="sources-tier-group">
+                        <h3><span className="source-tier tier-1">Tier 1</span> Primary Scholarly Databases & Peer-Reviewed Research</h3>
+                        <div className="source-entry">
+                            <div className="source-name">Trans-Atlantic Slave Trade Database (slavevoyages.org)</div>
+                            <div className="source-desc">David Eltis & David Richardson. The definitive dataset: 36,000+ voyages, 12.5M embarked. Peer-reviewed, digitised primary records.</div>
+                        </div>
+                        <div className="source-entry">
+                            <div className="source-name">ILO / Walk Free / IOM (2022) — Global Estimates of Modern Slavery</div>
+                            <div className="source-desc">UN-affiliated statistical modelling. Source for the 49.6M modern slavery figure.</div>
+                        </div>
+                        <div className="source-entry">
+                            <div className="source-name">Hacker, J.D. (2020) — "From '20 and odd' to 10 million"</div>
+                            <div className="source-desc">The growth of the slave population in the United States. Demographic Research. PMC/peer-reviewed.</div>
+                        </div>
+                        <div className="source-entry">
+                            <div className="source-name">Ralph Austen (various)</div>
+                            <div className="source-desc">Leading authority on Trans-Saharan and Islamic slave trades. Published estimates of 9-18M across the Arab trades.</div>
+                        </div>
+                        <div className="source-entry">
+                            <div className="source-name">Robert Davis (2003) — Christian Slaves, Muslim Masters</div>
+                            <div className="source-desc">White Slavery in the Mediterranean, the Barbary Coast and Italy, 1500-1800. Ohio State University Press. Source for the 1-1.25M Barbary estimate.</div>
+                        </div>
+                        <div className="source-entry">
+                            <div className="source-name">Cambridge World History of Slavery (4 vols)</div>
+                            <div className="source-desc">Comprehensive academic reference across all periods and regions.</div>
+                        </div>
+                    </div>
 
-            {activeTab === 'modern' && (
-                <div className="placeholder-section">
-                    <h2>Modern</h2>
-                    <p>Content coming soon...</p>
+                    <div className="sources-tier-group">
+                        <h3><span className="source-tier tier-2">Tier 2</span> Respected Academic & Institutional Sources</h3>
+                        <div className="source-entry">
+                            <div className="source-name">Digital History (University of Houston)</div>
+                            <div className="source-desc">digitalhistory.uh.edu — Educational resource with comparative slavery data.</div>
+                        </div>
+                        <div className="source-entry">
+                            <div className="source-name">Gilder Lehrman Institute</div>
+                            <div className="source-desc">gilderlehrman.org — Historical context and primary documents.</div>
+                        </div>
+                        <div className="source-entry">
+                            <div className="source-name">British Museum</div>
+                            <div className="source-desc">britishmuseum.org — Roman slavery contextual materials.</div>
+                        </div>
+                        <div className="source-entry">
+                            <div className="source-name">Equal Justice Initiative</div>
+                            <div className="source-desc">eji.org — Transatlantic trade documentation.</div>
+                        </div>
+                        <div className="source-entry">
+                            <div className="source-name">Oxford Research Encyclopedias</div>
+                            <div className="source-desc">oxfordre.com — European/North African slave trade scholarship.</div>
+                        </div>
+                        <div className="source-entry">
+                            <div className="source-name">Harvard DASH</div>
+                            <div className="source-desc">dash.harvard.edu — Central Asian slavery research.</div>
+                        </div>
+                    </div>
+
+                    <div className="sources-tier-group">
+                        <h3><span className="source-tier tier-3">Tier 3</span> Credible Journalism & Data Journalism</h3>
+                        <div className="source-entry">
+                            <div className="source-name">Walk Free Foundation / Global Slavery Index</div>
+                            <div className="source-desc">walkfree.org — Modern slavery prevalence data.</div>
+                        </div>
+                        <div className="source-entry">
+                            <div className="source-name">The Guardian — "One in 200 people is a slave" series</div>
+                            <div className="source-desc">Investigative reporting on modern slavery.</div>
+                        </div>
+                        <div className="source-entry">
+                            <div className="source-name">NPR — "India, China Top List of Nations With Most Slaves"</div>
+                            <div className="source-desc">Reporting on Global Slavery Index findings.</div>
+                        </div>
+                        <div className="source-entry">
+                            <div className="source-name">Statista</div>
+                            <div className="source-desc">Statistical compilations of transatlantic trade data, modern slavery data.</div>
+                        </div>
+                        <div className="source-entry">
+                            <div className="source-name">Pew Research Center</div>
+                            <div className="source-desc">pewresearch.org — Survey data on African-American ancestry/slavery knowledge.</div>
+                        </div>
+                        <div className="source-entry">
+                            <div className="source-name">Reason Magazine — "Slavery Was a Global Phenomenon" (Wilfred Reilly)</div>
+                            <div className="source-desc">Historical synthesis article.</div>
+                        </div>
+                        <div className="source-entry">
+                            <div className="source-name">The Conversation</div>
+                            <div className="source-desc">theconversation.com — Modern slavery measurement methodology.</div>
+                        </div>
+                    </div>
+
+                    <div className="sources-tier-group">
+                        <h3><span className="source-tier tier-4">Tier 4</span> Secondary/Popular Sources (Use with Caution)</h3>
+                        <div className="source-entry">
+                            <div className="source-name">Wikipedia</div>
+                            <div className="source-desc">Various slavery articles. Good for overviews and links to primary sources, but verify claims independently.</div>
+                        </div>
+                        <div className="source-entry">
+                            <div className="source-name">Medium — Brayden Gerrard</div>
+                            <div className="source-desc">"Are There Really More Slaves Now Than Anytime In History?" — Useful synthesis but not peer-reviewed.</div>
+                        </div>
+                        <div className="source-entry">
+                            <div className="source-name">Reddit (r/AskHistorians)</div>
+                            <div className="source-desc">Moderated, often cites academic sources, but community-generated.</div>
+                        </div>
+                        <div className="source-entry">
+                            <div className="source-name">YouTube — "History's Biggest Slavers" and similar</div>
+                            <div className="source-desc">Popular synthesis, not scholarly. Useful as entry points only.</div>
+                        </div>
+                    </div>
                 </div>
             )}
 
@@ -4025,8 +4621,41 @@ const slaveryData = [
                             Close
                         </button>
                         <h2 style={{ color: selectedTrade.color }}>{selectedTrade.name}</h2>
+                        <div className="detail-accuracy-note">
+                            Estimates for {selectedTrade.name} range from ~{formatNumber(selectedTrade.lowEstimate)} to ~{formatNumber(selectedTrade.highEstimate)} people. These figures reflect scholarly consensus ranges and should be read as orders of magnitude, not precise counts.
+                        </div>
                         <p><strong>Period:</strong> {selectedTrade.period}</p>
-                        <p><strong>Estimated Scale:</strong> {formatNumber(selectedTrade.lowEstimate)} - {formatNumber(selectedTrade.highEstimate)} people</p>
+                        <p><strong>Estimated Scale:</strong> ~{formatNumber(selectedTrade.lowEstimate)} - ~{formatNumber(selectedTrade.highEstimate)} people</p>
+
+                        {selectedTrade.intraGroupPercent && (
+                            <div className="intra-group-bar-container">
+                                <h4>Intra-Group vs Inter-Group Enslavement</h4>
+                                <div className="intra-group-bar">
+                                    <div className="intra-segment" style={{
+                                        width: `${(selectedTrade.intraGroupPercent[0] + selectedTrade.intraGroupPercent[1]) / 2}%`,
+                                        backgroundColor: selectedTrade.color,
+                                        opacity: 0.7
+                                    }}>
+                                        {Math.round((selectedTrade.intraGroupPercent[0] + selectedTrade.intraGroupPercent[1]) / 2)}% intra
+                                    </div>
+                                    <div className="inter-segment" style={{
+                                        width: `${100 - (selectedTrade.intraGroupPercent[0] + selectedTrade.intraGroupPercent[1]) / 2}%`,
+                                        backgroundColor: selectedTrade.color,
+                                        opacity: 1
+                                    }}>
+                                        {Math.round(100 - (selectedTrade.intraGroupPercent[0] + selectedTrade.intraGroupPercent[1]) / 2)}% inter
+                                    </div>
+                                </div>
+                                <div className="intra-group-bar-labels">
+                                    <span>Intra-group: {selectedTrade.intraGroupPercent[0]}-{selectedTrade.intraGroupPercent[1]}%</span>
+                                    <span>Inter-group: {100 - selectedTrade.intraGroupPercent[1]}-{100 - selectedTrade.intraGroupPercent[0]}%</span>
+                                </div>
+                                {selectedTrade.intraGroupNote && (
+                                    <p style={{ fontSize: '0.88rem', color: '#999', marginTop: '8px', lineHeight: 1.5 }}>{selectedTrade.intraGroupNote}</p>
+                                )}
+                            </div>
+                        )}
+
                         <hr style={{ margin: '20px 0', border: 'none', borderTop: '1px solid #333' }}/>
                         {selectedDestination && selectedTrade.destinationDetails && selectedTrade.destinationDetails[selectedDestination] && (
                             <>
@@ -4045,6 +4674,9 @@ const slaveryData = [
                     </div>
                 )}
             </div>
+            <footer className="site-footer">
+                This visualisation is an educational tool. It does not claim exhaustive accuracy. Historical slavery estimates are scholarly approximations, not exact counts. For corrections, contributions, or feedback, visit the project repository.
+            </footer>
         </div>
     );
 };
