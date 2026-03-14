@@ -1458,6 +1458,63 @@
                 font-size: 0.8rem;
             }
         }
+        /* Temporal Analysis Tab */
+        .century-slider-container {
+            padding: 16px 0;
+        }
+
+        .century-label {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 12px;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+        }
+
+        .century-slider {
+            width: 100%;
+            -webkit-appearance: none;
+            appearance: none;
+            height: 8px;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            outline: none;
+            cursor: pointer;
+        }
+
+        .century-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: #6366f1;
+            border: 2px solid #fff;
+            cursor: pointer;
+        }
+
+        .century-slider::-moz-range-thumb {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: #6366f1;
+            border: 2px solid #fff;
+            cursor: pointer;
+        }
+
+        .active-systems-list {
+            margin-top: 14px;
+            font-size: 0.88rem;
+            color: #aaa;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 600px) {
+            .century-label {
+                font-size: 1.4rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -2242,6 +2299,87 @@ const slaveryData = [
   }
 ];
 
+// === Temporal Analysis Data ===
+const systemEthnicMap = {
+    'roman':           { 'Asian': 0, 'White/European': 65, 'Black/African': 10, 'Middle Eastern': 20, 'Indigenous American': 0, 'Other/Mixed': 5 },
+    'chinese-korean':  { 'Asian': 95, 'White/European': 0, 'Black/African': 0, 'Middle Eastern': 0, 'Indigenous American': 0, 'Other/Mixed': 5 },
+    'pre-columbian':   { 'Asian': 0, 'White/European': 0, 'Black/African': 0, 'Middle Eastern': 0, 'Indigenous American': 100, 'Other/Mixed': 0 },
+    'trans-saharan':   { 'Asian': 0, 'White/European': 0, 'Black/African': 85, 'Middle Eastern': 10, 'Indigenous American': 0, 'Other/Mixed': 5 },
+    'slavic':          { 'Asian': 0, 'White/European': 95, 'Black/African': 0, 'Middle Eastern': 0, 'Indigenous American': 0, 'Other/Mixed': 5 },
+    'southeast-asian': { 'Asian': 95, 'White/European': 0, 'Black/African': 0, 'Middle Eastern': 0, 'Indigenous American': 0, 'Other/Mixed': 5 },
+    'mongol':          { 'Asian': 40, 'White/European': 10, 'Black/African': 0, 'Middle Eastern': 25, 'Indigenous American': 0, 'Other/Mixed': 25 },
+    'devshirme':       { 'Asian': 0, 'White/European': 85, 'Black/African': 0, 'Middle Eastern': 10, 'Indigenous American': 0, 'Other/Mixed': 5 },
+    'crimean':         { 'Asian': 0, 'White/European': 90, 'Black/African': 0, 'Middle Eastern': 5, 'Indigenous American': 0, 'Other/Mixed': 5 },
+    'indian-ocean':    { 'Asian': 0, 'White/European': 0, 'Black/African': 85, 'Middle Eastern': 10, 'Indigenous American': 0, 'Other/Mixed': 5 },
+    'barbary':         { 'Asian': 0, 'White/European': 90, 'Black/African': 5, 'Middle Eastern': 0, 'Indigenous American': 0, 'Other/Mixed': 5 },
+    'red-sea':         { 'Asian': 0, 'White/European': 0, 'Black/African': 90, 'Middle Eastern': 5, 'Indigenous American': 0, 'Other/Mixed': 5 },
+    'transatlantic':   { 'Asian': 0, 'White/European': 0, 'Black/African': 100, 'Middle Eastern': 0, 'Indigenous American': 0, 'Other/Mixed': 0 }
+};
+
+const ETHNIC_GROUPS = [
+    { key: 'Asian', color: '#10b981' },
+    { key: 'White/European', color: '#6366f1' },
+    { key: 'Black/African', color: '#f59e0b' },
+    { key: 'Middle Eastern', color: '#ec4899' },
+    { key: 'Indigenous American', color: '#f97316' },
+    { key: 'Other/Mixed', color: '#6b7280' }
+];
+
+function computeCenturyData() {
+    // Historical systems only (exclude modern 2021 systems)
+    const historicalSystems = slaveryData.filter(s => s.startYear < 1900);
+    // Century buckets from 1000 BCE to 1900 CE
+    const centuries = [];
+    for (let y = -1000; y <= 1900; y += 100) {
+        const label = y < 0 ? `${Math.abs(y)} BCE` : y === 0 ? '1 CE' : `${y} CE`;
+        centuries.push({ year: y, label });
+    }
+
+    return centuries.map(c => {
+        const centuryStart = c.year;
+        const centuryEnd = c.year + 99;
+        const groups = {};
+        ETHNIC_GROUPS.forEach(g => groups[g.key] = 0);
+        const activeSystems = [];
+
+        historicalSystems.forEach(sys => {
+            if (!systemEthnicMap[sys.id]) return;
+            // Check overlap
+            if (sys.endYear < centuryStart || sys.startYear > centuryEnd) return;
+
+            activeSystems.push(sys);
+            const avgEstimate = (sys.lowEstimate + sys.highEstimate) / 2;
+            // How many centuries does this system span?
+            const sysStartCentury = Math.floor(sys.startYear / 100) * 100;
+            const sysEndCentury = Math.floor(sys.endYear / 100) * 100;
+            const numCenturies = Math.max(1, (sysEndCentury - sysStartCentury) / 100 + 1);
+            const perCenturyShare = avgEstimate / numCenturies;
+
+            const ethnicMap = systemEthnicMap[sys.id];
+            ETHNIC_GROUPS.forEach(g => {
+                groups[g.key] += perCenturyShare * (ethnicMap[g.key] / 100);
+            });
+        });
+
+        const total = Object.values(groups).reduce((a, b) => a + b, 0);
+        const pct = {};
+        ETHNIC_GROUPS.forEach(g => {
+            pct[g.key] = total > 0 ? (groups[g.key] / total) * 100 : 0;
+        });
+
+        return {
+            century: c.year,
+            label: c.label,
+            total,
+            groups,
+            pct,
+            activeSystems
+        };
+    });
+}
+
+const centuryData = computeCenturyData();
+
     const SlaveryVisualization = () => {
         const svgRef = useRef(null);
         const treemapRef = useRef(null);
@@ -2266,6 +2404,7 @@ const slaveryData = [
             }
         });
         const [activeTab, setActiveTab] = useState('main');
+        const [selectedCentury, setSelectedCentury] = useState(20); // index into centuryData, default ~1000 CE
 
     const openTradeDetail = (trade, destination = null) => {
         setSelectedTrade(trade);
@@ -4116,6 +4255,221 @@ const slaveryData = [
     };
 
 
+    // === Stacked Area Chart (D3) ===
+    const StackedAreaChart = ({ selectedCentury }) => {
+        const chartRef = useRef(null);
+
+        useEffect(() => {
+            if (!chartRef.current) return;
+            d3.select(chartRef.current).selectAll('*').remove();
+
+            const margin = { top: 20, right: 160, bottom: 50, left: 60 };
+            const width = 900 - margin.left - margin.right;
+            const height = 350 - margin.top - margin.bottom;
+            const totalW = width + margin.left + margin.right;
+            const totalH = height + margin.top + margin.bottom;
+
+            const svg = d3.select(chartRef.current)
+                .append('svg')
+                .attr('viewBox', `0 0 ${totalW} ${totalH}`)
+                .attr('preserveAspectRatio', 'xMidYMid meet')
+                .style('width', '100%')
+                .style('height', 'auto');
+
+            const g = svg.append('g').attr('transform', `translate(${margin.left},${margin.top})`);
+
+            // Filter to centuries with data
+            const dataWithValues = centuryData.filter(d => d.total > 0);
+            if (dataWithValues.length === 0) return;
+
+            const keys = ETHNIC_GROUPS.map(eg => eg.key);
+            const colorMap = {};
+            ETHNIC_GROUPS.forEach(eg => colorMap[eg.key] = eg.color);
+
+            // Prepare stack data
+            const stackData = dataWithValues.map(d => {
+                const row = { century: d.century, label: d.label };
+                keys.forEach(k => row[k] = d.pct[k]);
+                return row;
+            });
+
+            const stack = d3.stack().keys(keys).offset(d3.stackOffsetNone);
+            const series = stack(stackData);
+
+            const x = d3.scaleLinear()
+                .domain(d3.extent(dataWithValues, d => d.century))
+                .range([0, width]);
+
+            const y = d3.scaleLinear()
+                .domain([0, 100])
+                .range([height, 0]);
+
+            const area = d3.area()
+                .x(d => x(d.data.century))
+                .y0(d => y(d[0]))
+                .y1(d => y(d[1]))
+                .curve(d3.curveMonotoneX);
+
+            // Draw areas
+            g.selectAll('.area-band')
+                .data(series)
+                .enter()
+                .append('path')
+                .attr('class', 'area-band')
+                .attr('d', area)
+                .attr('fill', d => colorMap[d.key])
+                .attr('opacity', 0.8);
+
+            // X axis
+            const xAxis = d3.axisBottom(x)
+                .tickFormat(d => d < 0 ? `${Math.abs(d)} BCE` : d === 0 ? '1 CE' : `${d} CE`)
+                .ticks(8);
+            g.append('g')
+                .attr('transform', `translate(0,${height})`)
+                .call(xAxis)
+                .selectAll('text')
+                .attr('fill', '#aaa')
+                .attr('font-size', '10px');
+            g.selectAll('.domain, .tick line').attr('stroke', '#444');
+
+            // Y axis
+            const yAxis = d3.axisLeft(y).tickFormat(d => d + '%').ticks(5);
+            g.append('g')
+                .call(yAxis)
+                .selectAll('text')
+                .attr('fill', '#aaa')
+                .attr('font-size', '10px');
+
+            // Vertical indicator for selected century
+            const selData = centuryData[selectedCentury];
+            if (selData && selData.total > 0) {
+                const cx = x(selData.century);
+                if (cx >= 0 && cx <= width) {
+                    g.append('line')
+                        .attr('x1', cx).attr('x2', cx)
+                        .attr('y1', 0).attr('y2', height)
+                        .attr('stroke', '#fff')
+                        .attr('stroke-width', 1.5)
+                        .attr('stroke-dasharray', '4,3')
+                        .attr('opacity', 0.7);
+                }
+            }
+
+            // Legend
+            const legend = svg.append('g')
+                .attr('transform', `translate(${margin.left + width + 15}, ${margin.top})`);
+            ETHNIC_GROUPS.forEach((eg, i) => {
+                const ly = i * 22;
+                legend.append('rect').attr('x', 0).attr('y', ly).attr('width', 14).attr('height', 14)
+                    .attr('fill', eg.color).attr('rx', 2);
+                legend.append('text').attr('x', 20).attr('y', ly + 11)
+                    .attr('fill', '#ccc').attr('font-size', '11px').text(eg.key);
+            });
+
+        }, [selectedCentury]);
+
+        return <div ref={chartRef}></div>;
+    };
+
+    // === Total Count Chart (D3) ===
+    const TotalCountChart = ({ selectedCentury }) => {
+        const chartRef = useRef(null);
+
+        useEffect(() => {
+            if (!chartRef.current) return;
+            d3.select(chartRef.current).selectAll('*').remove();
+
+            const margin = { top: 20, right: 160, bottom: 50, left: 60 };
+            const width = 900 - margin.left - margin.right;
+            const height = 200 - margin.top - margin.bottom;
+            const totalW = width + margin.left + margin.right;
+            const totalH = height + margin.top + margin.bottom;
+
+            const svg = d3.select(chartRef.current)
+                .append('svg')
+                .attr('viewBox', `0 0 ${totalW} ${totalH}`)
+                .attr('preserveAspectRatio', 'xMidYMid meet')
+                .style('width', '100%')
+                .style('height', 'auto');
+
+            const g = svg.append('g').attr('transform', `translate(${margin.left},${margin.top})`);
+
+            const dataWithValues = centuryData.filter(d => d.total > 0);
+            if (dataWithValues.length === 0) return;
+
+            const x = d3.scaleLinear()
+                .domain(d3.extent(dataWithValues, d => d.century))
+                .range([0, width]);
+
+            const maxTotal = d3.max(dataWithValues, d => d.total);
+            const y = d3.scaleLinear()
+                .domain([0, maxTotal * 1.1])
+                .range([height, 0]);
+
+            // Bar width
+            const barW = Math.max(4, width / centuryData.length - 2);
+
+            g.selectAll('.total-bar')
+                .data(dataWithValues)
+                .enter()
+                .append('rect')
+                .attr('class', 'total-bar')
+                .attr('x', d => x(d.century) - barW / 2)
+                .attr('y', d => y(d.total))
+                .attr('width', barW)
+                .attr('height', d => height - y(d.total))
+                .attr('fill', d => {
+                    const selCen = centuryData[selectedCentury];
+                    return d.century === selCen.century ? '#e0e0e0' : '#4a5568';
+                })
+                .attr('rx', 2)
+                .attr('opacity', 0.85);
+
+            // X axis
+            const xAxis = d3.axisBottom(x)
+                .tickFormat(d => d < 0 ? `${Math.abs(d)} BCE` : d === 0 ? '1 CE' : `${d} CE`)
+                .ticks(8);
+            g.append('g')
+                .attr('transform', `translate(0,${height})`)
+                .call(xAxis)
+                .selectAll('text')
+                .attr('fill', '#aaa')
+                .attr('font-size', '10px');
+            g.selectAll('.domain, .tick line').attr('stroke', '#444');
+
+            // Y axis
+            const formatCount = d => {
+                if (d >= 1e6) return (d / 1e6).toFixed(1) + 'M';
+                if (d >= 1e3) return (d / 1e3).toFixed(0) + 'K';
+                return d;
+            };
+            const yAxis = d3.axisLeft(y).tickFormat(formatCount).ticks(4);
+            g.append('g')
+                .call(yAxis)
+                .selectAll('text')
+                .attr('fill', '#aaa')
+                .attr('font-size', '10px');
+
+            // Vertical indicator
+            const selData = centuryData[selectedCentury];
+            if (selData && selData.total > 0) {
+                const cx = x(selData.century);
+                if (cx >= 0 && cx <= width) {
+                    g.append('line')
+                        .attr('x1', cx).attr('x2', cx)
+                        .attr('y1', 0).attr('y2', height)
+                        .attr('stroke', '#fff')
+                        .attr('stroke-width', 1.5)
+                        .attr('stroke-dasharray', '4,3')
+                        .attr('opacity', 0.7);
+                }
+            }
+
+        }, [selectedCentury]);
+
+        return <div ref={chartRef}></div>;
+    };
+
     return (
         <div className="container">
             {/* Navigation Header */}
@@ -4144,6 +4498,12 @@ const slaveryData = [
                         onClick={() => setActiveTab('sources')}
                     >
                         Sources
+                    </button>
+                    <button
+                        className={`nav-tab ${activeTab === 'temporal' ? 'active' : ''}`}
+                        onClick={() => setActiveTab('temporal')}
+                    >
+                        Temporal Analysis
                     </button>
                 </nav>
             </header>
@@ -4645,6 +5005,81 @@ const slaveryData = [
                             <div className="source-name">YouTube: "History's Biggest Slavers" and similar</div>
                             <div className="source-desc">Popular synthesis, not scholarly. Useful as entry points only.</div>
                         </div>
+                    </div>
+                </div>
+            )}
+
+            {activeTab === 'temporal' && (
+                <div className="sources-section">
+                    <h2>Ethnic Composition Through Time</h2>
+                    <p className="sources-intro">
+                        This view shows how the estimated ethnic composition of enslaved populations shifted across centuries, based on which slavery systems were active in each period. Modern systems (2021) are excluded. All figures are rough extrapolations.
+                    </p>
+
+                    {/* Century Slider + Bar Chart */}
+                    <div className="source-item">
+                        <div className="century-slider-container">
+                            <div className="century-label">{centuryData[selectedCentury].label}</div>
+                            <input
+                                type="range"
+                                className="century-slider"
+                                min={0}
+                                max={centuryData.length - 1}
+                                value={selectedCentury}
+                                onChange={e => setSelectedCentury(Number(e.target.value))}
+                            />
+                            <div style={{display: 'flex', justifyContent: 'space-between', fontSize: '0.75rem', color: '#888', marginTop: 4}}>
+                                <span>{centuryData[0].label}</span>
+                                <span>{centuryData[centuryData.length - 1].label}</span>
+                            </div>
+                        </div>
+
+                        <div style={{textAlign: 'center', margin: '12px 0 8px', color: '#aaa', fontSize: '0.9rem'}}>
+                            Estimated total enslaved this century: <strong style={{color: '#fff'}}>{centuryData[selectedCentury].total > 0 ? Math.round(centuryData[selectedCentury].total).toLocaleString() : 'No data'}</strong>
+                        </div>
+
+                        <div className="ethnic-bar-chart">
+                            {ETHNIC_GROUPS.map(g => {
+                                const pct = centuryData[selectedCentury].pct[g.key];
+                                return (
+                                    <div key={g.key} className="ethnic-bar-row">
+                                        <span className="ethnic-bar-label">{g.key}</span>
+                                        <div className="ethnic-bar-track">
+                                            <div className="ethnic-bar-fill" style={{
+                                                width: `${pct}%`,
+                                                background: g.color,
+                                                opacity: 0.85
+                                            }}></div>
+                                        </div>
+                                        <span className="ethnic-bar-range-text">{pct > 0 ? `${Math.round(pct)}%` : ''}</span>
+                                    </div>
+                                );
+                            })}
+                        </div>
+
+                        {centuryData[selectedCentury].activeSystems.length > 0 && (
+                            <div className="active-systems-list">
+                                <strong>Active systems:</strong>{' '}
+                                {centuryData[selectedCentury].activeSystems.map((s, i) => (
+                                    <span key={s.id}>
+                                        <span style={{color: s.color}}>{s.name}</span>
+                                        {i < centuryData[selectedCentury].activeSystems.length - 1 ? ', ' : ''}
+                                    </span>
+                                ))}
+                            </div>
+                        )}
+                    </div>
+
+                    {/* Stacked Area Chart */}
+                    <div className="source-item">
+                        <h3 style={{marginBottom: 12}}>Ethnic Composition Over Time (Percentage)</h3>
+                        <StackedAreaChart selectedCentury={selectedCentury} />
+                    </div>
+
+                    {/* Total Count Chart */}
+                    <div className="source-item">
+                        <h3 style={{marginBottom: 12}}>Total Estimated Enslaved Per Century</h3>
+                        <TotalCountChart selectedCentury={selectedCentury} />
                     </div>
                 </div>
             )}
